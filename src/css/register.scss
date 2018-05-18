@@ -1,0 +1,290 @@
+.register {
+	background: #f2f2f2;
+	position: absolute;
+	left: 0;
+	top: 0.5rem;
+	right: 0;
+	overflow: scroll;
+	bottom: 0;
+	.div3{
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		top:1.05rem;
+		background: red;
+		animation-name:light;
+		animation-duration:2s;
+		animation-iteration-count:1;
+	}
+	@keyframes light {
+		from {
+			background: red;
+			left: 100%;
+			width: 0;
+		}
+		to {
+			background: red;
+			left: 0;
+			width: 100%;
+		}
+	}
+
+	.light {
+		animation-name: light;
+		animation-timing-function: linear;
+	}
+	.div4{
+		position: absolute;
+		height: 2px;
+		width: 0;
+		top:1.05rem;
+		background: red;
+		animation:lightSpeed 2s;
+		animation-iteration-count:1;
+	}
+	@keyframes lightSpeed {
+		from {
+			background: red;
+			left: 0;
+			width: 100%;
+		}
+		to {
+			background: red;
+			left: 100%;
+			width:0;
+		}
+	}
+
+	.lightSpeed {
+		animation-name: lightSpeed;
+		animation-timing-function: linear;
+	}
+	.register_top {
+		//height: 9.1rem;
+		background: #fff;
+		width: 8.5rem;
+		margin: 0 auto;
+		position: relative;
+		top: 0.7rem;
+		border-radius: 0.2rem;
+		padding: 0.3rem;
+		z-index: 2;
+		.div1{
+			position: absolute;
+			height: 2px;
+			width: 100%;
+			top:1.05rem;
+			background: red;
+			animation-name:lightSpeedIn;
+			animation-duration:2s;
+			animation-iteration-count:1;
+		}
+		@keyframes lightSpeedI {
+			from {
+				background: red;
+				left: 100%;
+				width: 0;
+			}
+			to {
+				background: red;
+				left: 0;
+				width: 100%;
+			}
+		}
+
+		.lightSpeedI {
+			animation-name: lightSpeedI;
+			animation-timing-function: linear;
+		}
+		.div2{
+			position: absolute;
+			height: 2px;
+			width: 0;
+			top:1.05rem;
+			background: red;
+			animation:lightSpeed 2s;
+			animation-iteration-count:1;
+		}
+		@keyframes lightSpeed {
+			from {
+				background: red;
+				left: 0;
+				width: 100%;
+			}
+			to {
+				background: red;
+				left: 100%;
+				width:0;
+			}
+		}
+
+		.lightSpeed {
+			animation-name: lightSpeed;
+			animation-timing-function: linear;
+		}
+
+		ul {
+			li {
+				background: #fff;
+				list-style: none;
+				width: 100%;
+				height: 1.1rem;
+				display: block;
+
+				i {
+					width: 0.8rem;
+					height: 0.7rem;
+					display: inline-block;
+					margin-top: 0.2rem;
+					float: left;
+				}
+
+				span {
+					padding-top: 0.2rem;
+					font-size: 0.4rem;
+					position: relative;
+					padding-left: 0.2rem;
+				}
+
+				.ant-input {
+					width: 6.2rem;
+					text-align: left;
+					font-size: 0.38rem;
+					font-weight: normal;
+					margin-right: 0;
+					margin-top: 0;
+					height: 1rem;
+					line-height: px2rem(40px);
+					outline: none;
+					border: none;
+					color: #7e7e7e;
+					box-shadow: none;
+					float: left;
+					display: inline-block;
+				}
+			}
+
+			.haveCode_li {
+				background: #fff;
+				list-style: none;
+				width: 8.5rem;
+				height: 1.1rem;
+				display: block;
+				margin-left: -0.3rem;
+				margin-top: 0.4rem;
+				border-radius: 0.15rem;
+
+				right: 0.3rem;
+
+				input {
+					padding-left: 1.4rem;
+				}
+			}
+		}
+	}
+
+	.has-success.has-feedback:after {
+		display: none;
+	}
+
+	.ant-input-lg {
+		padding-right: 0;
+	}
+
+	.register_button {
+		height: 0.5rem;
+		width: 8.5rem;
+		margin: 0 auto;
+		position: relative;
+		top:0.1rem;
+		border-radius: 0.2rem;
+
+		.register_p {
+			margin-top: 2rem;
+			position:absolute;
+		}
+
+		p {
+			text-align: center;
+			font-size: 0.35rem;
+			position: relative;
+			top: 1rem;
+
+			Button {
+				width: 8.5rem;
+				background: #d22018;
+				color: #fff;
+				display: block;
+				    margin-top: -0.5rem;
+				height: 1.2rem;
+				line-height: 1.2rem;
+				font-size: 0.45rem;
+				border-radius: 0.2rem;
+				border: none;
+			}
+		}
+	}
+
+	.icon_global {
+		background: url("../img/login/icon_global.png") no-repeat;
+		height: 0.8rem;
+		margin-left: 0.2rem;
+		background-size: 86%;
+	}
+
+	.icon_password {
+		background: url("../img/login/icon_password.png") no-repeat;
+		height: 0.8rem;
+		margin-left: 0.2rem;
+		background-size: 86%;
+	}
+
+	.icon_phone {
+		background: url("../img/login/icon_phone.png") no-repeat;
+		height: 0.8rem;
+		margin-left: 0.2rem;
+		background-size: 86%;
+	}
+
+	.icon_qq {
+		background: url("../img/login/icon_qq.png") no-repeat;
+		height: 0.8rem;
+		margin-left: 0.2rem;
+		background-size: 86%;
+	}
+
+	.icon_username {
+		background: url("../img/login/icon_username.png") no-repeat;
+		height: 0.8rem;
+		margin-left: 0.2rem;
+		background-size: 86%;
+	}
+
+	.icon_realname {
+		background: url("../img/login/icon_realname.png") no-repeat;
+		height: 0.8rem;
+		margin-left: 0.2rem;
+		background-size: 86%;
+	}
+  .icon_team {
+    background: url("../img/login/icon_team.png") no-repeat;
+    height: 0.8rem;
+    margin-left: 0.2rem;
+    background-size: 86%;
+  }
+
+	.width_5 {
+		width: 5rem;
+	}
+}
+.rgyzm{
+	width: 2rem;
+	height: 0.8rem;
+	display: inline-block;
+	margin-top: 0.1rem;
+	font-size: 0.28rem;
+	line-height: 0.8rem;
+	text-align: center;
+	color: #333;
+	background: #f5f5fc;
+}

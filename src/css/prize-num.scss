@@ -1,0 +1,109 @@
+//开奖号
+//通用开奖号，如果修改在各自页面内修改
+.prize-num{
+  //普通
+  ul{
+    li{
+      width:px2rem(35px);
+      height:px2rem(35px);
+      margin-right: px2rem(6px);
+      float: left;
+      background: #d22018;
+      font-size: px2rem(24px);
+      color:#fff;
+      text-align: center;
+      line-height: px2rem(35px);
+      border-radius:100%;
+      &.cell-red{
+        background:#d22018;
+      }
+      &.cell-green{
+        background:#1c971b;
+      }
+      &.cell-blue{
+        background:#00b6ff;
+      }
+      &.cell-gray{
+        background:#cacfd1;;
+      }
+      &.cell-ssq:last-child{
+        background:#00b6ff;
+      }
+      //pk10
+      &.pk-01 {
+        background-color: #e8e230;
+      }
+      &.pk-02 {
+        background-color: #4798d8;
+      }
+      &.pk-03 {
+        background-color: #5f5f5f;
+      }
+      &.pk-04 {
+        background-color: #e37439;
+      }
+      &.pk-05 {
+        background-color:#21bdd0;
+      }
+      &.pk-06 {
+        background-color: #6f5fed;
+      }
+      &.pk-07 {
+        background-color: #b9b3b3;
+      }
+      &.pk-08 {
+        background-color: #e7352e;
+      }
+      &.pk-09 {
+        background-color: #6e1613;
+      }
+      &.pk-10 {
+        background-color: #7ee87c;
+      }
+      &.xy-01{
+        background-color:#e3f736;
+      }
+      &.xy-02{
+        background-color: #0098e1;
+      }
+      &.xy-03{
+        background-color: #ceced6;
+      }
+      &.xy-04{
+        background-color: #f56c07;
+      }
+      &.xy-05{
+        background-color: #2ff0e9;
+      }
+      &.xy-06{
+        background-color: #ff2929;
+      }
+      &.xy-07{
+        background-color: #ff2929;
+      }
+      &.xy-08{
+        background-color: #e4393c;
+      }
+      &.xy-09{
+        background-color: #ff2929;
+      }
+      &.xy-10{
+        background-color: #36f764;
+      }
+    }
+  }
+
+  //正在开奖
+  .winning,.closed{
+    font-size: px2rem(24px);
+    color:#ffc200;
+  }
+
+  .poker{
+    overflow: hidden;
+    .poker-icon{
+      display: inline-block;
+      margin-right:px2rem(15px);
+    }
+  }
+}

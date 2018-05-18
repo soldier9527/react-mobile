@@ -1,0 +1,58 @@
+.inegame {
+  background: #f2f2f2;
+  height: 17rem;
+  position: absolute;
+  width: 100%;
+  top: 1rem;
+
+  p {
+    font-size: 0.4rem;
+    padding-left: 0.7rem;
+    padding-top: 1.3rem;
+
+    a {
+      color: #d22018;
+    }
+  }
+
+  ul {
+    .sur_li {
+      background: #f2f2f2;
+      display: block;
+      margin-top: 1.5rem;
+    }
+
+    li {
+      background: #fff;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      font-size: 0.4rem;
+      margin-bottom: 0.05rem;
+      margin-top: 1rem;
+
+      input {
+        font-weight: normal;
+        padding-left: 1rem;
+        text-align: left;
+      }
+
+      span {
+        padding-left: 0.5rem;
+        font-weight: bold;
+      }
+
+      a {
+        color: #fff;
+        background: #d22018;
+        text-align: center;
+        display: block;
+        border-radius: 0.1rem;
+        margin: 0 auto;
+        font-size: 0.5rem;
+        width: 75%;
+        height: 1rem;
+        line-height: 1rem;
+      }
+    }
+  }
+}

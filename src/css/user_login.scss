@@ -1,0 +1,265 @@
+.user_login {
+  position: relative;
+  top: 1rem;
+
+  .info {
+    background: #d22018;
+    height: 1.953125rem;
+
+    .login-reg {
+      font-size: 0.390625rem;
+      color: #fff;
+      height: 2rem;
+
+      a {
+        display: block;
+        height: 100%;
+        color: #fff;
+
+        .login-reg_left {
+          width: 1.7rem;
+          height: 2rem;
+          margin-left: 0.8rem;
+        }
+
+        .login-reg_right {
+          width: 6rem;
+          position: relative;
+          left: 0.3rem;
+          top: 0.1rem;
+          display: inline-block;
+        }
+
+        .login-reg_rr {
+          height: 2rem;
+          width: 1rem;
+        }
+
+        i {
+          display: inline-block;
+          float: left;
+        }
+
+        p {
+          width: 6rem;
+          float: right;
+          padding-top: 0.1rem;
+          span {}
+        }
+
+        a {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .btns {
+    background: #fff;
+    padding: 0 0.3125rem;
+
+    .row {
+      padding: 0.65625rem 0 0.3125rem;
+
+      &:first-child {
+        border-bottom: 1px solid #d5d5d5;
+      }
+
+      .col {
+        padding: 0 0.625rem;
+        text-align: center;
+
+        a {
+          display: block;
+        }
+        a:focus{
+          text-decoration: none;
+        }
+
+        &:first-child a {
+          margin-left: -0.3125rem;
+        }
+
+        &:last-child a {
+          margin-right: -0.3125rem;
+        }
+      }
+    }
+
+    i {
+      display: block;
+      background:center center no-repeat;
+      width: 0.65625rem;
+      height: 0.65625rem;
+      margin: 0 auto 0.125rem;
+
+      &.icon-deposit {
+        background-image: url("../img/user/icon_deposit.png");
+      }
+
+      &.icon-withdrawal {
+        background-image: url("../img/user/icon_withdrawal.png");
+      }
+
+      &.icon-orders {
+        background-image: url("../img/user/icon_orders.png");
+        width: 0.5625rem;
+      }
+
+      &.icon-account {
+        background-image: url("../img/user/icon_account.png");
+        width: 0.5625rem;
+      }
+
+      &.icon-team {
+        background-image: url("../img/user/icon_team.png");
+        width: 0.890625rem;
+      }
+
+      &.icon-message {
+        background-image: url("../img/user/icon_message.png");
+        width: 0.6875rem;
+      }
+
+      &.icon-message_red {
+        background-image: url("../img/user/icon_message_red.png");
+        width: 0.6875rem;
+      }
+      background-size: 100% 100%;
+    }
+
+    span {
+      color: #303030;
+      font-size: 0.3125rem;
+    }
+  }
+
+  .list {
+    background: #f2f2f2;
+    margin-top: 0.1rem;
+    height: 3rem;
+
+    li {
+      background: #fff;
+      list-style: none;
+      width: 100%;
+      height: 1.15rem;
+      line-height: 1rem;
+      display: block;
+      margin-top: 0.1rem;
+
+      a {
+        color: #303030;
+        width: 100%;
+        height: 1.15rem;
+        display: block;
+
+        i:first-child {
+          width: 0.8rem;
+          height: 0.8rem;
+          display: inline-block;
+          margin-top: 0.3rem;
+        }
+
+        i:last-child {
+          width: px2rem(16.8px);
+          height: px2rem(30px);
+          margin-top: 0.34rem;
+          margin-right: 0.8rem;
+        }
+
+        span {
+          font-size: 0.4rem;
+          float: left;
+          padding-top: 0.1rem;
+        }
+      }
+    }
+  }
+
+  .icon_service {
+    background: url("../img/user/icon_service.png") no-repeat;
+    height: 0.8rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    background-size: 86%;
+  }
+  .caijinquan_icon {
+    background: url("../img/user/caijinquan_icon.png") no-repeat;
+    height: 0.8rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    background-size: 86%;
+  }
+
+  .active_center_icon {
+    background: url("../img/user/active_center_icon.png") no-repeat;
+    height: 0.8rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    background-size: 73%;
+  }
+
+  .icon_touxiang {
+    background: url("../img/login/icon_touxiang.png") no-repeat;
+    background-size: 100%;
+    position: relative;
+    height: 1.7rem;
+    width: 1.7rem;
+    border-radius: 0.9rem;
+  }
+
+  .arrow_right_withe {
+    background: url("../img/global/arrow_right_withe.png") no-repeat;
+    height: 0.8rem;
+    width: 0.5rem;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    background-size: 73%;
+  }
+}
+.isbind-wrapper{
+  color: #303030;
+  .ant-modal-header{
+    background: #d22018;
+    .ant-modal-title{
+      color:#fff;
+      text-align: center;
+      font-size: 0.375rem;
+
+    }
+  }
+  .ant-modal-content{
+    width: 80%;
+    margin: 0 auto;
+    .ant-modal-body{
+      padding: 0;
+      .x-confirm-data{
+        text-align: left;
+        padding: px2rem(15px) px2rem(20px);
+        >p{
+          font-size: px2rem(26px);
+          overflow: hidden;
+          white-space:nowrap;
+        }
+
+      }
+      .x-btn-wrapper{
+        overflow: hidden;
+        >span{
+          display: block;
+          float: left;
+          font-size: px2rem(28px);
+          width:50%;
+          text-align: center;
+          height:px2rem(70px);
+          line-height: px2rem(70px);
+          border-top:1px solid  #ddd;
+          &:first-child{
+            border-right: 1px solid  #ddd;
+          }
+        }
+      }
+    }
+  }
+}

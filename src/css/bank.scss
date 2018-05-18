@@ -1,0 +1,160 @@
+// 绑定银行卡
+
+.bank-card-bind-wrap{
+  background: #f2f2f2;
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  right: 0;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  bottom: 0;
+  .demoTitle:before,
+  .demoTitle:after {
+    border-bottom: none;
+  }
+  .mt20{
+    margin-top: px2rem(20px);
+  }
+
+  .submit-btn{
+    margin: px2rem(60px) auto 0;
+    font-size: 0.45rem;
+  }
+  .bank-card-bind-warining{
+    padding: 0.8rem 0.3rem 0 ;
+    >p{
+
+    }
+  }
+}
+.am-picker .bank-item{
+  line-height: 34px;
+  vertical-align: top;
+}
+.icon-bank{
+  background-repeat: no-repeat;
+  height: 34px;
+  width: 34px;
+  background-size: 100%;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
+
+}
+// 银行卡列表
+//{bank_id: 1, bank_name: "工商银行"}
+.icon-bank-1 {
+  background-image: url("../img/bankcard/icbc_bank.png");
+}
+//{bank_id: 2, bank_name: "农业银行"}
+.icon-bank-2 {
+  background-image: url("../img/bankcard/nongye_bank.png");
+}
+//{bank_id: 3, bank_name: "建设银行"}
+.icon-bank-3 {
+  background-image: url("../img/bankcard/jianse_bank.png");
+}
+//{bank_id: 4, bank_name: "招商银行"}
+.icon-bank-4 {
+  background-image: url("../img/bankcard/zhaoshang_bank.png");
+}
+//{bank_id: 5, bank_name: "交通银行"}
+.icon-bank-5 {
+  background-image: url("../img/bankcard/jiaotong_bank.png");
+}
+//{bank_id: 6, bank_name: "中信银行"}
+.icon-bank-6 {
+  background-image: url("../img/bankcard/zhongxin_bank.png");
+}
+//{bank_id: 7, bank_name: "邮政储汇"}
+.icon-bank-7{
+  background-image: url("../img/bankcard/postal_bank.png");
+}
+//{bank_id: 8, bank_name: "中国光大银行"}
+.icon-bank-8 {
+  background-image: url("../img/bankcard/everynight_bank.png");
+}
+//{bank_id: 9, bank_name: "民生银行"}
+.icon-bank-9 {
+  background-image: url("../img/bankcard/mingsheng_bank.png");
+}
+//{bank_id: 10, bank_name: "上海浦东发展银行"}
+.icon-bank-10{
+  background-image: url("../img/bankcard/pufa_bank.png");
+}
+//{bank_id: 11, bank_name: "兴业银行"}
+.icon-bank-11 {
+  background-image: url("../img/bankcard/xingye_bank.png");
+}
+
+//{bank_id: 12, bank_name: "广发银行"}
+.icon-bank-12 {
+  background-image: url("../img/bankcard/guangfa_bak.png");
+}
+//{bank_id: 13, bank_name: "平安银行"}
+.icon-bank-13 {
+  background-image: url("../img/bankcard/pingan_bank.png");
+}
+//{bank_id: 15, bank_name: "华夏银行"}
+.icon-bank-15 {
+  background-image: url("../img/bankcard/huaxia_bank.png");
+}
+//{bank_id: 16, bank_name: "东莞银行"}
+.icon-bank-16 {
+  background-image: url("../img/bankcard/dongguan_bank.png");
+}
+//{bank_id: 17, bank_name: "渤海银行"}
+.icon-bank-17 {
+  background-image: url("../img/bankcard/bohai_bank.png");
+}
+//{bank_id: 19, bank_name: "浙商银行"}
+.icon-bank-19 {
+  background-image: url("../img/bankcard/zheshang_bank.png");
+}
+//{bank_id: 20, bank_name: "北京银行"}
+.icon-bank-20 {
+  background-image: url("../img/bankcard/beijing_bank.png");
+}
+//{bank_id: 21, bank_name: "广州银行"}
+.icon-bank-21 {
+  background-image: url("../img/bankcard/guangzhou_bank.png");
+}
+
+//{bank_id: 22, bank_name: "中国银行"}
+.icon-bank-22 {
+  background-image: url("../img/bankcard/china_bank.png");
+}
+//{bank_id: 23, bank_name: "农村信用社"}
+.icon-bank-23 {
+  background-image: url("../img/bankcard/farm_bank.png");
+}
+//{bank_id: 24, bank_name: "其他银行"}
+
+
+
+  //
+  //.dalian_bank {
+  //  background-image: url("../img/bankcard/dalian_bank.png");
+  //}
+  //
+  //.dongya_bank {
+  //  background-image: url("../img/bankcard/dongya_bank.png");
+  //}
+
+
+
+
+
+
+
+
+
+
+
+  .weishang_bank {
+    background-image: url("../img/bankcard/weishang_bank.png");
+  }
+
+
+

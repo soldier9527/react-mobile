@@ -1,0 +1,71 @@
+
+/**登录页面样式**/
+
+.login-frame{
+
+
+	margin:39px 29px auto;
+}
+
+.input-userName{
+
+	width: 248px;
+}
+
+.icon-userName{
+
+
+    background-image: url("../img/login/icon_username.png");
+
+}
+
+.icon-password{
+
+     background-image: url("../img/login/icon_password.png");
+}
+
+.login-Retrieve-password{
+
+	font-size: 15px;
+    color: red;
+    margin: 6px auto;
+}
+
+.login-but{
+
+	width: 350px;
+	height: 40px;
+    font-size: 15px;
+    background: #d22107;
+    color: aliceblue;
+    border:none;
+    border-radius:10px;
+    outline: none;
+
+}
+
+.register-btn{
+
+	width: 350px;
+	height: 40px;
+    font-size: 15px;
+    background: #dfdfdf;
+    color: aliceblue;
+    border:none;
+    border-radius:10px;
+}
+
+.login-div{
+
+	margin: 20px auto;
+}
+
+.login-input{
+
+outline: none;
+border: none;
+font-size: 0.4rem;
+width: 5rem;
+margin-right: .63rem;
+color: #7e7e7e;
+}

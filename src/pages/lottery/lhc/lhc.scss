@@ -1,0 +1,43 @@
+.lottery{
+  .ch_chart {
+    .ch_num_box {
+      .text-align{
+        font-size: 0;
+        text-align: center;
+      }
+      .ch_num_show{
+
+        li{
+          &.TMBT{
+            button{
+              width:1.8rem;
+            }
+          }
+            .ba-red{
+              background: red;
+            }
+          .ba-green{
+            background: green;
+            color: #fff;
+          }
+          .ba-blue{
+            background: blue;
+            color: #fff;
+          }
+            .red{
+              color: red;
+            }
+            .green{
+              color:green;
+            }
+            .blue{
+              color: blue;
+            }
+
+        }
+      }
+    }
+
+  }
+
+}

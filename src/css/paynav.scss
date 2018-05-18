@@ -1,0 +1,35 @@
+/*充值页面*/
+.paynav {
+  position: relative;
+  top: 1rem;
+
+  ul {
+    li {
+      display: inline-block;
+      width: 25%;
+      font-size: 0.1875rem;
+      display: inline-block;
+      font-size: 0.35rem;
+      text-align: center;
+      background: #a40000;
+      color: #fff;
+      height: 1rem;
+      line-height: 1rem;
+      a{
+        color: #fff
+      }
+
+      span {
+        display: inline-block;
+        width: 70%;
+        height: 70%;
+        line-height: 0.7rem;
+      }
+    }
+
+    li:hover span {
+      padding-bottom: 0.05rem;
+      border-bottom: 0.05rem solid #fff;
+    }
+  }
+}

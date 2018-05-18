@@ -1,0 +1,31 @@
+//样式彩种wrapper,别用important
+.lottery{
+  .lt11x5-wrapper{
+    .ch_chart .ch_num_box .ch_num_show li button{
+      text-align: center;
+    }
+    .ch_chart .ch_num_box .ch_num_show{ text-align: center;
+      &.center{
+        text-align: center;
+      }
+    }
+
+    .lt11x5-dingdanshuang{
+      .ch_num_box .ch_num_show li {
+
+
+        button{
+          line-height: 0.38rem;
+
+          font-size: 0.3rem;
+        }
+        label{
+          display: block;
+          text-align: center;
+          color: #d22018;
+        }
+      }
+    }
+  }
+
+}

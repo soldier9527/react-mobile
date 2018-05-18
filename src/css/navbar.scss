@@ -1,0 +1,171 @@
+.navbar {
+	background: #d22018;
+	position: fixed;
+	z-index: 10;
+	// width: 640px;
+	width: 100%;
+	// height: 70px;
+	height: 1rem;
+	left: 0;
+	top: 0;
+	right: 0;
+	text-align: center;
+
+	span {
+		width: 5rem;
+		display: block;
+		margin: 0 auto;
+		height: 1rem;
+		overflow: hidden;
+	}
+
+	.fl {
+		width: 1rem;
+		height: 1rem;
+		position: absolute;
+		left: 0;
+		top: 0;
+		padding-top: 0.3rem;
+	}
+
+	.title {
+		line-height: 1rem;
+		font-size: 0.4375rem;
+		color: #fff;
+		font-weight: 600;
+	}
+
+	//.icon-arrow-dropdown {
+	//	margin-left: px2rem(25px);
+	//	display: inline-block;
+	//	width: px2rem(20px);
+	//	height: px2rem(17px);
+	//	vertical-align: px2rem(2px);
+	//	background: url("../img/global/arrow-dropdown.png") no-repeat;
+	//	background-size: px2rem(20px) px2rem(17px);
+	//}
+
+	.dropdown-wrap {
+		position: absolute;
+		top: 1rem;
+		width: 100%;
+		background: rgba(198,198,198,.3);
+
+		ul {
+			height: px2rem(712px);
+			overflow-y: auto;
+			-webkit-overflow-scrolling: touch;
+			background: #fff;
+
+			li {
+				display: block;
+				width: px2rem(560px);
+				height: px2rem(80px);
+				line-height: px2rem(80px);
+				color: #303030;
+				font-size: px2rem(26px);
+				border-bottom: px2rem(1px) solid #d2d2d2;
+				margin: 0 auto;
+
+				&.dropdown-select {
+					color: #d22018;
+				}
+			}
+		}
+	}
+	.navbar-right{
+		position: absolute;
+		top:0;
+		right:0;
+		//彩种操作
+		.lottery-operate-wrapper{
+			position: relative;
+			>label{
+
+				display: inline-block;
+				width: .7rem;
+				height: .7rem;
+				color:#fff;
+				margin-top: 0.2rem;
+				margin-right: 0.2rem;
+				background: url("../img/user/menu.png") no-repeat;
+				background-size: 100%;
+			}
+			.lottery-operate{
+				position: absolute;
+				display: block;
+				top: 1rem;
+				right:0;
+				z-index: 99;
+				overflow: hidden;
+				li{
+					background: #b31717;
+					width: px2rem(180px);
+					height: px2rem(50px);
+					line-height: px2rem(50px);
+					border-bottom: 1px solid #fff;
+					font-size: 0.35rem;
+					color: #fff;
+					&.extra{
+						border: none;
+						text-align: center;
+						>span{
+							display: inline-block;
+							width: px2rem(120px);
+							height: px2rem(50px);
+							line-height: px2rem(50px);
+							border-bottom: 1px solid #fff;
+						}
+					}
+					a{
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+
+	//个人中心设置按钮
+	.lt-mysetting {
+		display: inline-block;
+		width: px2rem(35px);
+		height: px2rem(35px);
+		background: url("../img/user/icon_loginsetting.png") no-repeat;
+		background-size: 100%;
+		float: right;
+		margin-top: 0.2rem;
+		margin-right: 0.2rem;
+	}
+
+	//时间插件样式
+	.datepicker-wrapper{
+		.am-list-item.am-list-item-middle{
+			overflow: hidden;
+			background: #fff;
+			min-height: 0;
+		}
+		.am-list-item {
+			.am-list-line{
+				font-size: 0;
+				.am-list-content{
+					background: #a40000;
+					position: fixed;
+					top:  0.17rem;
+					right:px2rem(35px);
+					height: 0.7rem;
+					line-height: 0.7rem;
+					font-size: 0.3rem;
+					color: #fff;
+					width: 2rem;
+					border-radius: 5px;
+					text-align: center;
+					padding: 0 0 0 0.4rem
+
+				}
+				.am-list-arrow,.am-list-extra{
+					display: none;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,61 @@
+.withdraw-warp {
+  background: #f2f2f2;
+  padding: px2rem(20px);
+  position: absolute;
+  width: 10.0rem;
+  top: 1rem;
+  bottom: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  color: #303030;
+  .withdraw-info {
+    background: #fff;
+    width:px2rem(580px);
+    margin:0 auto px2rem(20px);
+    border-radius: px2rem(5px);
+    padding: 0 px2rem(12px);
+    ul {
+      li {
+        padding : 0 px2rem(20px);
+        height: px2rem(60px);
+        line-height: px2rem(60px);
+        color:rgb(48,48,48);
+        font-size: px2rem(26px);
+        overflow: hidden;
+        border-bottom: 1px solid #c9c9c9;
+        &:last-child{
+          border-bottom:none;
+        }
+        span {
+          font-size:px2rem(26px);
+          font-weight: 500;
+        }
+        >i{
+          float: right;
+          font-style: normal;
+          &.money{
+            color:#d22018;
+          }
+        }
+        input{
+          float: right;
+          border: 0;
+          text-align: right;
+          outline: 0;
+          height: px2rem(60px);
+          font-size: px2rem(20px);
+          line-height: px2rem(60px);
+        }
+      }
+    }
+  }
+  .withdraw-btn-wrap {
+    .clearF {
+      overflow: hidden;
+    }
+
+    .submit-btn {
+      margin: px2rem(45px) auto 0;
+    }
+  }
+}

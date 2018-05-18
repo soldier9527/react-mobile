@@ -1,0 +1,58 @@
+.wallet {
+  background: #f2f2f2;
+  height: 17rem;
+  position: relative;
+  top: 1rem;
+
+  .blance {
+    padding: 0.80rem;
+    position: relative;
+    background: #d22018;
+    color: #fff;
+    font-size: 0.4rem;
+    padding-bottom: 0.2rem;
+
+    .bigsize {
+      font-size: 2rem;
+    }
+  }
+
+  .change {
+    ul {
+      li {
+        background: #fff;
+        height: 1.5rem;
+        line-height: 1.5rem;
+        font-size: 0.4rem;
+        margin-bottom: 0.05rem;
+
+        a {
+          color: #000;
+
+          i {
+            height: 0.65rem;
+            width: 0.5rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+          }
+
+          span {
+            padding-right: 4.3rem;
+            padding-left: 0.2rem;
+          }
+        }
+
+        .lt-inegame {
+          margin-left: 0.5rem;
+          width: 0.85rem;
+          height: 0.7rem;
+        }
+        .lt-outegame {
+          margin-left: 0.5rem;
+          width: 0.85rem;
+          height: 0.7rem;
+        }
+      }
+    }
+  }
+}

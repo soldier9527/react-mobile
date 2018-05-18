@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.scss';
 import {Button} from 'antd-mobile'
-import Router from 'react-router'
 class App extends Component {
   render() {
     return (

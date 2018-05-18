@@ -1,0 +1,49 @@
+
+/**幸运28彩种玩法样式**/
+.lottery{
+
+    .ch_chart{
+
+       .ch_num_box{
+          .ch_num_text-align{
+            text-align:center;
+          }
+          .ch_num_show{
+
+              li{
+                 .bg-red{
+                   background:#d22018;
+                   color: #fff;
+                 }
+                 .bg-green{
+                   background: rgb(35, 196, 47);
+                   color: #fff;
+                 }
+                 .bg-blue{
+                   background:#49a9ee;
+                   color: #fff;
+                 }
+
+                 .red{
+                    color: #d22018;
+                 }
+
+                 .green{
+
+                   color: rgb(35, 196, 47);
+                 }
+                .blue{
+                  color: #49a9ee;
+                }
+              }
+              label{
+                display: block;
+                text-align: center;
+                color: #d22018;
+              }
+
+          }
+       }
+    }
+
+}

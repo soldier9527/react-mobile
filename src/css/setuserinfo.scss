@@ -1,0 +1,47 @@
+.setuserinfo-wrap {
+  background: #fff;
+  padding:px2rem(45px) px2rem(20px) 0;
+  position: absolute;
+  width: 10.0rem;
+  top: 1rem;
+  bottom: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  color: #303030;
+
+  .input-wrap{
+    text-align: center;
+    .ant-form-item-label{
+      vertical-align: top;
+    }
+    .ant-form-item-control-wrapper{
+      display: inline-block;
+      width:px2rem(400px);
+    }
+    .ant-form-explain{
+      text-align: left;
+    }
+  }
+  .warning-wrap{
+    margin:0 px2rem(40px) ;
+
+    .warning{
+      display: inline-block;
+      margin-right:px2rem(15px);
+      vertical-align: middle;
+      color:#d22018;
+      line-height: px2rem(20px);
+    }
+    span{
+      font-size: px2rem(16px);
+      line-height: px2rem(20px);
+      vertical-align: middle;
+      color:#d22018;
+    }
+  }
+
+  .submit-btn {
+    margin: px2rem(60px) auto 0;
+    font-size: 0.45rem;
+  }
+}

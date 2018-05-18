@@ -1,0 +1,51 @@
+.aaa{
+  width: 100%;
+  height: 0.1rem;
+  background: #e4393c;
+  animation:Speed 3s;
+  animation-iteration-count:1;
+    @keyframes Speed {
+      from {
+        background: red;
+        left: 100%;
+        width: 0;
+      }
+      to {
+        background: red;
+        left: 0;
+        width:100%;
+      }
+
+}
+  .Speed {
+    animation-name: Speed;
+    animation-timing-function: linear;
+  }
+}
+.bbb{
+  position: absolute;
+  top:30%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  background: #e4393c;
+  animation: spin 6.5s linear infinite;
+  transform-origin: 50% 50%;
+    @keyframes spin {
+      0% { transform:rotate(0deg) }
+      23.07692% { transform:rotate(359deg) }
+      100% { transform:rotate(359deg) }
+    }
+}
+.span2{
+  font-size: 1rem;
+  color: red;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:60%;
+  margin: auto;
+  text-align: center;
+}

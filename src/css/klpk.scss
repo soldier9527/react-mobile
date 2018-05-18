@@ -1,0 +1,703 @@
+
+
+.playBody{
+  background-color:white;
+  color:#303030;
+}
+
+.playType{
+  display:flex;
+  justify-content:space-between;
+  padding:0.10625rem 0;
+  border-bottom:0.008625rem solid #f2f2f2;
+  li:first-child{
+    margin-left:0.25625rem;
+  }
+  li:nth-child(2){
+    margin-right:0.25625rem;
+    color:#d22018;
+  }
+}
+
+//用来控制页面上显示哪种玩法
+.showPoker{
+  .pksz{
+    display:none;
+  }
+  .common{
+    display:none;
+  }
+}
+
+.showPoker-PKBX{
+  display:flex;
+  flex-wrap:wrap;
+  .common{
+    display:block;
+    .item{
+      display: block;
+      color:#303030;
+      width:2.2rem;
+      height:0.5rem;
+      position:absolute;
+      top:1rem;
+    }
+  }
+  li{
+    width:33.33%;
+    height:2.8rem;
+    text-align:center;
+    line-height:2.8rem;
+    padding-left:0.5rem;
+    margin-bottom:0.15625rem;
+    div{
+      width:2.3rem;
+      height:2.6rem;
+      border:1px solid #f2f2f2;
+      background-color:white;
+      line-height:2.5rem;
+      margin-top:0.15625rem;
+      position:relative;
+    }
+  }
+  .poker-style{
+    display:block;
+    width:70%;
+    height:70%;
+    margin-top:0.234375rem;
+    background-size: 100%;
+    margin-left:0.3rem;
+    background-repeat:no-repeat;
+  }
+  .poker-style-1{
+    background-image: url("../img/lottery/klpk/03.png");
+  }
+  .poker-style-2{
+    background-image: url("../img/lottery/klpk/01.png");
+  }
+  .poker-style-3{
+    background-image: url("../img/lottery/klpk/02.png");
+  }
+  .poker-style-4{
+    background-image: url("../img/lottery/klpk/04.png");
+  }
+  .poker-style-5{
+    background-image: url("../img/lottery/klpk/05.png");
+  }
+  .poker-style-select{
+    width:100%;
+    height:100%;
+    position:absolute;
+    background: url("../img/lottery/klpk/borderColor.png") no-repeat;
+    background-size: 100% 100%;
+    top:0;
+    left:0;
+  }
+}
+
+.showPoker-PKTH{
+  display:flex;
+  flex-wrap:wrap;
+  .common{
+    display:block;
+  }
+  li{
+    width:25%;
+    height:2.8rem;
+    text-align:center;
+    line-height:2.8rem;
+    padding-left:0.25rem;
+    margin-bottom:0.08rem;
+    div{
+      display:inline-block;
+      width:2rem;
+      height:2.5rem;
+      border:1px solid #f2f2f2;
+      background-color:white;
+      line-height:2.5rem;
+      margin-top:0.15625rem;
+      overflow:hidden;
+      position:relative;
+      .poker-style{
+        width:60%;
+        height:60%;
+        margin-top:0.234375rem;
+        background-size:100% 100%;
+        background-repeat:no-repeat ;
+        display:block;
+        margin-left:0.4rem;
+      }
+      .poker-style-1{
+        background-image:url("../img/lottery/klpk/spade.png");
+      }
+      .poker-style-2{
+        background-image:url("../img/lottery/klpk/Heart.png");
+      }
+      .poker-style-3{
+        background-image:url("../img/lottery/klpk/club.png");
+      }
+      .poker-style-4{
+        background-image:url("../img/lottery/klpk/diamond.png");
+      }
+      .poker-style-select{
+        width:100%;
+        height:100%;
+        position:absolute;
+        background: url("../img/lottery/klpk/borderColor.png") no-repeat;
+        background-size: 100% 100%;
+        top:0;
+        left:0;
+      }
+
+        i{
+        position:absolute;
+        top: 0.85rem;
+        left:0.575rem;
+        font-size:0.390625rem;
+      }
+
+    }
+    &:nth-child(even){
+      i{
+        color:#d22018;;
+      }
+    }
+  }
+}
+.showPoker-PKSZ{
+  display:flex;
+  flex-wrap:wrap;
+  height:8.1rem;
+  .common{
+    display:none;
+  }
+  .pksz{
+    display:block;
+  }
+  li{
+    width:25%;
+    height:2.5rem;
+    text-align:center;
+    line-height:2.5rem;
+    padding-left:0.35rem;
+    div{
+      display:inline-block;
+      width:1.8rem;
+      height:2.2rem;
+      border:1px solid #f2f2f2;
+      background-color:white;
+      margin-top:0.22625rem;
+      overflow:hidden;
+      position:relative;
+      .poker-style{
+        width:85%;
+        height:70%;
+        position:absolute;
+        top:0.55rem;
+        left:0.15rem;
+        background:url("../img/lottery/klpk/klpk.png") no-repeat;
+        background-size:100%;
+      }
+      .poker-style-select{
+        width:100%;
+        height:100%;
+        position:absolute;
+        background: url("../img/lottery/klpk/borderColor.png") no-repeat;
+        background-size: 100% 100%;
+        top:0;
+        left:0;
+      }
+      i{
+        height:0.46875rem;
+        position:absolute;
+        top: -1rem;
+        left:0.15rem;
+        font-size:0.390625rem;
+      }
+    }
+  }
+}
+.showPoker-PKTHS{
+  display:flex;
+  flex-wrap:wrap;
+
+  .common{
+    display:block;
+  }
+
+  li{
+    width:25%;
+    height:2.8rem;
+    text-align:center;
+    line-height:2.8rem;
+    padding-left:0.24rem;
+    div{
+      display:inline-block;
+      width:2rem;
+      height:2.5rem;
+      border:1px solid #f2f2f2;
+      background-color:white;
+      line-height:2.5rem;
+      margin-top:0.15625rem;
+      overflow:hidden;
+      position:relative;
+      .poker-style{
+        width:70%;
+        height:65%;
+        position:absolute;
+        top:0.15rem;
+        left:0.3rem;
+        background-repeat:no-repeat;
+        background-size:100% 100%;
+      }
+      .poker-style-1{
+        background-image:url("../img/lottery/klpk/spade.png");
+      }
+      .poker-style-2{
+        background-image:url("../img/lottery/klpk/Heart.png");
+      }
+      .poker-style-3{
+        background-image:url("../img/lottery/klpk/club.png");
+      }
+      .poker-style-4{
+        background-image:url("../img/lottery/klpk/diamond.png");
+      }
+      .poker-style-select{
+        width:100%;
+        height:100%;
+        position:absolute;
+        background: url("../img/lottery/klpk/borderColor.png") no-repeat;
+        background-size: 100% 100%;
+        top:0;
+        left:0;
+      }
+      i{
+        position:absolute;
+        top: 0.85rem;
+        left:0.18rem;
+        font-size:0.390625rem;
+      }
+    }
+    &:nth-child(even){
+      i{
+        color:#d22018;
+      }
+    }
+  }
+}
+.showPoker-PKBZ{
+  display:flex;
+  flex-wrap:wrap;
+  height:10.56rem;
+
+  .pksz{
+    display:block;
+  }
+
+  li{
+    width:25%;
+    height:2.5rem;
+    text-align:center;
+    line-height:2.5rem;
+    padding-left:0.34rem;
+    div{
+      display:inline-block;
+      width:1.8rem;
+      height:2.2rem;
+      border:1px solid #f2f2f2;
+      background-color:white;
+      margin-top:0.22625rem;
+      overflow:hidden;
+      position:relative;
+      .poker-style{
+        width:85%;
+        height:70%;
+        position:absolute;
+        top:0.55rem;
+        left:0.15rem;
+        background:url("../img/lottery/klpk/klpk.png") no-repeat;
+        background-size:100%;
+      }
+      .poker-style-select{
+        width:100%;
+        height:100%;
+        position:absolute;
+        background: url("../img/lottery/klpk/borderColor.png") no-repeat;
+        background-size: 100% 100%;
+        top:0;
+        left:0;
+      }
+      i{
+        height:0.46875rem;
+        position:absolute;
+        top: -1rem;
+        left:0.15rem;
+        font-size:0.390625rem;
+      }
+    }
+  }
+}
+.showPoker-PKDZ{
+  display:flex;
+  flex-wrap:wrap;
+  height:10.56rem;
+
+  .pksz{
+    display:block;
+  }
+
+  li{
+    width:25%;
+    height:2.5rem;
+    text-align:center;
+    line-height:2.5rem;
+    padding-left:0.34rem;
+    div{
+      display:inline-block;
+      width:1.8rem;
+      height:2.2rem;
+      border:1px solid #f2f2f2;
+      background-color:white;
+      margin-top:0.22625rem;
+      overflow:hidden;
+      position:relative;
+      .poker-style{
+        width:85%;
+        height:70%;
+        position:absolute;
+        top:0.55rem;
+        left:0.15rem;
+        background:url("../img/lottery/klpk/klpk.png") no-repeat;
+        background-size:100%;
+      }
+      .poker-style-select{
+        width:100%;
+        height:100%;
+        position:absolute;
+        background: url("../img/lottery/klpk/borderColor.png") no-repeat;
+        background-size: 100% 100%;
+        top:0;
+        left:0;
+      }
+      i{
+        height:0.46875rem;
+        position:absolute;
+        top: -1rem;
+        left:0.15rem;
+        font-size:0.390625rem;
+      }
+    }
+  }
+}
+.showPoker-PKRX1{
+  display:flex;
+  flex-wrap:wrap;
+  height:10.56rem;
+
+  .pksz{
+    display:block;
+  }
+
+  li{
+    width:25%;
+    height:2.5rem;
+    text-align:center;
+    line-height:2.5rem;
+    padding-left:0.34rem;
+    div{
+      display:inline-block;
+      width:1.8rem;
+      height:2.2rem;
+      border:1px solid #f2f2f2;
+      background-color:white;
+      margin-top:0.22625rem;
+      overflow:hidden;
+      position:relative;
+      .poker-style{
+        width:85%;
+        height:70%;
+        position:absolute;
+        top:0.55rem;
+        left:0.15rem;
+        background:url("../img/lottery/klpk/klpk.png") no-repeat;
+        background-size:100%;
+      }
+      .poker-style-select{
+        width:100%;
+        height:100%;
+        position:absolute;
+        background: url("../img/lottery/klpk/borderColor.png") no-repeat;
+        background-size: 100% 100%;
+        top:0;
+        left:0;
+      }
+      i{
+        height:0.46875rem;
+        position:absolute;
+        top: -1rem;
+        left:0.15rem;
+        font-size:0.390625rem;
+      }
+    }
+  }
+}
+.showPoker-PKRX2{
+  display:flex;
+  flex-wrap:wrap;
+  height:10.56rem;
+
+  .pksz{
+    display:block;
+  }
+
+  li{
+    width:25%;
+    height:2.5rem;
+    text-align:center;
+    line-height:2.5rem;
+    padding-left:0.34rem;
+    div{
+      display:inline-block;
+      width:1.8rem;
+      height:2.2rem;
+      border:1px solid #f2f2f2;
+      background-color:white;
+      margin-top:0.22625rem;
+      overflow:hidden;
+      position:relative;
+      .poker-style{
+        width:85%;
+        height:70%;
+        position:absolute;
+        top:0.55rem;
+        left:0.15rem;
+        background:url("../img/lottery/klpk/klpk.png") no-repeat;
+        background-size:100%;
+      }
+      .poker-style-select{
+        width:100%;
+        height:100%;
+        position:absolute;
+        background: url("../img/lottery/klpk/borderColor.png") no-repeat;
+        background-size: 100% 100%;
+        top:0;
+        left:0;
+      }
+      i{
+        height:0.46875rem;
+        position:absolute;
+        top: -1rem;
+        left:0.15rem;
+        font-size:0.390625rem;
+      }
+    }
+  }
+}
+.showPoker-PKRX3{
+  display:flex;
+  flex-wrap:wrap;
+  height:10.56rem;
+
+  .pksz{
+    display:block;
+  }
+
+  li{
+    width:25%;
+    height:2.5rem;
+    text-align:center;
+    line-height:2.5rem;
+    padding-left:0.34rem;
+    div{
+      display:inline-block;
+      width:1.8rem;
+      height:2.2rem;
+      border:1px solid #f2f2f2;
+      background-color:white;
+      margin-top:0.22625rem;
+      overflow:hidden;
+      position:relative;
+      .poker-style{
+        width:85%;
+        height:70%;
+        position:absolute;
+        top:0.55rem;
+        left:0.15rem;
+        background:url("../img/lottery/klpk/klpk.png") no-repeat;
+        background-size:100%;
+      }
+      .poker-style-select{
+        width:100%;
+        height:100%;
+        position:absolute;
+        background: url("../img/lottery/klpk/borderColor.png") no-repeat;
+        background-size: 100% 100%;
+        top:0;
+        left:0;
+      }
+      i{
+        height:0.46875rem;
+        position:absolute;
+        top: -1rem;
+        left:0.15rem;
+        font-size:0.390625rem;
+      }
+    }
+  }
+}
+.showPoker-PKRX4{
+  display:flex;
+  flex-wrap:wrap;
+  height:10.56rem;
+
+  .pksz{
+    display:block;
+  }
+
+  li{
+    width:25%;
+    height:2.5rem;
+    text-align:center;
+    line-height:2.5rem;
+    padding-left:0.34rem;
+    div{
+      display:inline-block;
+      width:1.8rem;
+      height:2.2rem;
+      border:1px solid #f2f2f2;
+      background-color:white;
+      margin-top:0.22625rem;
+      overflow:hidden;
+      position:relative;
+      .poker-style{
+        width:85%;
+        height:70%;
+        position:absolute;
+        top:0.55rem;
+        left:0.15rem;
+        background:url("../img/lottery/klpk/klpk.png") no-repeat;
+        background-size:100%;
+      }
+      .poker-style-select{
+        width:100%;
+        height:100%;
+        position:absolute;
+        background: url("../img/lottery/klpk/borderColor.png") no-repeat;
+        background-size: 100% 100%;
+        top:0;
+        left:0;
+      }
+      i{
+        height:0.46875rem;
+        position:absolute;
+        top: -1rem;
+        left:0.15rem;
+        font-size:0.390625rem;
+      }
+    }
+  }
+}
+.showPoker-PKRX5{
+  display:flex;
+  flex-wrap:wrap;
+  height:10.56rem;
+
+  .pksz{
+    display:block;
+  }
+
+  li{
+    width:25%;
+    height:2.5rem;
+    text-align:center;
+    line-height:2.5rem;
+    padding-left:0.34rem;
+    div{
+      display:inline-block;
+      width:1.8rem;
+      height:2.2rem;
+      border:1px solid #f2f2f2;
+      background-color:white;
+      margin-top:0.22625rem;
+      overflow:hidden;
+      position:relative;
+      .poker-style{
+        width:85%;
+        height:70%;
+        position:absolute;
+        top:0.55rem;
+        left:0.15rem;
+        background:url("../img/lottery/klpk/klpk.png") no-repeat;
+        background-size:100%;
+      }
+      .poker-style-select{
+        width:100%;
+        height:100%;
+        position:absolute;
+        background: url("../img/lottery/klpk/borderColor.png") no-repeat;
+        background-size: 100% 100%;
+        top:0;
+        left:0;
+      }
+      i{
+        height:0.46875rem;
+        position:absolute;
+        top: -1rem;
+        left:0.15rem;
+        font-size:0.390625rem;
+      }
+    }
+  }
+}
+.showPoker-PKRX6{
+  display:flex;
+  flex-wrap:wrap;
+  height:10.56rem;
+
+  .pksz{
+    display:block;
+  }
+
+  li{
+    width:25%;
+    height:2.5rem;
+    text-align:center;
+    line-height:2.5rem;
+    padding-left:0.34rem;
+    div{
+      display:inline-block;
+      width:1.8rem;
+      height:2.2rem;
+      border:1px solid #f2f2f2;
+      background-color:white;
+      margin-top:0.22625rem;
+      overflow:hidden;
+      position:relative;
+      .poker-style{
+        width:85%;
+        height:70%;
+        position:absolute;
+        top:0.55rem;
+        left:0.15rem;
+        background:url("../img/lottery/klpk/klpk.png") no-repeat;
+        background-size:100%;
+      }
+      .poker-style-select{
+        width:100%;
+        height:100%;
+        position:absolute;
+        background: url("../img/lottery/klpk/borderColor.png") no-repeat;
+        background-size: 100% 100%;
+        top:0;
+        left:0;
+      }
+      i{
+        height:0.46875rem;
+        position:absolute;
+        top: -1rem;
+        left:0.15rem;
+        font-size:0.390625rem;
+      }
+    }
+  }
+}

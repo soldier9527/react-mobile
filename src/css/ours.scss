@@ -1,0 +1,56 @@
+.ours {
+  .main {
+    width: 100%;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    bottom: 0;
+    font-size: 0.4rem;
+    z-index: -1;
+    position: relative;
+    background: #fff;
+    padding: 0.5rem;
+    p {
+      padding:0 0 0.2rem 0;
+      position: relative;
+    }
+
+    h2 {
+      padding: 0;
+      font-size: 0.45rem;
+      font-weight: bold;
+      line-height: 0.6rem;
+      height: 0.8rem;
+    }
+    h3{padding: 0.3rem}
+  }
+}
+
+.help_buy,
+.help_information,
+.help_recharge,
+.help_safe,
+.help_user,
+.help_withdraw,
+.ours {
+  background: #ffffff;
+  position: relative;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  bottom: 0;
+  padding: 1rem;
+  font-size: 0.4rem;
+  z-index: -1;
+
+  p {
+    span {}
+
+    b {}
+  }
+
+  span {
+    padding-left: 0.4rem;
+    line-height: 0.5rem;
+  }
+}

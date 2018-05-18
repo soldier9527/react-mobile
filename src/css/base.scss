@@ -1,0 +1,431 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+}
+@function px2rem($px){
+  $rem : 64px;
+  @return ($px/$rem) + rem;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.pad_left{
+  padding-left: .27rem; /* 20/75 */
+}
+.pad_left40{
+  padding-left: .53rem; /* 40/75 */
+}
+.margin_right20{
+  margin-right: .27rem; /* 20/75 */
+}
+.margin_right40{
+  margin-right: .53rem; /* 40/75 */
+}
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.gray{
+  background:#f2f2f2 !important;
+}
+.red{
+  color: #d22018 !important;
+}
+.input {
+  height: 1rem;
+  line-height: 1rem;
+  outline: none;
+  border: none;
+  font-size: 0.4rem;
+  font-weight: bold;
+  width: 4rem;
+  margin-right: .63rem;
+  text-align: right;
+  color: #7e7e7e;
+}
+//提交按钮
+.submit-btn {
+  display: block;
+  width: 5.5rem;
+  height: 1.3rem;
+  line-height: px2rem(56px);
+  font-size: .7rem!important;
+  border: none;
+  outline: 0;
+  color: #fff;
+  text-align: center;
+  border-radius: 0.12rem;
+  letter-spacing: 2px;
+  background: #d22018;
+}
+
+/*下边框*/
+.bottom_border {
+  border-bottom: 0.01rem solid #c9c9c9;
+}
+/* 每个页面布局这里控制 */
+.home,
+.user,
+.hall,
+.lotto-cart,
+.lt-trace
+{
+  position: absolute;
+  background: #f2f2f2;
+  width: 10.0rem;
+  top: 1rem;
+  bottom: 1.484375rem;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  color: #303030;
+}
+
+.arrow-left, .arrow-right  {
+  background: url("../img/global/arrow_left.png") no-repeat;
+  background-size: 100% 100%;
+  display: inline-block;
+  width: px2rem(14px);
+  height: px2rem(25px);
+
+}
+.anticon-right {
+  //background-image: url(../img/global/arrow_right.png);
+  font-size: px2rem(30px);
+  color: #838793;
+}
+.auto-complete-input{
+  height: 0;
+  width: 0;
+  border: 0;
+  outline: 0;
+}
+//遮罩层
+.mask-layer{
+  background: #000;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right:0;
+  bottom:0;
+  z-index: 999;
+}
+/*转出电子钱包*/
+.lt-outegame{
+  background: url("../img/global/lt_outegame.png") no-repeat;
+
+}
+/*转入电子钱包*/
+.lt-inegame{
+  background: url("../img/global/lt_inegame.png") no-repeat;
+
+}
+/*选中*/
+.lt-select{
+  // background-image: url(../img/global/lt_select.png);
+  background-repeat: no-repeat;
+  background-size: 0.5rem;
+}
+/* 全局使用统一彩种logo */
+.lt-icon {
+	display: inline-block;
+  background: url("../img/global/lt_default.png") center center no-repeat;
+	background-size: 100% 100%;
+	width: 1.84375rem;
+	height: 1.84375rem;
+}
+.lt-plus {
+    background-image: url("../img/global/lt_plus.png");
+}
+/*邮件*/
+.lt-mail {
+    background: url("../img/user/icon_mail.png") no-repeat;
+    background-size: 100%;
+}
+.lt-mail_red {
+    background: url("../img/user/icon_mail_red.png") no-repeat;
+    background-size: 100%;
+}
+/*计数器*/
+.lt-sum {
+    background: url("../img/global/lt_sum.png") no-repeat;
+    background-size: 100%;
+}
+/* 11选5分分彩 */
+.lt-11x5ffc,.lt-icon-16 {
+    background-image: url("../img/global/lt_11x5ffc.png");
+}
+/* 安徽快3 */
+.lt-ahk3,.lt-icon-19 {
+    background-image: url("../img/global/lt_ahk3.png");
+}
+/* 北京PK10 */
+.lt-bjpk10,.lt-icon-17 {
+    background-image: url("../img/global/lt_bjpk10.png");
+}
+/* 重庆时时彩 */
+.lt-cqssc,.lt-icon-1 {
+    background-image: url("../img/global/lt_cqssc.png");
+}
+/* 东京1.5分彩 */
+.lt-dj15ffc,.lt-icon-18 {
+    background-image: url("../img/global/lt_dj15fc.png");
+}
+/* 福彩3D */
+.lt-fc3d,.lt-icon-9 {
+    background-image: url("../img/global/lt_fc3d.png");
+}
+/* 广东11选5 */
+.lt-gd11x5,.lt-icon-7 {
+    background-image: url("../img/global/lt_gd11x5.png");
+}
+/* 极速六合彩 */
+.lt-js6hc,.lt-icon-25 {
+    background-image: url("../img/global/lt_js6hc.png");
+}
+/* 江苏11选5 */
+.lt-js11x5,.lt-icon-5 {
+    background-image: url("../img/global/lt_js11x5.png");
+}
+/* 江苏快3 */
+.lt-jsk3,.lt-icon-12 {
+    background-image: url("../img/global/lt_jsk3.png");
+}
+/* 江西11选5 */
+.lt-jx11x5,.lt-icon-6 {
+    background-image: url("../img/global/lt_jx11x5.png");
+}
+/* 快三分分彩 */
+.lt-k3ffc,.lt-icon-13 {
+    background-image: url("../img/global/lt_k3ffc.png");
+}
+/* 山东11选5 */
+.lt-sd11x5,.lt-icon-2 {
+    background-image: url("../img/global/lt_sd11x5.png");
+}
+/* 山东快乐扑克 */
+.lt-sdklpk,.lt-icon-14 {
+    background-image: url("../img/global/lt_sdklpk.png");
+}
+/* 双色球 */
+.lt-ssq,.lt-icon-22 {
+    background-image: url("../img/global/lt_ssq.png");
+}
+/* 体彩P3P5 */
+.lt-tcp3p5,.lt-icon-10 {
+    background-image: url("../img/global/lt_tcp3p5.png");
+}
+/* 天津时时彩 */
+.lt-tjssc,.lt-icon-8 {
+    background-image: url("../img/global/lt_tjssc.png");
+}
+/* 香港六合彩 */
+.lt-xg6hc,.lt-icon-21 {
+    background-image: url("../img/global/lt_xg6hc.png");
+}
+/* 新疆时时彩 */
+.lt-xjssc,.lt-icon-4 {
+    background-image: url("../img/global/lt_xjssc.png");
+}
+/* 幸运28 */
+.lt-xy28,.lt-icon-23 {
+    background-image: url("../img/global/lt_xy28.png");
+}
+/* 幸运分分彩 */
+.lt-xyffc,.lt-icon-11 {
+    background-image: url("../img/global/lt_xyffc.png");
+}
+/* 幸运秒秒彩 */
+.lt-xymmc,.lt-icon-15 {
+    background-image: url("../img/global/lt_xymmc.png");
+}
+/* 幸运飞艇 */
+.lt-xyft,.lt-icon-26 {
+    background-image: url("../img/global/lt_xyft.png");
+}
+/* 腾讯分分彩 */
+.lt-txffc,.lt-icon-24 {
+    background-image: url("../img/global/lt_txffc.png");
+}
+
+
+/* 骰子*/
+.icon-sifter {
+  display: inline-block;
+  width: px2rem(30px);
+  height: px2rem(30px);
+  background-image: url("../img/global/icon-sifter.png");
+  background-size: px2rem(40px) px2rem(480px);
+  margin-right: px2rem(10px);
+}
+
+
+/* 北京快3 */
+.lt-bjk3,.lt-icon-20 {
+  background-image: url("../img/global/lt_bjk3.png");
+}
+
+/* 广西快3 */
+.lt-gxk3,.lt-icon-27 {
+  background-image: url("../img/global/lt_gxk3.png");
+}
+
+/* 湖北快3 */
+.lt-hbk3,.lt-icon-28 {
+  background-image: url("../img/global/lt_hbk3.png");
+}
+
+/* 河北快3 */
+.lt-hbk3,.lt-icon-29 {
+  background-image: url("../img/global/lt_hebeik3.png");
+}
+
+/* 甘肃快3 */
+.lt-gsk3,.lt-icon-30 {
+  background-image: url("../img/global/lt_gsk3.png");
+}
+
+.icon-sifter-1-select {
+  background-position: px2rem(-5px) px2rem(-45px);
+}
+
+.icon-sifter-1{
+  background-position: px2rem(-5px) px2rem(-245px);
+}
+
+
+.icon-sifter-2-select {
+  background-position: px2rem(-5px) px2rem(-85px);
+}
+
+.icon-sifter-2{
+  background-position: px2rem(-5px) px2rem(-125px);
+}
+.icon-sifter-3-select {
+  background-position: px2rem(-5px) px2rem(-165px);
+}
+
+.icon-sifter-3{
+  background-position: px2rem(-5px) px2rem(-205px);
+}
+.icon-sifter-4-select {
+  background-position: px2rem(-5px) px2rem(-5px);
+}
+
+.icon-sifter-4{
+  background-position: px2rem(-5px) px2rem(-285px);
+}
+.icon-sifter-5-select {
+  background-position: px2rem(-5px) px2rem(-325px);
+}
+
+.icon-sifter-5{
+  background-position: px2rem(-5px) px2rem(-365px);
+}
+.icon-sifter-6-select {
+  background-position: px2rem(-5px) px2rem(-405px);
+}
+
+.icon-sifter-6{
+  background-position: px2rem(-5px) px2rem(-445px);
+}
+
+//
+//
+//.bg-sifter02 {
+//  width: 60px; height: 60px;
+//  background: url('css_sprites.png') -10px px;
+//}
+//
+//x
+//.bg-sifter2 {
+//  width: 60px; height: 60px;
+//  background: url('css_sprites.png') -10px -250px;
+//}
+//
+//x
+//.bg-sifter03 {
+//  width: 60px; height: 60px;
+//  background: url('css_sprites.png') -10px -330px;
+//}
+//
+//x
+//.bg-sifter3 {
+//  width: 60px; height: 60px;
+//  background: url('css_sprites.png') -10px -410px;
+//}
+//
+//x
+//.bg-sifter04 {
+//  width: 60px; height: 60px;
+//  background: url('css_sprites.png') -10px -10px;
+//}
+//
+//x
+//.bg-sifter4 {
+//  width: 60px; height: 60px;
+//  background: url('css_sprites.png') -10px -570px;
+//}
+//
+//x
+//.bg-sifter05 {
+//  width: 60px; height: 60px;
+//  background: url('css_sprites.png') -10px -650px;
+//}
+//
+//x
+//.bg-sifter5 {
+//  width: 60px; height: 60px;
+//  background: url('css_sprites.png') -10px -730px;
+//}
+//
+//x
+//.bg-sifter06 {
+//  width: 60px; height: 60px;
+//  background: url('css_sprites.png') -10px -810px;
+//}
+//
+//x
+//.bg-sifter6 {
+//  width: 60px; height: 60px;
+//  background: url('css_sprites.png') -10px -890px;
+//}
+
+
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+//全局中奖提醒
+.ant-notification{
+  position: fixed;
+  margin-right: 0;
+  z-index: 1010;
+  width: 100%;
+  padding: 10px;
+  top: 20px!important;
+}
