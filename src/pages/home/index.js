@@ -591,7 +591,7 @@ export default class Home extends Component {
                     <section className="popular">
                         <h3>
                             <span>热门彩票</span>
-                            <Link to="hall">更多<Icon type="right" /></Link>
+                            <Link to="hall"><label >更多</label><Icon type="right" className="section-icon" /></Link>
                         </h3>
 
                         {this.hotlottery()}

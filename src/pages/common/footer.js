@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import {Link } from 'react-router-dom';
+import {NavLink } from 'react-router-dom';
 
 export default class Footer extends Component {
     constructor(props) {
@@ -8,7 +8,6 @@ export default class Footer extends Component {
             userWay:"",
           };
     }
-
     render() {
         const user = JSON.parse(sessionStorage.getItem("user"));
         let userWay = "";
@@ -21,34 +20,34 @@ export default class Footer extends Component {
             <div className="footer">
                 <ul>
                     <li>
-                        <Link activeClassName="active" to="home">
+                        <NavLink activeClassName="active" to="home">
                             <i className="i-home"></i>
                             <span>首页</span>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link activeClassName="active" to="hall">
+                        <NavLink activeClassName="active" to="hall">
                             <i className="i-hall"></i>
                             <span>购彩</span>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link activeClassName="active" to="open">
+                        <NavLink activeClassName="active" to="open">
                             <i className="i-cup"></i>
                             <span>开奖</span>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link activeClassName="active" to="promo">
+                        <NavLink activeClassName="active" to="promo">
                             <i className="i-gift"></i>
                             <span>优惠</span>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link activeClassName="active" to={userWay}>
+                        <NavLink activeClassName="active" to={userWay}>
                             <i className="i-user"></i>
                             <span>我的</span>
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
             </div>

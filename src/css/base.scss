@@ -10,6 +10,11 @@
   $rem : 64px;
   @return ($px/$rem) + rem;
 }
+
+a{
+ color: #108ee9
+}
+
 .fl {
     float: left;
 }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Link, hashHistory} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {Form, message, Select, Input, Button, Modal,Checkbox} from 'antd';
 import Navbar from '../common/navbar';
 import Footer from '../common/footer';
@@ -62,7 +62,7 @@ class NormalLoginForm extends React.Component {
             content: '找回密码，请联系客服',
         });
         setTimeout(function () {
-            hashHistory.push("getService");
+            location.replace("#/home")
         }, 2000);
     }
 
@@ -139,13 +139,13 @@ class NormalLoginForm extends React.Component {
                                     localStorage.setItem('username',JSON.stringify(e.data.username));
                                     localStorage.setItem('user',JSON.stringify(e.data));
                                     localStorage.setItem('checked',JSON.stringify(this.state.checked));
-                                    hashHistory.push("home");
+                                    this.props.history.push("home");
                                 }else if(this.state.isRemember===false){
                                     localStorage.removeItem('sid');
                                     localStorage.removeItem('user_id');
                                     localStorage.removeItem('username');
                                     localStorage.removeItem('checked');
-                                    hashHistory.push("home");
+                                    this.props.history.push("home");
                                 }
                             }else{
                                 this.getCode();
@@ -164,7 +164,7 @@ class NormalLoginForm extends React.Component {
                             if(res.errno===0){
                                 MaskLoading(false);
                                 sessionStorage.user = JSON.stringify(user);
-                                hashHistory.push('home')
+                                this.props.history.push('home')
                             }
                         })
                 }
@@ -401,7 +401,7 @@ class NormalLoginForm extends React.Component {
                         <p><Button type="primary" htmlType="submit" className="login-form-button">登录</Button></p>
                         <p><Link to="register"><Button onClick={this.showModal} type="primary" className="login-form-button login_gary">注册</Button></Link></p>
                         <Checkbox onChange={()=>{this.onChange()}} checked={this.state.checked} disabled={this.state.disabled}>记住密码</Checkbox>
-                        <a className="login-form-forgot login_tp " onClick={this.backPassWord}>找回密码</a>
+                        <a className="login-form-forgot login_tp " onClick={()=>{this.backPassWord()}}>找回密码</a>
                     </FormItem>
                     {/*检查是否为UC浏览器，如果是，页面低部显示温馨提示*/}
                     {navigator.userAgent.indexOf("UCBrowser") !== -1 ?

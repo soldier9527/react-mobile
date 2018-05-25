@@ -2,6 +2,6 @@
     "react-app"
   ],
     "plugins": [
-      ["import", { "libraryName": "antd-mobile", "style": "css" }]
+      ["import", { "libraryName": "antd-mobile", "style": "css" }, { "libraryName": "antd", "style": "css" }]
     ]
   }

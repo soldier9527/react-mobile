@@ -4,12 +4,7 @@ import {Tabs,Toast} from 'antd-mobile';
 import Navbar from '../common/navbar';
 import Footer from '../common/footer';
 import LotteryNum from '../open/lotteryNum'
-import CountdownTimer from '../open/countdown'
 import Api from '../api';
-
-import 'antd-mobile/lib/tabs/style/css';
-
-
 export default class Hall extends Component {
     constructor(props) {
         super(props);
@@ -138,7 +133,7 @@ export default class Hall extends Component {
                             </div>
                             {item.lottery_id != 15 ? <p className="date">第
                                 <span className="">{item.issue}</span>期 截至
-                                <CountdownTimer initialTimeRemaining={count_down}/>
+                                {/*<CountdownTimer initialTimeRemaining={count_down}/>*/}
                             </p> : <p className="date">无奖期</p>}
                         </div>
                         <div className="gameRight"><i className="anticon anticon-right"></i></div>

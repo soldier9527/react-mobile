@@ -7,7 +7,7 @@ import Footer from '../common/footer';
 import { Tabs,PullToRefresh,Toast } from 'antd-mobile';
 import {Link } from 'react-router-dom';
 import LotteryNum from './lotteryNum';
-import CountdownTimer  from './countdown';
+// import CountdownTimer  from './countdown';
 import Api from '../api';
 export default class OpenList extends Component {
     constructor(props) {
@@ -111,7 +111,7 @@ export default class OpenList extends Component {
                                     <h3>{item.cname}</h3>
                                     <p className="time">
                                         第{issue}期&nbsp;&nbsp;
-                                        <CountdownTimer initialTimeRemaining={count_down}   />
+                                        {/*<CountdownTimer initialTimeRemaining={count_down}   />*/}
                                     </p>
                                     <div className="prize-num">
                                         {/*彩球样式*/}
@@ -228,7 +228,7 @@ class OpenLi extends Component {
                         <h3>{this.props.item.cname}</h3>
                         <p className="time">
                             第{issue}期&nbsp;&nbsp;
-                            <CountdownTimer initialTimeRemaining={count_down}   />
+                            {/*<CountdownTimer initialTimeRemaining={count_down}   />*/}
                         </p>
                         <div className="prize-num">
                             {/*彩球样式*/}
