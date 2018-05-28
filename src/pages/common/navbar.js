@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
-// import { hashHistory } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 
-export default class Navbar extends Component {
+ class Navbar extends Component {
     constructor(props) {
         super(props);
         this.state={
             displayDrop:"none",//默认隐藏
-
             navbarRight:null,//右侧渲染
         }
     }
     componentWillMount(){
-
+       
     }
     //选中
     select(index){
@@ -29,9 +28,9 @@ export default class Navbar extends Component {
     }
     back(){
         if(this.props.back==="back"){//各个页面自己设置回退，
-            // hashHistory.goBack()
+            this.props.history.goBack()
         }else{
-            // hashHistory.push(this.props.back)
+            this.props.history.push(this.props.back)
         }
     }
     render() {
@@ -81,3 +80,4 @@ export default class Navbar extends Component {
       )
     }
 }
+export default withRouter(Navbar)

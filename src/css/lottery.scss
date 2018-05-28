@@ -1,10 +1,11 @@
 
 .lottery {
-  position: absolute;
-  top: 1rem;
-  bottom: px2rem(80px);
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
+  //position: absolute;
+  //top: 1rem;
+  //bottom: px2rem(80px);
+  padding-top: 1rem;
+  padding-bottom: px2rem(80px);
+  //-webkit-overflow-scrolling: touch;
 
   //min-height: px2rem(800px);
   //border-top:1rem solid transparent;
@@ -353,20 +354,15 @@
   }
 
 
-  .tabOverlay {
-    //background: rgba(0,0,0,0.5);
-    position: fixed;
-    width: 100%;
-    z-index: 999;
-    top: 1rem;
-    bottom: -7.9rem;
-  }
   .tabWrap {
+    position: absolute;
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
     background-color: #f2f2f2;
     border-bottom: 1px solid #ddd;
     overflow: hidden;
-
-    height:60%;
     animation: SlideDown 0.15s ease-in-out;
   }
   @keyframes SlideDown {
@@ -374,7 +370,6 @@
     100% { transform: translateY(0); }
   }
   .lt_tab, .lt-tab {
-    float: left;
 
     ul {
       width: 3.125rem;
@@ -396,16 +391,27 @@
       }
     }
   }
-  .lt_tab,.sub-tab{
+  .lt_tab{
+    position: absolute;
+    top:0;
+    bottom:0;
+    left: 0;
+    width: 3.125rem;
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    height:100%;
-    overflow:auto;
+
+
   }
   .sub-tab {
-    width: 6.875rem;
-    float: right;
+    width: 6.2rem;
+    position: absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     .sub-row {
       overflow: hidden;
       text-align: center;
@@ -421,7 +427,7 @@
       a {
         background: #fff;
         display: inline-block;
-        width: 2.5rem;
+        width: 2.4rem;
         height: 0.9375rem;
         line-height: 0.9375rem;
         font-size: px2rem(20px);
@@ -447,10 +453,13 @@
     background: #fff;
     z-index: 8;
     bottom: 1.25rem;
-
+    background-color: #f2f2f2;
     &.show{
       width: 3rem;
       .methods-wrap{
+        display: block;
+      }
+      .mask-layer{
         display: block;
       }
     }
@@ -497,6 +506,7 @@
 
     }
     .mask-layer{
+      display: none;
       position:fixed;
       top:0;
       bottom:0;
@@ -734,7 +744,7 @@
 
 }
 .touzhu {
-  position:absolute;
+  position:fixed;
   bottom: -1px;
   width: 100%;
   text-align: center;
@@ -839,6 +849,10 @@
   bottom: 0;
   z-index:3;
   position: fixed;
+  top: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
   .tzlist {
     width: 100%;
     li {
@@ -969,10 +983,13 @@
 // 追号样式
 .lt-trace {
   background-color: #f2f2f2;
+  position: fixed;
+  top:0;
   bottom: 0;
   z-index: 4;
-  position: fixed;
-
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   .trace-filter {
     background: #fff;
     margin-bottom: 0.3125rem;

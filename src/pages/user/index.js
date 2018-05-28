@@ -1,93 +1,108 @@
-import React, { Component, PropTypes } from 'react'
+import React, {Component} from 'react'
 import {Link} from 'react-router-dom';
-import { Carousel, Icon, Row, Col } from 'antd';
 import Footer from '../common/footer';
 import Navbar from '../common/navbar';
-import Api from '../api';
+import {Grid,Icon} from 'antd-mobile';
+import "./index.scss"
 
 export default class User extends Component {
-	constructor(props) {
-		super(props);
-	}
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: [
+                {
+                    icon: "i-user i-user-deposit",
+                    text: "充值",
+                    type: "deposit",
+                }, {
+                    icon: "i-user i-user-withdrawal",
+                    text: "提款",
+                    type: "withdrawal",
+                }, {
+                    icon: "i-user i-user-orders",
+                    text: "注单",
+                    type: "orders",
+                }, {
+                    icon: "i-user i-user-account",
+                    text: "个人账变",
+                    type: "account",
+                }, {
+                    icon: "i-user i-user-team",
+                    text: "代理中心",
+                    type: "team",
+                }, {
+                    icon: "i-user i-user-message",
+                    text: "系统信息",
+                    type: "message",
+                },
+            ]
+        }
+    }
 
-	componentWillMount(){
-		this.changeSessionstorage();
-	}
+    handleGrid(type) {
+        switch (type) {
+            case "pay":
+                console.log("pay");
+                break;
+            default:
+                this.props.history.push(type)
+        }
+    }
 
-	/** render前设置jumpPage为个人中心 **/
-	changeSessionstorage(){
-		sessionStorage.setItem("jumpPage","个人中心");
-	}
-
-	render() {
-		return (
-			<div>
-			 <Navbar  title="我的" navbarRight={<Link to="setting"><i className="lt-mysetting"></i></Link>} />
-				<div className="user fadeInRight">
-					<div className="info">
-						<div className="login-reg">
-							<div >
-									<div>
-									   <Link to="login">登录</Link> / <Link to="login">注册</Link>
-									</div>
-							</div>
-						</div>
-					</div>
-					<div className="btns">
-						<Row className="row">
-							<Col className="col" span={8}>
-								<Link to="login">
-									<i className="icon-deposit"></i>
-									<span>充值</span>
-								</Link>
-							</Col>
-							<Col className="col" span={8}>
-								<Link to="login">
-									<i className="icon-withdrawal"></i>
-									<span>提款</span>
-								</Link>
-							</Col>
-							<Col className="col" span={8}>
-								<Link to="login">
-									<i className="icon-orders"></i>
-									<span>注单</span>
-								</Link>
-							</Col>
-						</Row>
-						<Row className="row">
-							<Col className="col" span={8}>
-								<Link to="login">
-									<i className="icon-account"></i>
-									<span>个人帐变</span>
-								</Link>
-							</Col>
-							<Col className="col" span={8}>
-								<Link to="login">
-									<i className="icon-team"></i>
-									<span>代理中心</span>
-								</Link>
-							</Col>
-							<Col className="col" span={8}>
-								<Link to="login">
-									<i className="icon-message"></i>
-									<span>系统信息</span>
-								</Link>
-							</Col>
-						</Row>
-					</div>
-					<ul className="list">
-					    <li>
-								<Link to="getService">
-									<i className="icon_service fl"></i>
-									<span>在线客服</span>
-									<i className="arrow-right fr"></i>
-								</Link>
-							</li>
-							<li className="bottom_border"><Link to="promo/user"><i className="active_center_icon fl"></i><span>活动中心</span><i className="arrow-right fr"></i></Link></li>
-					</ul>
-				</div>
-				<Footer />
-			</div>
-		);
-	}
+    render() {
+        return (
+            <div>
+                <Navbar title="我的" navbarRight={<Link to="setting"><i className="lt-mysetting"></i></Link>}/>
+                <div className="container user-wrap">
+                    <div className="user-guest">
+                        <div className="login-btn">
+                            <Link to="login">登录</Link> / <Link to="login">注册</Link>
+                        </div>
+                    </div>
+                    <div className="user-normal">
+                        <Link className="user-info-link" to="userInfo">
+                            <i className="icon_touxiang"></i>
+                            <div className="user-info">
+                                <p>账户：</p>
+                                <p>余额：</p>
+                            </div>
+                            <Icon className="" type="right"></Icon>
+                        </Link>
+                    </div>
+                    <Grid
+                        className="content"
+                        data={
+                            this.state.data
+                        }
+                        renderItem={dataItem => (
+                            <div>
+                                <div>
+                                    <i className={dataItem.icon}></i>
+                                </div>
+                                <div>
+                                    <span>{dataItem.text}</span>
+                                </div>
+                            </div>
+                        )}
+                        hasLine={false}
+                        columnNum={3}
+                        onClick={_el => this.handleGrid(_el.type)}
+                    />
+                    <ul className="list">
+                        <li>
+                            <Link to="getService">
+                                <i className="icon_service fl"></i>
+                                <span>在线客服</span>
+                                <i className="arrow-right fr"></i>
+                            </Link>
+                        </li>
+                        <li className="bottom_border"><Link to="promo/user"><i
+                            className="active_center_icon fl"></i><span>活动中心</span><i
+                            className="arrow-right fr"></i></Link></li>
+                    </ul>
+                </div>
+                <Footer/>
+            </div>
+        );
+    }
 }

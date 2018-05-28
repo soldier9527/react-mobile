@@ -1,8 +1,8 @@
 import React, { Component} from 'react'
 import {Link} from 'react-router-dom';
+import Progress from 'antd/lib/progress';  // 加载 JS
+import 'antd/lib/progress/style/css';
 // import CountdownTimer  from '../open/countdown';
-
-
 export default class PopularLottery extends Component {
 
 
@@ -65,9 +65,9 @@ export default class PopularLottery extends Component {
                             </dl>
                             <div className="bottom">
                                 <div className="cvs">
-                                    {/*<Progress type="circle"*/}
-                                              {/*percent={this.props.item.odds_win}*/}
-                                              {/*width={48} format={() => this.props.item.odds_win.toFixed(2)}/>*/}
+                                    <Progress type="circle"
+                                              percent={this.props.item.odds_win}
+                                              width={48} format={() => this.props.item.odds_win.toFixed(2)}/>
                                 </div>
                                 <div className="rate">
                                     中奖率<br/>

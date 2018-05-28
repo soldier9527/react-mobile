@@ -1,0 +1,85 @@
+.egame{
+  width: 10rem;
+  overflow-y: auto;
+  position: absolute;
+  top: 1rem;
+  margin-top: 0.2rem;
+  a{
+    display: block;
+    background: #fff;
+    height: 2.2rem;
+    margin-bottom: 0.2rem;
+    text-decoration: none;
+    color: #c9c9c9;
+  }
+  .gameLeft {
+    padding: 0.35rem;
+
+    i {
+      width: 1.40625rem;
+      height: 1.40625rem;
+    }
+  }
+  .fl {
+    float: left;
+  }
+  .gameMid {
+    h3 {
+      font-size: 0.45rem;
+      color: #d22018;
+      padding-top: 0.35rem;
+    }
+    h4{
+      font-size: 0.3rem;
+      font-family: 'Simhei';
+      display: inline-block;
+    }
+    .gameplay{
+      margin-top: 0.1rem;
+      Button{
+        background: #d22018;
+        color: #fff;
+        font-size: 0.4rem;
+      }
+      Button:focus{
+        border-color:#d22018;
+      }
+    }
+  }
+  .gameRight {
+    float: right;
+    width: 1rem;
+    height: 2rem;
+    font-size: 1rem;
+    line-height: 1.8rem;
+
+    i {
+      display: inline-block;
+      width: 0.38rem;
+      height: 0.65rem;
+    }
+  }
+}
+.datepicker-wrapper{
+  .ewallet{
+    background: #a40000;
+    position: fixed;
+    top: 0.17rem;
+    right: 0.54688rem;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    font-size: 0.35rem;
+    color: #fff;
+    width: 2rem;
+    border-radius: 5px;
+    text-align: center;
+    padding: 0;
+    border-color: #a40000;
+    span{
+      color: #fff;
+      width: 2rem;
+    }
+  }
+}
+
+

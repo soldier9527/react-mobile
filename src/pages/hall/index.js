@@ -4,7 +4,12 @@ import {Tabs,Toast} from 'antd-mobile';
 import Navbar from '../common/navbar';
 import Footer from '../common/footer';
 import LotteryNum from '../open/lotteryNum'
+// import CountdownTimer from '../open/countdown'
 import Api from '../api';
+
+import 'antd-mobile/lib/tabs/style/css';
+
+
 export default class Hall extends Component {
     constructor(props) {
         super(props);

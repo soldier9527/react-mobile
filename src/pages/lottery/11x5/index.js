@@ -117,37 +117,30 @@ class Lt11x5 extends Component {
                         if(md.name[i]=="SYXW-EZHE"||"SYXW-SAZHSA"||"SYXW-SIZHSI"||"SYXW-WZHW"||"SYXW-LZHW"||"SYXW-QZHW"||"SYXW-BZHW"){
 
                             if(md.name[i]=="SYXW-SAZHSA"){
-                                content.push(item[index].join("_"));
                                 if(item[index].length>3){
                                     message.warn('当前最多只能选择3注',2,()=>{});
                                 }
                             }else if(md.name[i]=="SYXW-QZHW"){
-                                content.push(item[index].join("_"));
                                 if(item[index].length>7){
                                     message.warn('当前最多只能选择7注',2,()=>{});
                                 }
                             }else if(md.name[i]=="SYXW-SIZHSI"){
-                                content.push(item[index].join("_"));
                                 if(item[index].length>4){
                                     message.warn('当前最多只能选择4注',2,()=>{});
                                 }
                             }else if(md.name[i]=="SYXW-BZHW"){
-                                content.push(item[index].join("_"));
                                 if(item[index].length>8){
                                     message.warn('当前最多只能选择8注',2,()=>{});
                                 }
                             }else if(md.name[i]=="SYXW-WZHW"){
-                                content.push(item[index].join("_"));
                                 if(item[index].length>5){
                                     message.warn('当前最多只能选择5注',2,()=>{});
                                 }
                             }else if(md.name[i]=="SYXW-EZHE"){
-                                content.push(item[index].join("_"));
                                 if(item[index].length>2){
                                     message.warn('当前最多只能选择2注',2,()=>{});
                                 }
                             }else if(md.name[i]=="SYXW-LZHW"){
-                                content.push(item[index].join("_"));
                                 if(item[index].length>6){
                                     message.warn('当前最多只能选择6注',2,()=>{});
                                 }
@@ -511,8 +504,8 @@ class LtSpecial extends Component{
                 if(["总和","码一","码二","码三","码四","码五"].indexOf(item.prompt)!=-1){
                     textcenter="textcenter";
                 }else if(["总和尾数","龙虎"].indexOf(item.prompt)!=-1){
-                    textcenter="textcenter_zhlh";
-                    liZhlh="li_zhlh";
+                    // textcenter="textcenter_zhlh";
+                    // liZhlh="li_zhlh";
                 }else{
                     textcenter="";
                 }
@@ -653,7 +646,6 @@ class Unitary extends Component{
         valueArr.map((item,i)=>{
             let itemArr = item.trim().split(" ");
             let newSet = [...new Set(itemArr)];
-
             //判断号码符不符合规范
             for(let a=0;a<newSet.length;a++){
                 if(nums.indexOf(newSet[a])===-1){

@@ -110,9 +110,8 @@ export default class LotteryBottom extends Component {
             </div>;
         }
 
-        let isSafari = navigator.userAgent.indexOf("Safari") > -1;
         return (
-            <div className="touzhu" style={isSafari?{"position":"absolute"}:{"position":"fixed"}}>
+            <div className="touzhu" >
                     {renderBar}
                 </div>
 

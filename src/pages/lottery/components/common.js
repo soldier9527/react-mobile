@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Api from '../../api';
-import {Link,hashHistory} from 'react-router-dom';
+import {Link,hashHistory} from 'react-router';
 import Navbar from '../../common/navbar';
 import MaskLoading from '../../common/maskLoading';
 import ShowMessage from '../../common/globalMessage';
@@ -15,7 +15,7 @@ import GetLotteryList from '../../get_lottery_list'
 import DESCRIPTION from './description'
 import Animate from '../components/Animate'
 import {message,Modal, } from 'antd';
-import GetStaticData from './staticData'
+import getStaticData from '../../common/getStatic'
 //1
 export let LotteryCommon = ComposeComponent => class extends ComposeComponent {
     static displayName = 'LotteryCommon';
@@ -242,22 +242,18 @@ export let LotteryCommon = ComposeComponent => class extends ComposeComponent {
         this._isMounted = false;
     }
     //整合数据
-    combineData(needCombineData,game_key){
-        let data;
-        let staticData = GetStaticData(this.state.lottery_id,game_key)
-        if(needCombineData){
-            data = needCombineData
-        }else{
-            data = staticData.fakeData
-        }
-        let newData = JSON.parse(JSON.stringify(data))
-        data.map((item,i)=>{
-            item.childs.map((method,m)=>{
-                method =Object.assign({},staticData.static[method.name],method);
-                newData[i].childs[m]=method
+    combineData(needCombineData){
+        let data = getStaticData(this.state.game_key,(staticData)=>{
+            let newData = JSON.parse(JSON.stringify(needCombineData))
+            needCombineData.map((item,i)=>{
+                item.childs.map((method,m)=>{
+                    method =Object.assign({},staticData[method.name],method);
+                    newData[i].childs[m]=method
+                })
             })
-        })
-        return newData;
+            return newData;
+        });
+        return data
     }
     //初始化信息
     getInitData(game_key){
@@ -267,11 +263,15 @@ export let LotteryCommon = ComposeComponent => class extends ComposeComponent {
         if(!game_key){
             game_key =this.state.game_key;
         }
-        this.transMethods(this.combineData("",game_key));
+        // let data = sessionStorage.getItem(this.state.lottery_id+game_key);
+        // if(data){
+        //     this.transMethods(this.combineData(JSON.parse(data)));
+        // }
         Api('c=game&a=initCaiZhong2&game_key='+game_key+'&lottery_id=' + this.state.lottery_id+"&historyLimit=8", null, (res) => {
             if(res.errno===0){
                 let data = res.data;
-                let methods = this.combineData(data.methods,game_key);
+                // sessionStorage.setItem(this.state.lottery_id+game_key,JSON.stringify(data.methods));
+                let methods = this.combineData(data.methods);
                 data.methods = methods;
                 this.transMethods(data.methods);
                 let sliderConfig=null;

@@ -1,0 +1,6 @@
+@function px2rem($px){
+  $rem : 64px;
+  @return ($px/$rem) + rem;
+}
+//基本色
+$red:#d22018;

@@ -1,0 +1,189 @@
+@import "../../css/params";
+.login-wrap{
+  width: 9rem;
+  margin: .7rem auto 0;
+  .form-wrap{
+    background: #fff;
+    padding: px2rem(20px);
+    border-radius: .2rem;
+    margin-bottom: 0.6rem;
+  }
+  .input-wrap{
+    padding-bottom: 1px;
+    border-bottom: 1px solid #c9c9c9;
+    position: relative;
+    top: 0;
+    label{
+      display: inline-block;
+      width: px2rem(102px);
+      text-align: center;
+      height: 1rem;
+      font-size:.375rem ;
+      color:#303030;
+      line-height: 1rem;
+      vertical-align: middle;
+
+    }
+    input{
+      display: inline-block;
+      vertical-align: middle;
+      width: 6rem;
+      height: 1rem;
+      padding: 0 px2rem(15px);
+      line-height: .625rem;
+      font-size: .38rem;
+      font-weight: 400;
+      border: none;
+      &.vcode-input{
+        width: 3rem;
+      }
+    }
+    .vcode-canvas{
+      float: right;
+      height: px2rem(60px);
+      width: px2rem(140px);
+      margin-top: px2rem(2px);
+    }
+    .btn-get-vcode{
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: px2rem(60px);
+      width: px2rem(140px);
+      margin-top: px2rem(2px);
+      line-height: px2rem(60px);
+      font-size: px2rem(22px);
+      background: #f5f5fc;
+      color: #333;
+      border-radius: 0;
+    }
+  }
+  .has-invite-code{
+    text-align: center;
+    font-size: px2rem(24px);
+    color:$red;
+    padding: .25rem;
+    margin-bottom: .25rem;
+  }
+  .links{
+    overflow: hidden;
+    .am-checkbox-wrapper{
+      font-size: px2rem(24px);
+      color:#303030;
+      .am-checkbox{
+        height: px2rem(40px);
+        width: px2rem(40px);
+        margin-right: .1rem;
+      }
+      .am-checkbox-inner{
+        border-radius: 0;
+        height: px2rem(40px);
+        width: px2rem(40px);
+        border: 1px solid #ccc;
+        &:after{
+          top: px2rem(3px);
+          right: px2rem(12px);
+          width: px2rem(10px);
+          height: px2rem(22px);
+          border-style: solid;
+          border-width: 0 px2rem(4px) px2rem(4px) 0;
+        }
+      }
+    }
+    .links-right{
+      float: right;
+      height: px2rem(40px);
+      line-height: px2rem(40px);
+      font-size: px2rem(24px);
+      color:#303030;
+    }
+    .tip{
+      margin-top: .5rem;
+      line-height: px2rem(32px);
+      font-size: px2rem(24px);
+      color: $red;
+    }
+  }
+  .i-login{
+    width: px2rem(40px);
+    height: px2rem(40px);
+    margin: px2rem(11px) .5rem 0;
+    display: inline-block;
+    vertical-align: middle;
+    background: url("../../img/login/icon_username.png")  no-repeat;
+    background-size: 100%;
+  }
+  .i-password{
+    background-image: url("../../img/login/icon_password.png") ;
+  }
+  .i-invite{
+    background-image: url("../../img/login/icon_invite.png") ;
+  }
+  .i-phone{
+    background-image: url("../../img/login/icon_phone.png") ;
+  }
+  .i-realname{
+    background-image: url("../../img/login/icon_realname.png") ;
+  }
+  .i-qq{
+    background-image: url("../../img/login/icon_qq.png") ;
+  }
+  .btn{
+    height: 1.2rem;
+    line-height: 1.2rem;
+    font-size: .4rem;
+    background: $red;
+    color:#fff;
+    margin-bottom: 0.5rem;
+    &.btn-white{
+      background: #fff;
+      color:$red;
+    }
+  }
+
+  .animate-input-on{
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom:-1px;
+    background: $red;
+    animation-name:input-on;
+    animation-duration:2s;
+    animation-iteration-count:1;
+  }
+  @keyframes input-on {
+    from {
+      background: $red;
+      left: 100%;
+      width: 0;
+    }
+    to {
+      background: $red;
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  .animate-input-leave{
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom:-1px;
+    background: $red;
+    animation:input-leave 2s;
+    animation-iteration-count:1;
+  }
+  @keyframes input-leave {
+    from {
+      background: $red;
+      left: 0;
+      width: 100%;
+    }
+    to {
+      background: $red;
+      left: 100%;
+      width:0;
+    }
+  }
+
+}

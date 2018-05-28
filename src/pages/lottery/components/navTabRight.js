@@ -54,9 +54,14 @@ class NavTabRight extends Component {
         }
 
 
-        let isSafari = navigator.userAgent.indexOf("iPhone") > -1;
         return(
             <div className={this.props.showTab?"tab-over-lay-right show":"tab-over-lay-right"}  style={this.props.showTab&&this.props.game_key==="g"?{width:'9.5rem'}:this.props.showTab&&this.props.game_key==="x"?{right:'0.1rem'}:null}>
+
+                {/*遮罩层*/}
+                <div className="mask-layer" style={{display: this.props.showTab ? 'block' : 'none'}} onClick={() =>this.props.navBarClick()} >
+
+                </div>
+
                 <div className="ctrl-btn" style={{top:this.props.showTab?'0.015rem':null}} onClick={(e)=>{this.props.navBarClick(e)}}>
                     {this.props.showTab?<Icon type="caret-right"></Icon>:<i className="anticon anticon-caret-left"></i>}
                     玩法选择
@@ -66,13 +71,8 @@ class NavTabRight extends Component {
                     <ul>
                         {listRender}
                     </ul>
-                    {/*遮罩层*/}
-                    <div className="mask-layer" style={{display: this.props.showTab ? 'block' : 'none'}} onClick={()=> this.props.navBarClick()
-                    }>
 
-                    </div>
-                </div>: <div className="tabOverlay" onClick={(e)=>this.closeTab(e)} style={isSafari?{top:'2.93rem',bottom:'-5rem'}:{top:'2.93rem',bottom:'-7.9rem'}}>
-                    <div className="tabWrap">
+                </div>: <div className="tabWrap"  onClick={(e)=>this.closeTab(e)}>
                         <div className="lt_tab">
                             <ul>
                                 {this.props.one_level_menu.map((menu, key) =>
@@ -87,11 +87,6 @@ class NavTabRight extends Component {
                                 </div>
                             </div>
                         </div>
-                        {/*遮罩层*/}
-                        <div className="mask-layer" style={{display: this.props.showTab ? 'block' : 'none'}} onClick={() =>this.props.navBarClick()}>
-
-                        </div>
-                    </div>
                 </div>}
             </div>
         )

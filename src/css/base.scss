@@ -6,20 +6,29 @@
     -moz-box-sizing:border-box; /* Firefox */
     -webkit-box-sizing:border-box; /* Safari */
 }
-@function px2rem($px){
-  $rem : 64px;
-  @return ($px/$rem) + rem;
-}
-
 a{
- color: #108ee9
+  color: #108ee9
 }
-
+ul,li,p,h1,h2,h3,h4,h5,h6 {
+  list-style:none;
+  margin-bottom: 0;
+}
+body{
+  height: auto;
+  background: #f2f2f2;
+}
+.container{
+  padding-top: 1rem;
+  padding-bottom: 1.484375rem;
+}
 .fl {
     float: left;
 }
 .fr {
     float: right;
+}
+.hidden{
+  display: none;
 }
 .pad_left{
   padding-left: .27rem; /* 20/75 */
@@ -85,13 +94,10 @@ a{
 .lotto-cart,
 .lt-trace
 {
-  position: absolute;
   background: #f2f2f2;
   width: 10.0rem;
-  top: 1rem;
-  bottom: 1.484375rem;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
+  padding-top: 1rem;
+  padding-bottom: 1.484375rem;
   color: #303030;
 }
 
@@ -262,6 +268,51 @@ a{
 .lt-txffc,.lt-icon-24 {
     background-image: url("../img/global/lt_txffc.png");
 }
+
+
+
+//电子游戏
+/*超级斗地主*/
+.lt-superdoudizhu,.lt-icon-520{
+  background-image: url('../img/global/superdoudizhu.png');
+}
+/*森林舞会*/
+.lt-senlinparty,.lt-icon-540{
+  background-image:url("../img/global/senlinparty.png") ;
+}
+/*千炮捕鱼*/
+.lt-fish,.lt-icon-550{
+  background-image: url("../img/global/fish.png");
+}
+/*水浒传*/
+.lt-shuihuzhuan,.lt-icon-610{
+  background-image: url("../img/global/shuihuzhuan.png");
+}
+/*水浒英雄*/
+.lt-shuihuhero,.lt-icon-612{
+  background-image: url("../img/global/shuihuhero.png");
+}
+/*太极*/
+.lt-taiji,.lt-icon-640{
+  background-image: url("../img/global/taiji.png");
+}
+/**千炮捕鱼*/
+.lt-fish,.lt-icon-1051{
+  background-image: url("../img/global/fish.png");
+}
+/*水浒传H5*/
+.lt-shuihuzhuan,.lt-icon-1110{
+  background-image: url("../img/global/shuihuzhuan.png");
+}
+/*水浒英雄H5*/
+.lt-shuihuhero,.lt-icon-1112{
+  background-image: url("../img/global/shuihuhero.png");
+}
+
+
+
+
+
 
 
 /* 骰子*/

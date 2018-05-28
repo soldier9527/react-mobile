@@ -1,4 +1,10 @@
 .hall {
+	.am-tabs-tab-bar-wrap{
+		position: fixed;
+		top: 1rem;
+		width: 100%;
+		z-index: 9999;
+	}
 	.am-tabs-default-bar {
 		width: 100%;
 		height:auto;
@@ -20,7 +26,7 @@
 	}
 
 	.am-tabs-content-wrap  {
-		padding-top: 0.2rem;
+		padding-top: 1rem;
 	}
 
 	a {

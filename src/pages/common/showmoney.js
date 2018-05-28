@@ -1,6 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import {Link } from 'react-router-dom';
-import { Icon } from 'antd';
 import Api from '../api';
 
 export default class ShowMoney extends Component {

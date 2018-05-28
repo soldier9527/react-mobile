@@ -24,16 +24,22 @@
 
     li {
       background: #fff;
-      height: 1.5rem;
-      line-height: 1.5rem;
+      height: 1rem;
+      line-height: 1rem;
       font-size: 0.4rem;
-      margin-bottom: 0.05rem;
       margin-top: 1rem;
 
       input {
+        text-align: left;
+        font-size: 0.4rem;
         font-weight: normal;
         padding-left: 1rem;
-        text-align: left;
+        margin-right: 0;
+        width: 6rem;
+        height: 1rem;
+        line-height: 0.6rem;
+        color: #7e7e7e;
+
       }
 
       span {

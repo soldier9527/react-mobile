@@ -139,7 +139,7 @@ module.exports = {
             test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
             loader: require.resolve('url-loader'),
             options: {
-              limit: 10000,
+              limit: 10,
               name: 'static/media/[name].[hash:8].[ext]',
             },
           },
@@ -157,38 +157,48 @@ module.exports = {
             // 增加sass支持
             {
                 test: /\.scss$/,
-                use: [
-                    {
-                        loader: require.resolve('style-loader'),
-                    },
-                    {
-                        loader: require.resolve('css-loader'),
-                        options: {
-                            importLoaders: 1,
-                        }
-                    },
-                    {
-                        loader: require.resolve('sass-loader'),
-                    },
-                    {
-                        loader: require.resolve('postcss-loader'),
-                        options: {
-                            ident: 'postcss',
-                            plugins: () => [
-                                require('postcss-flexbugs-fixes'),
-                                autoprefixer({
-                                    browsers: [
-                                        '>1%',
-                                        'last 4 versions',
-                                        'Firefox ESR',
-                                        'not ie < 9',
-                                    ],
-                                    flexbox: 'no-2009',
-                                }),
-                            ],
+                loader: ExtractTextPlugin.extract(
+                    Object.assign(
+                        {
+                            fallback: {
+                                loader: require.resolve('style-loader'),
+                                options: {
+                                    hmr: false,
+                                },
+                            },
+                            use: [
+                                {
+                                    loader: require.resolve('css-loader'),
+                                    options: {
+                                        importLoaders: 1,
+                                    }
+                                },
+                                {
+                                    loader: require.resolve('sass-loader'),
+                                },
+                                {
+                                    loader: require.resolve('postcss-loader'),
+                                    options: {
+                                        ident: 'postcss',
+                                        plugins: () => [
+                                            require('postcss-flexbugs-fixes'),
+                                            autoprefixer({
+                                                browsers: [
+                                                    '>1%',
+                                                    'last 4 versions',
+                                                    'Firefox ESR',
+                                                    'not ie < 9',
+                                                ],
+                                                flexbox: 'no-2009',
+                                            }),
+                                        ],
+                                    },
+                                },
+                            ]
                         },
-                    },
-                ]
+                        extractTextPluginOptions
+                    )
+                )
             },
           // The notation here is somewhat confusing.
           // "postcss" loader applies autoprefixer to our CSS.

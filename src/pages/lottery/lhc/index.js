@@ -66,7 +66,7 @@ class Ltlhc extends Component {
 
         }
         let item = this.calcItem(cart);
-        if(cart[0].length>this.props.md.field_def[0].max_selected){
+        if(cart[0]&&cart[0].length>this.props.md.field_def[0].max_selected){
             message.config({
                 top: 20,
                 duration: 1
@@ -143,218 +143,110 @@ class NumList extends Component{
             var max_selected =  cur_method[i].max_selected;
             var prompt = cur_method[i].prompt;
         }
+        let simple = this.props.md.num_level?this.props.md.num_level.simple.split(" "):null;
         cur_method.map((item,i)=>{
             let codeArr = item.nums.split(" ");
+            // 1等奖和2等奖比较大小
+            let p1VSp2 = null;
+            if(["SZE","LMEZT","JS-LMEZT"].indexOf(this.props.md.name)!==-1){
+                let p1 = parseFloat(prize[1])>parseFloat(prize[2])?prize[1]:prize[2];
+                let p2 = parseFloat(prize[1])>parseFloat(prize[2])?prize[2]:prize[1];
+                p1VSp2 = <span>一等奖：{game.toFixed(parseFloat(p1*10000)*this.props.gamePrize*10000/(this.props.divisor*10000)/10000,3)} 二等奖：{game.toFixed(parseFloat(p2*10000)*this.props.gamePrize*10000/(this.props.divisor*10000)/10000,3)}</span>
+            }
             renderNumList.push(
                 <div className="ch_chart" key={i}>
                     <div className="ch_num_w">
                         <Icon type="down-circle" style={{ fontSize:"15px",color: '#d22018' }}/>
                         &nbsp;&nbsp;&nbsp;{item.prompt}
-                        {(['HXZ','JS-HXZ','HXBZ','JS-HXBZ'].indexOf(this.props.md.name)!==-1)?<span>赔率:{(parseFloat(this.prizeCount(this.props.cart,this.props.md.prize)*10000)*this.props.gamePrize*10000/(this.props.divisor*10000)/10000).toFixed(3)}</span>:(['LHC-HZLM','LHC-ZTMH','LHC-ZTLM','TMDXDS','TMSX','TMWS','TMSB'].indexOf(this.props.md.name) !== -1)?<span></span>:(this.props.md.num_level.simple==undefined?<span>赔率:{gamePrize}</span>:<span>赔率:一等奖 : {gamePrize} 二等奖 : {game.toFixed((this.props.gamePrize*parseFloat(prize[2])),3)}</span>)}
-
+                        {!simple?<span>赔率:{gamePrize}</span>:null}
+                        {(['HXZ','JS-HXZ','HXBZ','JS-HXBZ'].indexOf(this.props.md.name)!==-1)?<span>赔率：{(parseFloat(this.prizeCount(this.props.cart,this.props.md.prize)*10000)*this.props.gamePrize*10000/(this.props.divisor*10000)/10000).toFixed(3)}</span>:null}
+                        {p1VSp2}
                     </div>
                     <div className="ch_num_box">
-
                         <ul className={max_selected>4?"ch_num_show":"ch_num_show text-align"}>
                             {codeArr.map((num,j)=>{
-                                if(['LBZ','WBZ','QBZ','BBZ','JBZ','SBZ','SYBZ','SEBZ','SZE','JS-LBZ','JS-WBZ','JS-QBZ','JS-BBZ','JS-JBZ','JS-SBZ','JS-SYBZ','JS-SEBZ','JS-SZE'].indexOf(this.props.md.name)!==-1){
+                                // 普通 大小单双 鼠牛虎兔
+                                if(["JS-TX","JS-ZX","JS-LXEX","JS-LXSX","JS-LXSIX","JS-LXWX","JS-PTX",'LHC-HZLM',"LHC-ZTMH","LHC-ZTLM","THDXDS","TDXDS","TX","PTX","ZX","TMSX","TMDXDS","ZTYX","ELX","SLX","SILX","LXEX","LXSX","LXSIX","LXWX","LWEW","LWSW","LWSIW","JS-THDXDS","JS-TDXDS"].indexOf(this.props.md.name)!==-1){
+                                    return(<li key={j}>
+                                        <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn on ant-btn-primary":"ant-btn off ant-btn-primary"}>
+                                            {num}
+                                        </button>
+                                        {simple?<label>{game.toFixed(parseFloat(prize[simple[j]]*10000)*this.props.gamePrize*10000/(this.props.divisor*10000)/10000,3)}</label>:null}
+                                    </li>)
+                                    // 普通 1-49号码球
+                                }else if(["JS-LMSQZ","JS-LMEQZ","JS-LMTC","JS-LMEZT",'LBZ','WBZ','QBZ','BBZ','JBZ','SBZ','SYBZ','SEBZ','SZE','JS-LBZ','JS-WBZ','JS-QBZ','JS-BBZ','JS-JBZ','JS-SBZ','JS-SYBZ','JS-SEBZ','JS-SZE',"TMA","ZM","ZM1","ZM2","ZM3","ZM4","ZM5","ZM6","LMSQZ","LMEQZ","LMEZT","LMTC","TMZX","EZE","SZS","SZE","ZTYM","JS-TMA","JS-ZM","JS-ZM1","JS-ZM2","JS-ZM3","JS-ZM4","JS-ZM5","JS-ZM6"].indexOf(this.props.md.name)!==-1){
+                                    let color = "red";
                                     if(red.indexOf(parseInt(num))!=-1){
-                                        return(<li key={j}>
-                                            <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn on ant-btn-primary":"ant-btn off red ant-btn-primary"}>
-                                                {num}
-                                            </button>
-                                        </li>)
+                                        color = "red"
                                     }else if(blue.indexOf(parseInt(num))!=-1){
-                                        return(<li key={j}>
-                                            <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn ba-blue ant-btn-primary":"ant-btn off blue ant-btn-primary"}>
-                                                {num}
-                                            </button>
-                                        </li>)
+                                        color = "blue"
                                     }else if(green.indexOf(parseInt(num))!=-1){
-                                        return(<li key={j}>
-                                            <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn ba-green ant-btn-primary":"ant-btn off green ant-btn-primary"}>
-                                                {num}
-                                            </button>
-                                        </li>)
+                                        color = "green"
                                     }
+                                    //三中二部显示prize
+                                    let needPrize = ["SZE","LMEZT","JS-LMEZT"].indexOf(this.props.md.name) ===-1
+                                    return(<li key={j}>
+                                        <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn ant-btn-primary ba-"+color:"ant-btn off ant-btn-primary "+color}>
+                                            {num}
+                                        </button>
+                                        {simple&&needPrize?<label>{game.toFixed(parseFloat(prize[simple[j]]*10000)*this.props.gamePrize*10000/(this.props.divisor*10000)/10000,3)}</label>:null}
+                                    </li>)
+                                    //  红绿蓝
+                                }else if(["SB","ZMSB1","ZMSB2","ZMSB3","ZMSB4","ZMSB5","ZMSB6","TMSB","JS-SB","JS-ZMSB1","JS-ZMSB2","JS-ZMSB3","JS-ZMSB4","JS-ZMSB5","JS-ZMSB6"].indexOf(this.props.md.name)!==-1){
+                                    let color = "red";
+                                    if(["红","红大","红小","红单","红双"].indexOf(num)!=-1){
+                                        color = "red"
+                                    }else if(["蓝","蓝大","蓝小","蓝单","蓝双"].indexOf(num)!=-1){
+                                        color = "blue"
+                                    }else if(["绿","绿大","绿小","绿单","绿双"].indexOf(num)!=-1){
+                                        color = "green"
+                                    }
+                                    return(<li key={j}>
+                                        <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn ant-btn-primary ba-"+color:"ant-btn off ant-btn-primary "+color}>
+                                            {num}
+                                        </button>
+                                        {simple?<label>{game.toFixed(parseFloat(prize[simple[j]]*10000)*this.props.gamePrize*10000/(this.props.divisor*10000)/10000,3)}</label>:null}
+                                    </li>)
+                                    //  椭圆球
                                 }else if(["LHC-BB","JSLHC-BB"].indexOf(this.props.md.name)!==-1){
-                                    if(['红大','红小','红单','红双'].indexOf(num)!==-1){
-                                        return(<li key={j} className="TMBT">
-                                            <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn on ant-btn-primary":"ant-btn off red ant-btn-primary"}>
-                                                {num}
-                                            </button>
-                                        </li>)
-                                    }else if(['蓝大','蓝小','蓝单','蓝双'].indexOf(num)!==-1){
-                                        return(<li key={j} className="TMBT">
-                                            <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn ba-blue ant-btn-primary":"ant-btn off blue ant-btn-primary"}>
-                                                {num}
-                                            </button>
-                                        </li>)
-                                    }else if(['绿大','绿小','绿单','绿双'].indexOf(num)!==-1){
-                                        return(<li key={j} className="TMBT">
-                                            <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn ba-green ant-btn-primary":"ant-btn off green ant-btn-primary"}>
-                                                {num}
-                                            </button>
-                                        </li>)
+                                    let color = "red";
+                                    if(["红","红大","红小","红单","红双"].indexOf(num)!=-1){
+                                        color = "red"
+                                    }else if(["蓝","蓝大","蓝小","蓝单","蓝双"].indexOf(num)!=-1){
+                                        color = "blue"
+                                    }else if(["绿","绿大","绿小","绿单","绿双"].indexOf(num)!=-1){
+                                        color = "green"
                                     }
-                                }else if(red.indexOf(parseInt(num))!=-1&&max_selected==49&&this.props.md.num_level.simple!=undefined){
-                                    return(<li key={j}>
-                                        <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn on ant-btn-primary":"ant-btn off red ant-btn-primary"}>
+                                    return(<li key={j} className="TMBT">
+                                        <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?" on ba-"+color:" off "+color}>
                                             {num}
                                         </button>
-                                        <label>{gamePrize}</label>
+                                        {simple?<label>{game.toFixed(parseFloat(prize[simple[j]]*10000)*this.props.gamePrize*10000/(this.props.divisor*10000)/10000,3)}</label>:null}
                                     </li>)
-                                }else if(red.indexOf(parseInt(num))!=-1&&max_selected==49&&this.props.md.num_level.simple==undefined){
-                                    return(<li key={j}>
-                                        <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn on ant-btn-primary":"ant-btn off red ant-btn-primary"}>
-                                            {num}
-                                        </button>
-                                    </li>)
-                                } else if(blue.indexOf(parseInt(num))!=-1&&max_selected==49&&this.props.md.num_level.simple!=undefined){
-                                    return(<li key={j}>
-                                        <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn ba-blue ant-btn-primary":"ant-btn off blue ant-btn-primary"}>
-                                            {num}
-                                        </button>
-                                        <label>{gamePrize}</label>
-                                    </li>)
-                                } else if(blue.indexOf(parseInt(num))!=-1&&max_selected==49&&this.props.md.num_level.simple==undefined){
-                                    return(<li key={j}>
-                                        <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn ba-blue ant-btn-primary":"ant-btn off blue ant-btn-primary"}>
-                                            {num}
-                                        </button>
-                                    </li>)
-                                } else if(green.indexOf(parseInt(num))!=-1&&max_selected==49&&this.props.md.num_level.simple!=undefined){
-                                    return(<li key={j}>
-                                        <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn ba-green ant-btn-primary":"ant-btn off green ant-btn-primary"}>
-                                            {num}
-                                        </button>
-                                        <label>{gamePrize}</label>
-                                    </li>)
-                                } else if(green.indexOf(parseInt(num))!=-1&&max_selected==49&&this.props.md.num_level.simple==undefined){
-                                    return(<li key={j}>
-                                        <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn ba-green ant-btn-primary":"ant-btn off green ant-btn-primary"}>
-                                            {num}
-                                        </button>
-                                    </li>)
-                                } else if(shengxiao.indexOf(num)!=-1&&this.props.md.num_level.simple!=undefined&&prompt=="生肖"){
-                                    return(<li key={j}>
-                                        <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn on ant-btn-primary":"ant-btn off  ant-btn-primary"}>
-                                            {num}
-                                        </button>
-                                    </li>)
-                                }
-                                else if(shengxiao.indexOf(num)!=-1&&this.props.md.num_level.simple!=undefined){
-                                    let simple=this.props.md.num_level.simple.split(" ");
-                                    let specific=this.props.md.num_level.specific;
-                                    let level = specific[simple[j]-1].level;
-                                    return(<li key={j}>
-                                        <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn on ant-btn-primary":"ant-btn off  ant-btn-primary"}>
-                                            {num}
-                                            </button>
-                                        <label>{game.toFixed(this.props.gamePrize*10000*parseFloat(prize[level])*10000/(this.props.divisor*10000)/10000,3)}</label>
-                                    </li>)
-                                }else if(shengxiao.indexOf(num)!=-1&&this.props.md.num_level.simple==undefined){
-                                    return(<li key={j}>
-                                        <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn on ant-btn-primary":"ant-btn off  ant-btn-primary"}>
-                                            {num}
-                                        </button>
-                                    </li>)
-                                } else if(sebo.indexOf(num)!=-1&&this.props.md.num_level.simple!=undefined){
-                                    let simple=this.props.md.num_level.simple.split(" ");
-                                    let specific=this.props.md.num_level.specific;
-                                    let level = specific[simple[j]-1].level;
-                                    if(num=='红'){
-                                        return(<li key={j}>
-                                            <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn on ant-btn-primary":"ant-btn off red ant-btn-primary"}>
-                                                {num}
-
-                                                </button>
-                                            <label>{game.toFixed(this.props.gamePrize*10000*parseFloat(prize[level])*10000/(this.props.divisor*10000)/10000,3)}</label>
-                                        </li>)
-                                    }else if(num=="蓝"){
-                                        return(<li key={j}>
-                                            <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn ba-blue ant-btn-primary":"ant-btn off blue ant-btn-primary"}>
-                                                {num}
-
-                                                </button>
-                                            <label>{game.toFixed(this.props.gamePrize*10000*parseFloat(prize[level])*10000/(this.props.divisor*10000)/10000,3)}</label>
-                                        </li>)
-                                    }else if(num=='绿'){
-                                        return(<li key={j}>
-                                            <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn ba-green ant-btn-primary":"ant-btn off green ant-btn-primary"}>
-                                                {num}
-
-                                                </button>
-                                            <label>{game.toFixed(this.props.gamePrize*10000*parseFloat(prize[level])*10000/(this.props.divisor*10000)/10000,3)}</label>
-
-                                        </li>)
-                                    }
-                                }else if(sebo.indexOf(num)!=-1&&this.props.md.num_level.simple==undefined){
-                                    if(num=='红'){
-                                        return(<li key={j}>
-                                            <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn on ant-btn-primary":"ant-btn off red ant-btn-primary"}>
-                                                {num}
-                                            </button>
-                                        </li>)
-                                    }else if(num=="蓝"){
-                                        return(<li key={j}>
-                                            <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn ba-blue ant-btn-primary":"ant-btn off blue ant-btn-primary"}>
-                                                {num}
-                                            </button>
-                                        </li>)
-                                    }else if(num=='绿'){
-                                        return(<li key={j}>
-                                            <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn ba-green ant-btn-primary":"ant-btn off green ant-btn-primary"}>
-                                                {num}
-                                            </button>
-                                        </li>)
-                                    }
-                                } else if(dxds.indexOf(num)!=-1&&this.props.md.num_level.simple!=undefined){
-                                    let simple=this.props.md.num_level.simple.split(" ");
-                                    let specific=this.props.md.num_level.specific;
-                                    let level = specific[simple[j]-1].level;
-                                    return(<li key={j}>
-                                        <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn on ant-btn-primary":"ant-btn off  ant-btn-primary"}>
-                                            {specific[j].code}
-                                            </button>
-                                        <label>{game.toFixed(this.props.gamePrize*10000*parseFloat(prize[specific[j].level])*10000/(this.props.divisor*10000)/10000,3)}</label>
-                                    </li>)
-                                }else if(dxds.indexOf(num)!=-1&&this.props.md.num_level.simple==undefined){
-                                    return(<li key={j}>
-                                        <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn on ant-btn-primary":"ant-btn off  ant-btn-primary"}>
-                                            {num}
-                                        </button>
-                                    </li>)
-                                } else if(max_selected==10&&this.props.md.num_level.simple!=undefined){
-                                    let simple=this.props.md.num_level.simple.split(" ");
-                                    let specific=this.props.md.num_level.specific;
-                                    let level = specific[simple[j]-1].level;
-                                    return(<li key={j}>
-                                        <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn on ant-btn-primary":"ant-btn off  ant-btn-primary"}>
-                                            {num}
-
-                                            </button>
-                                        <label>{game.toFixed(this.props.gamePrize*10000*parseFloat(prize[level])*10000/(this.props.divisor*10000)/10000,3)}</label>
-
-                                    </li>)
-                                }else if(max_selected==10&&this.props.md.num_level.simple==undefined){
-                                    return(<li key={j}>
-                                        <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn on ant-btn-primary":"ant-btn off  ant-btn-primary"}>
-                                            {num}
-                                        </button>
-                                    </li>)
-                                }else if(["TMBT","JS-TMBT"].indexOf(this.props.md.name)!==-1){
+                                }else if(["TQS","JS-TQS","TMBT"].indexOf(this.props.md.name)!==-1){
                                     return(<li key={j} className="TMBT">
                                         <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?" on":" off "}>
                                             {num}
                                         </button>
+                                        {simple?<label>{game.toFixed(parseFloat(prize[simple[j]]*10000)*this.props.gamePrize*10000/(this.props.divisor*10000)/10000,3)}</label>:null}
                                     </li>)
-                                }else if(["TQS","JS-TQS"].indexOf(this.props.md.name)!==-1){
-                                    return(<li key={j} className="TMBT">
-                                        <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?" on":" off "}>
+                                    // 合肖中
+                                }else if(['HXZ','JS-HXZ','HXBZ','JS-HXBZ'].indexOf(this.props.md.name)!==-1){
+                                    return(<li key={j}>
+                                        <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn on ant-btn-primary":"ant-btn off ant-btn-primary"}>
                                             {num}
                                         </button>
                                     </li>)
+                                    // 普通 1-9球 没有颜色
+                                }else if(["TMWS","ZTWS","JS-LWEW","JS-LWSW","JS-LWSIW"].indexOf(this.props.md.name)!==-1){
+                                    return(<li key={j}>
+                                        <button onClick={()=>{this.props.handlechooseNum(i,num)}} type="button"  className={cart[i]&&cart[i].indexOf(num) !==-1?"ant-btn on ant-btn-primary":"ant-btn off  ant-btn-primary"}>
+                                            {num}
+                                        </button>
+                                        {simple?<label>{game.toFixed(parseFloat(prize[simple[j]]*10000)*this.props.gamePrize*10000/(this.props.divisor*10000)/10000,3)}</label>:null}
+                                    </li>)
+                                }else if(true){
+                                    console.log("没有匹配")
                                 }
                             })
                             }

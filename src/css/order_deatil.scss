@@ -109,3 +109,34 @@
   }
   .ant-table-tbody>tr>td{text-align: center}
 }
+
+//体彩普通注单
+.query{
+  height:17rem;
+  position: absolute;
+  width:100%;
+  top: 1rem;
+  background: #fff;
+  overflow: auto;
+  font-size: 0.35rem;
+  li{
+    height: 1.2rem ;
+    line-height: 1.2rem;
+    padding-left: 0.3rem;
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: normal;
+  }
+  button{
+    width:50%;
+    height:1.2rem;
+    line-height: 1.2rem;
+    background: #e4393c;
+    border: none;
+    border-radius: 0.2rem;
+    color: #fff;
+    font-size: 0.5rem;
+    margin-left:25%;
+    margin-top: 1rem;
+  }
+}
