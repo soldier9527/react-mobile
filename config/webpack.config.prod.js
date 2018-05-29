@@ -12,7 +12,6 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
-
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
 const publicPath = paths.servedPath;
@@ -171,6 +170,8 @@ module.exports = {
                                     loader: require.resolve('css-loader'),
                                     options: {
                                         importLoaders: 1,
+                                        minimize: true,
+                                        sourceMap: shouldUseSourceMap,
                                     }
                                 },
                                 {
@@ -187,7 +188,7 @@ module.exports = {
                                                     '>1%',
                                                     'last 4 versions',
                                                     'Firefox ESR',
-                                                    'not ie < 9',
+                                                    'not ie < 9', // React doesn't support IE8 anyway
                                                 ],
                                                 flexbox: 'no-2009',
                                             }),

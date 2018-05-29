@@ -1,8 +1,6 @@
 import React, { Component, } from 'react'
 import {Link} from 'react-router-dom';
 import {Button, Icon} from 'antd';
-
-
 export default class Guidance extends Component{
     constructor(props){
         super(props);

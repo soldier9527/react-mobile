@@ -5,6 +5,7 @@ import {Carousel,NoticeBar,Icon} from 'antd-mobile';
 import Navbar from '../common/navbar';
 import Footer from '../common/footer';
 import Api from '../api';
+import config from '../config';
 import PopularLottery from './popular_lottery';  //热门彩票
 import TheLatestLottery from './The_latest_lottery'; //最新开奖
 
@@ -562,7 +563,7 @@ class Home extends Component {
         return (
             <div onClick={()=>{this.hideLatestLottery()}}>
 
-                <Navbar title="幸运彩票" />
+                <Navbar title={config.title} />
                 <div className="home fadeInRight">
                     <div className="banner">
                         {this.state.carouse_data?<Carousel

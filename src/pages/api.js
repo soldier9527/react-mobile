@@ -265,6 +265,7 @@ export function sendData(api,err){
 }
 
 function getSession(type) {
+
     let countDown = sessionStorage.getItem("countDown");
     let now = new Date().getTime();
     //有请求不成功，半小时之内都用api/?

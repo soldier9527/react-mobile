@@ -30,6 +30,7 @@
     "react": "^16.3.2",
     "react-dev-utils": "^5.0.1",
     "react-dom": "^16.3.2",
+    "react-loadable": "^5.4.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "resolve": "1.6.0",
@@ -44,6 +45,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "release":"npm run build 01 && npm run build 02",
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {

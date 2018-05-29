@@ -37,13 +37,18 @@ function getServedPath(appPackageJson) {
     envPublicUrl || (publicUrl ? url.parse(publicUrl).pathname : '/');
   return ensureSlash(servedUrl, true);
 }
-
+let pankou = "00"
+process.argv.forEach((val, index) => {
+    if(val.length===2){
+        pankou = val
+    }
+});
 // config after eject: we're in ./config/
 module.exports = {
   dotenv: resolveApp('.env'),
-  appBuild: resolveApp('build'),
-  appPublic: resolveApp('public'),
-  appHtml: resolveApp('public/index.html'),
+  appBuild: resolveApp('build/dist_online'+pankou),
+  appPublic: resolveApp('public/'+pankou),
+  appHtml: resolveApp('public/'+pankou+'/index.html'),
   appIndexJs: resolveApp('src/index.js'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
