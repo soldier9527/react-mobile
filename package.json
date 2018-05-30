@@ -46,8 +46,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "release": "npm run build 01 && npm run build 02",
-    "test": "node scripts/test.js --env=jsdom"
+    "release": "npm run build 01 && npm run build 02"
   },
   "jest": {
     "collectCoverageFrom": [
