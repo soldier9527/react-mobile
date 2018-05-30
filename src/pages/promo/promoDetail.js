@@ -1,8 +1,5 @@
 import React,{Component,PropTypes} from 'react'
-import {Link} from 'react-router-dom';
-import {Carousel,Icon,Row,Col} from 'antd';
 import Navbar from '../common/navbar';
-import Footer from '../common/footer';
 import Api from '../api';
 
 export default class PromoDetail extends Component{
@@ -27,7 +24,7 @@ getData(){
 }
 
 render(){
-    let param=this.props.params.id;
+    let param=new URLSearchParams(this.props.history.location.search).get('id');
     let renderActivity=[];
     let lotteryActivity=this.state.activityList;
     lotteryActivity.map(function(item,i){

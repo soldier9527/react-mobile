@@ -1,0 +1,23 @@
+.testOpen {
+  .num {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  span {
+    display: inline-block;
+    line-height: 20px;
+    text-align: center;
+    overflow: hidden;
+  }
+  i {
+    width: 20px;
+    height: 20px;
+    display: block;
+    text-align: center;
+    font-style: normal;
+  }
+}

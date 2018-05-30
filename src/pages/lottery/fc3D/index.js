@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import {LotteryCommon} from '../components/common';
 import Game from '../components/game';
 import Calc from "../components/calc";
-import {Modal} from "antd/lib/index";
-import {Icon} from 'antd'
+import Modal from 'antd/lib/modal';
+import  Icon from 'antd/lib/icon';
 
 
  class LtFC3D extends Component {

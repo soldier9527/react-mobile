@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { PopupConfirm, Slider} from 'antd';
+import Slider from 'antd/lib/slider';
 import ShowMessage from '../../common/globalMessage';
 //底部投注条
 export default class LotteryBottom extends Component {

@@ -1,6 +1,6 @@
 import React, { Component} from 'react'
 import {Link } from 'react-router-dom';
-import { Icon } from 'antd';
+import  Icon from 'antd/lib/icon';
 import Navbar from '../common/navbar';
 export default class Help extends Component {
     constructor(props) {

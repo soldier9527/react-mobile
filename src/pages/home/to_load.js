@@ -1,6 +1,5 @@
 import React, { Component, } from 'react'
 import '../../css/to_load.scss'
-import {hashHistory} from 'react-router-dom';
 export default class To_load extends Component{
     constructor(props){
         super(props);

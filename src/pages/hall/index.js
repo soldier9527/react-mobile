@@ -7,7 +7,6 @@ import LotteryNum from '../open/lotteryNum'
 // import CountdownTimer from '../open/countdown'
 import Api from '../api';
 
-import 'antd-mobile/lib/tabs/style/css';
 
 
 export default class Hall extends Component {

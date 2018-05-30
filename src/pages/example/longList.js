@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { PullToRefresh, ListView } from 'antd-mobile';
 import Api from '../api';
-import 'antd-mobile/lib/list-view/style/css';//加载选择样式
 
 export default class LongList extends Component {
     constructor(props) {

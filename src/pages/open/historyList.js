@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
-import {Row, Col } from 'antd';
+import  Row from 'antd/lib/row';
+import  Col from 'antd/lib/col';
+
 import Navbar from '../common/navbar';
 import HistoryItem from './historyItem';
 import GetLotteryList from '../get_lottery_list';
@@ -12,8 +14,9 @@ import Api from '../api';
 export default class HistoryList extends Component {
     constructor(props) {
         super(props);
+        console.log()
         this.state={
-            id:props.params.name,
+            id:new URLSearchParams(props.history.location.search).get("id"),
             lotteryHistory:[]
         }
     }
@@ -92,7 +95,7 @@ export default class HistoryList extends Component {
                                 <Col className="foot-btn btn-bet" span={12} >立即投注</Col>
                             </Link>
 
-                            <Link to={{pathname:"lotteryTrend",query:{id:this.state.id}}}>
+                            <Link to={{pathname:"/lotteryTrend",search:"?id="+this.state.id }}>
                                 <Col className="foot-btn btn-trend" span={12}>走势图</Col>
                             </Link>
                         </Row>

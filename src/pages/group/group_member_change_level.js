@@ -1,9 +1,10 @@
 import React,{Component} from 'react';
 import Navbar from '../common/navbar';
-import {Link,hashHistory} from 'react-router-dom';
-import Api from '../api';
-import { Col,Select,message,Modal,Form} from 'antd';
 
+import Api from '../api';
+import Modal from 'antd/lib/modal';
+import  Select from 'antd/lib/select';
+import  message from 'antd/lib/message';
 const confirm = Modal.confirm;
 
 export default class Group_member_change_level extends Component{
@@ -73,7 +74,7 @@ export default class Group_member_change_level extends Component{
                         message.info(res.errstr);
                     }
                     setTimeout(()=>{
-                        hashHistory.push("group_custom1");
+                        this.props.history.push("group_custom1");
                     },1000)
                 })
             },

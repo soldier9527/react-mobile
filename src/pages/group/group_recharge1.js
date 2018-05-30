@@ -1,12 +1,9 @@
 import React,{Component} from 'react';
-import {message} from 'antd';
+import  message from 'antd/lib/message';
 import Navbar from '../common/navbar';
 import Api from '../api';
 import {List,Calendar,PullToRefresh,Icon} from 'antd-mobile';
 import ReactDOM from 'react-dom';
-import enUS from 'antd-mobile/lib/calendar/locale/en_US';
-import zhCN from 'antd-mobile/lib/calendar/locale/zh_CN';
-import 'antd-mobile/lib/Calendar/style/css';
 import { Toast} from 'antd-mobile';
 
 const extra = {

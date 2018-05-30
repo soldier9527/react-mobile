@@ -3,8 +3,8 @@ import {LotteryCommon} from '../components/common';
 import './p3p5.scss';
 import Game from '../components/game';
 import Calc from "../components/calc";
-import {Modal} from "antd/lib/index";
-import {Icon} from 'antd'
+import Modal from 'antd/lib/modal';
+import  Icon from 'antd/lib/icon';
 
 class LtP3P5 extends Component {
   constructor(props) {

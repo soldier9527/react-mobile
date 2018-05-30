@@ -1,7 +1,8 @@
 import React, { Component} from 'react'
 import {Link } from 'react-router-dom';
-import {Radio ,  Modal} from 'antd';
-import {message} from 'antd';
+import  Radio from 'antd/lib/radio';
+import Modal from 'antd/lib/modal';
+import  message from 'antd/lib/message';
 import Navbar from '../common/navbar';
 import Api from '../api';
 

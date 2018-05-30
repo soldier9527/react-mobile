@@ -1,9 +1,9 @@
     import React, {Component} from 'react'
 import Navbar from '../common/navbar';
 import {Tabs} from 'antd-mobile';
-import {message} from 'antd';
+import  message from 'antd/lib/message';
 import ReactDOM from 'react-dom';
-import {Icon} from 'antd';
+import  Icon from 'antd/lib/icon';
 import GetLotteryList from '../get_lottery_list';
 
 import Api from '../api';
@@ -12,8 +12,8 @@ export default class LotteryTrend extends Component {
     constructor(props) {
         super(props);
         let id=1;
-        if(props.location.query.id - 0!==15){
-            id=props.location.query.id - 0;
+        if(props.history.location.search&&new URLSearchParams(props.history.location.search).get('id') - 0!==15){
+            id=new URLSearchParams(props.history.location.search).get('id') - 0;
         }
         this.state = {
             id: id,//转number

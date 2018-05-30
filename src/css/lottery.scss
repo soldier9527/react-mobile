@@ -283,6 +283,16 @@
               line-height:px2rem(60px);
               font-size:px2rem(20px)
             }
+            &.ssc-right{
+              right:px2rem(30px);
+              >span{
+                float: left;
+                width: px2rem(60px);
+                text-align: center;
+                line-height:px2rem(60px);
+                font-size:px2rem(20px)
+              }
+            }
             &.k3-right{
               right:px2rem(30px);
               >span{

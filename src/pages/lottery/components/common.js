@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Api from '../../api';
-import {Link,hashHistory} from 'react-router';
+import {Link} from 'react-router-dom';
 import Navbar from '../../common/navbar';
 import MaskLoading from '../../common/maskLoading';
 import ShowMessage from '../../common/globalMessage';
@@ -13,22 +13,24 @@ import Trace from '../components/trace'
 import ConfirmModal from '../components/ConfirmModal';
 import GetLotteryList from '../../get_lottery_list'
 import DESCRIPTION from './description'
-import Animate from '../components/Animate'
-import {message,Modal, } from 'antd';
+import Animate from '../components/animate'
+import Modal from 'antd/lib/modal';
+import  message from 'antd/lib/message';
 import getStaticData from '../../common/getStatic'
 //1
 export let LotteryCommon = ComposeComponent => class extends ComposeComponent {
     static displayName = 'LotteryCommon';
     constructor(props) {
         super(props);
-        let type = props.location.query.type;
-        if([26].indexOf(parseInt(props.params.ltCode))!==-1){
-            type="x"
-        }else if([15].indexOf(parseInt(props.params.ltCode))!==-1){
-            type="g"
-        }
+        // let type = props.location.query.type;
+        // if([26].indexOf(parseInt(props.params.ltCode))!==-1){
+        //     type="x"
+        // }else if([15].indexOf(parseInt(props.params.ltCode))!==-1){
+        //     type="g"
+        // }
+        let type = ""
         this.state = {
-            lottery_id:props.params.ltCode,
+            lottery_id:this.props.match.params.id,
             // lottery_id:19,
             lottery_name:"",
             showList:false,//彩种列表显示
@@ -156,7 +158,7 @@ export let LotteryCommon = ComposeComponent => class extends ComposeComponent {
 
       }else{
           ShowMessage("请先登录","info");
-       hashHistory.push("login");
+       this.props.history.push("login");
       }
 
     }
@@ -215,7 +217,7 @@ export let LotteryCommon = ComposeComponent => class extends ComposeComponent {
                 this.getLastOpen();
             });
         }else{
-            hashHistory.push(newPath+"/"+id+"?type="+this.state.game_key);
+            this.props.history.push(newPath+"/"+id+"?type="+this.state.game_key);
         }
     }
     showLotteryList(e){
@@ -1415,7 +1417,7 @@ export let LotteryCommon = ComposeComponent => class extends ComposeComponent {
             this.setState({"showcart": false});
         }else{
 
-                hashHistory.push("hall");
+                this.props.history.push("/hall");
 
         }
     }

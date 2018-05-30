@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { PullToRefresh, Button } from 'antd-mobile';
-import 'antd-mobile/lib/pull-to-refresh/style/css';//加载选择样式
 function genData() {
     const dataArr = [];
     for (let i = 0; i < 20; i++) {

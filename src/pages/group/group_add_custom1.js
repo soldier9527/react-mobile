@@ -1,11 +1,13 @@
 import React, {Component, PropTypes} from 'react';
-import {Link} from 'react-router-dom';
-import {Radio, message, Select, Modal} from 'antd';
+import  Select from 'antd/lib/select';
+import  Radio from 'antd/lib/radio';
+import  Tooltip from 'antd/lib/tooltip';
+import  message from 'antd/lib/message';
+import Modal from 'antd/lib/modal';
 import Navbar from '../common/navbar';
 import Api from '../api';
-import {Checkbox} from 'antd';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import {Toast} from "antd-mobile/lib/index";
+import {Toast} from  "antd-mobile";
 //复制
 var QRCode = require('qrcode.react');
 
@@ -58,7 +60,7 @@ export default class Group_add_custom1 extends Component {
             } else {
 
                 this.setState({
-                    prizeData: data
+                    prizeData: data.prizes
                 })
 
             }
@@ -189,14 +191,11 @@ export default class Group_add_custom1 extends Component {
 
     render() {
         const RadioGroup = Radio.Group;
-
-
         let children = [];
         for (let i = 0; i < this.state.prizeData.length; i++) {
             children.push(<Select.Option
                 key={this.state.prizeData[i].prizeMode}>{this.state.prizeData[i].prizeMode}/{this.state.prizeData[i].rebate+'%'}</Select.Option>);
         }
-
 
         return (
             <div>
@@ -238,6 +237,12 @@ export default class Group_add_custom1 extends Component {
                                     <hr/>
                                     <br/>
                                     <span style={{position: "relative", bottom: "0.25rem"}}>推广码</span>
+                                    <Tooltip
+                                        trigger={['focus']}
+                                        title="请输入3-10位数字或字母组合"
+                                        placement="topLeft"
+                                        overlayClassName="numeric-input"
+                                    >
                                     <input ref="myInput" type="text" placeholder="请输入推广码"
                                            onChange={this.handleChange.bind(this)} style={{
                                         float: "right",
@@ -245,18 +250,23 @@ export default class Group_add_custom1 extends Component {
                                         backgroundColor: "transparent",
                                         width: "2.3rem"
                                     }}/>
+                                    </Tooltip>
                                 </div>
                             </div>
 
 
                         </div>
+                        <div className="bonusodds">
 
-                        <div className="promotionnumber">
+                            <button type="submit" onClick={this.handleClick.bind(this)}>{this.state.linkAdd=="请生成推广链接"?"生成":"重新生成"}</button>
+
+                        </div>
+                        <div className="promotionnumber" style={{display:this.state.linkAdd=="请生成推广链接"?'none':'block'}}>
 
                             <span style={{fontSize: "0.475rem"}}>推广链接</span>
 
                         </div>
-                        <div className="promoArea">
+                        <div className="promoArea" style={{display:this.state.linkAdd=="请生成推广链接"?'none':'block'}}>
                             <div className="promoLink">
                                 <br/>
                                 <span>推广链接</span>
@@ -275,7 +285,7 @@ export default class Group_add_custom1 extends Component {
                                 <hr style={{marginRight: "0.346875rem", marginTop: "0.3rem"}}/>
                             </div>
 
-                            <div className="wechaterweima" style={{display: this.state.visb}}>
+                            <div className="wechaterweima" style={{display: this.state.visb}} >
                                 <QRCode value={this.state.linkAdd}/>
                             </div>
                         </div>
@@ -283,11 +293,7 @@ export default class Group_add_custom1 extends Component {
                     <br/>
 
                 </div>
-                <div className="bonusodds" style={{paddingTop: "14.3rem"}}>
 
-                    <button type="submit" onClick={this.handleClick.bind(this)}>生成</button>
-
-                </div>
 
             </div>
 

@@ -1,7 +1,7 @@
 import React,{Component,PropTypes} from 'react';
 import Navbar from '../common/navbar';
 import Api from '../api';
-import {message } from 'antd';
+import  message from 'antd/lib/message';
 import {List,PullToRefresh,Calendar} from 'antd-mobile';
 import ReactDOM from 'react-dom';
 import { Toast} from 'antd-mobile';

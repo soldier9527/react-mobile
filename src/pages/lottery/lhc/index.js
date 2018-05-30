@@ -2,7 +2,8 @@ import React, { Component} from 'react'
 import {LotteryCommon} from '../components/common';
 import './lhc.scss';
 import Game from '../components/game';
-import {Icon,message} from 'antd'
+import  Icon from 'antd/lib/icon';
+import  message from 'antd/lib/message';
 
 class Ltlhc extends Component {
     constructor(props) {

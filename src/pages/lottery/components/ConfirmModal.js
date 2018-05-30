@@ -1,7 +1,8 @@
 //确认投注 弹框
 // 用于 commonjs和traceSingle的投注确认弹框
 import React, { Component} from 'react'
-import {Modal} from 'antd';
+import Modal from 'antd/lib/modal';
+
 import Calc from "./calc";
 export default class ConfirmModal extends Component {
     render() {

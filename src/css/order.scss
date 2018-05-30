@@ -64,12 +64,6 @@
       font-size: 0.45rem;
       color: #000;
     }
-    &.video{
-      background: #a40000;
-      span{
-        color:#ffffff;
-      }
-    }
   }
   .table-body {
     margin-bottom:0.53rem;
@@ -123,6 +117,7 @@
       line-height: 0.8rem;
       nmargin-left: 2.6rem;
       width: 3rem;
+      margin-top: 0.5rem;
       font-size: 0.4rem;
       background: #FF6100;
       color: #fff;
@@ -142,19 +137,6 @@
   z-index: 99;
 }
 
-//玩法选择
-.wfxz{
-  position: fixed;
-  border:1px solid #a40000;
-  border-radius: 3px;
-  left: 1.5rem;
-  font-size: 12px;
-  padding-left: 0.1rem;
-  width:2.2rem;
-  top:0.2rem;
-  background: #a40000;
-  z-index: 99;
-  line-height: 0.6rem;
-}
+
 
 

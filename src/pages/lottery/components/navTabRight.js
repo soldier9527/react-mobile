@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-import {Icon} from "antd";
+import {Icon} from "antd-mobile";
 
 // 投足玩法菜单
 class NavTabRight extends Component {

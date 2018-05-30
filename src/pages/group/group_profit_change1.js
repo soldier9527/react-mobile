@@ -1,5 +1,5 @@
 import React,{Component,PropTypes} from 'react';
-import {message} from 'antd';
+import  message from 'antd/lib/message';
 import Navbar from '../common/navbar';
 import Api from '../api';
 import {DatePicker,List,PullToRefresh,Calendar} from 'antd-mobile';

@@ -1,13 +1,11 @@
 import React,{Component,PropTypes} from 'react';
-import {message} from 'antd';
+import  message from 'antd/lib/message';
 import Navbar from '../common/navbar';
 import Api from '../api';
 import {List,PullToRefresh,Icon,Calendar} from 'antd-mobile';
 import ReactDOM from 'react-dom';
 import { Toast} from 'antd-mobile';
-import enUS from 'antd-mobile/lib/calendar/locale/en_US';
-import zhCN from 'antd-mobile/lib/calendar/locale/zh_CN';
-import 'antd-mobile/lib/Calendar/style/css'
+
 
 const now = new Date();
 

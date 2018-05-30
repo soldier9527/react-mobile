@@ -2,7 +2,7 @@ import React, {Component} from "react"
 import '../../../css/k3.scss';
 import {LotteryCommon} from '../components/common';
 import Game from '../components/game';
-import {Icon} from 'antd'
+import  Icon from 'antd/lib/icon';
 
 class LtK3 extends Component {
     constructor(props) {

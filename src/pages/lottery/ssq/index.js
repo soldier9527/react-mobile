@@ -3,8 +3,8 @@ import './ssq.scss';
 import Game from '../components/game';
 import {LotteryCommon} from '../components/common';
 import Calc from "../components/calc";
-import {Modal} from "antd/lib/index";
-import {Icon} from 'antd'
+import Modal from 'antd/lib/modal';
+import  Icon from 'antd/lib/icon';
 
 class LtSSQ extends Component {
     constructor(props) {

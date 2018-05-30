@@ -489,12 +489,12 @@ body{
     margin:0.625rem 0 0.625rem 0;
   }
   button{
-    width:7.34375rem;
+    width:5rem;
     height:0.875rem;
     font-size:0.375rem;
     font-family:"Microsoft YaHei";
     color:rgb(255,255,255);
-    margin:0 0 0.625rem 1.25rem;
+    margin-left:2.55rem;
     border-radius:0.078125rem;
     background: #d22018;
     border:0.015625rem solid #d22018;
@@ -586,6 +586,7 @@ body{
 }
 
 .promoLink{
+  position: relative;
   margin-left:0.625rem;
   margin-top:0.16875rem;
   vertical-align:middle;
@@ -598,6 +599,9 @@ body{
     float: right;
     margin-right:0.646875rem;
     margin-top:0.05rem;
+    position: absolute;
+    left: 1.8rem;
+    top: 0.5rem;
   }
   input{
     width:6.25rem;
@@ -617,7 +621,6 @@ body{
 
 .wechaterweima{
   margin-left:3.25rem;
-  margin-top:0.33125rem;
   display: none;
 
   span:first-child{
@@ -663,5 +666,4 @@ body{
 .calendar-list .right {
   float: right;
 }
-
 

@@ -2,7 +2,7 @@ import React, { Component} from 'react';
 import {LotteryCommon} from '../components/common';
 import Game from '../components/game';
 import "./mmc.scss"
-import {Icon} from 'antd'
+import  Icon from 'antd/lib/icon';
 class Mmc extends Component {
 
   constructor(props) {

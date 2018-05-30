@@ -1,3 +1,580 @@
-.xy01{
-  color:red;
+.home {
+  section {
+    background: #fff;
+    margin-bottom: 0.3125rem;
+    h3 {
+      height:0.983125rem;
+      line-height: 0.703125rem;
+      border-bottom: 1px solid #d2d2d2;
+      padding:0.128rem 0.4375rem;
+      font-size: 0.375rem;
+      text-align: right;
+      span {
+        float: left;
+      }
+      a {
+        color: #303030;
+      }
+    }
+  }
+  .banner {
+    height: 3.4375rem;
+    >.slider.am-carousel{
+      height: 100%!important;
+      .slider-frame{
+        height: 100%!important;
+      }
+    }
+    img {
+      width: 10.0rem;
+      height: 3.4375rem;
+    }
+  }
+
+  /* 公告 */
+  .marquee {
+    position: relative;
+    /* height: 50px; */
+    height: 0.78125rem;
+    width: 100%;
+    border-top: 1px solid #f0f0f1;
+    border-bottom: 1px solid #bebebe;
+    overflow: hidden;
+
+    i {
+      background: url("../../../img/home/notice.png") 0 0 no-repeat;
+      background-size: 100%;
+      position: absolute;
+      display: block;
+      width: 0.53125rem;
+      height: 0.46875rem;
+      left: 0.3125rem;
+      top: 0.12rem;
+    }
+
+    p {
+      position: absolute;
+      line-height: 0.7rem;
+      left: 1.09375rem;
+      right: 0;
+      color: #838793;
+      font-size: 0.34375rem;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: marquee 10s linear infinite;
+      @keyframes marquee {
+        0% { text-indent: 0; }
+        100% { text-indent: -150%; }
+      }
+    }
+  }
+
+  .fast-link {
+    padding: 0.234375rem 0 0.234375rem;
+    text-align: center;
+    a {
+      display: inline-block;
+      /* width: 120px; */
+      width: 2.295rem;
+      font-size: 0.375rem;
+
+      &.btn-deposit i {
+        background-image: url("../../../img/home/btn_deposit.png");
+      }
+      &.btn-withdrawal i {
+        background-image: url("../../../img/home/btn_withdrawal.png");
+      }
+      &.btn-wallet i {
+        background-image: url("../../../img/home/Sports.png");
+      }
+      &.btn-trend i {
+        background-image: url("../../../img/home/btn_trend.png");
+      }
+      &.btn-service i {
+        background-image: url("../../../img/home/btn_service.png");
+      }
+      &.btn-login i{
+        background-image: url("../../../img/home/btn_login.png");
+      }
+      &.btn_registered i{
+        background-image: url("../../../img/home/btn_registered.png");
+      }
+      &.btn_egame i{
+        background-image: url("../../../img/home/zhuan.png");
+      }
+
+
+
+      img{
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        display: block;
+        width: 1.25rem;
+        height: 1.25rem;
+        margin: 0 auto 0.15625rem;
+      }
+      i {
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        display: block;
+        width: 1.25rem;
+        height: 1.25rem;
+        margin: 0 auto 0.15625rem;
+      }
+    }
+  }
+
+  /* 走势 */
+  .trend {
+    height: 2.5rem;
+  }
+
+  /* 我的最爱 */
+  .favorite {
+    h3 i {
+      display: block;
+      background: url("../../../img/home/setting.png") 0 0 no-repeat;
+      background-size: 100%;
+      width: 0.4375rem;
+      height: 0.4375rem;
+      margin-top: 0.125rem;
+      float: right;
+    }
+    ul {
+      padding: 0.078125rem 0 0.234375rem;
+      li {
+        margin-top: 0.15625rem;
+        font-size: 0;
+        text-align: center;
+        i {
+          display: inline-block;
+          width: 1.5625rem;
+          height: 1.5625rem;
+          margin: 0 0.375rem;
+          vertical-align: middle;
+          &.i-plus {
+            background: #e5e5e5;
+            line-height: 130%;
+            text-align: center;
+            font-size: 1.0rem;
+            color: #838793;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+  .favorite2{
+    ul{
+      overflow: hidden;
+      li{
+        width:25%;
+        float:left;
+      }
+    }
+  }
+  /* 最新开奖 */
+  .latest {
+    .container{
+      position:fixed;
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    .box {
+      padding-right: 0.5rem;
+      text-align: right;
+      position: relative;
+      .lt-select {
+        padding: 0.1875rem 0.26875rem 0.3125rem;
+        text-align: center;
+        .lt-icon {
+          display: block;
+          width: 1.40625rem;
+          height: 1.40625rem;
+          margin: 0 auto 0.078125rem;
+        }
+        span {
+          font-size: 0.375rem;
+        }
+      }
+      .nums {
+        margin: 0.25rem 0 0.3125rem;
+        font-size: 0;
+        i {
+          background: #d22018;
+          display: inline-block;
+          width: 0.625rem;
+          height: 0.625rem;
+          line-height: 0.625rem;
+          margin-left: 0.046875rem;
+          border-radius: 50%;
+          color: #fff;
+          font-size: 0.34375rem;
+          text-align: center;
+          font-style: normal;
+        }
+      }
+      .issue {
+        font-size: 0.3125rem;
+      }
+      .amount {
+        font-size: 0.375rem;
+        span {
+          color: #d22018;
+        }
+      }
+      p.default{
+        border:1px solid #ddd;
+        border-radius: 0.1rem;
+        width: 2.6rem;
+        font-size: 0.3rem;
+        padding:0.05rem 0.3rem 0.05rem 0;
+        position: relative;
+        &:after{
+          content: '';
+          position: absolute;
+          border-left: 0.15rem solid transparent;
+          border-right: 0.15rem solid transparent;
+          border-top: 0.15rem solid #d22018;
+          top: 0.25rem;
+          right: 0.1rem;
+          margin-left: 0.1rem;
+        }
+      }
+      //最新开奖
+      .latestLottery{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        border: 1px solid #ddd;
+        height: 7rem;
+        overflow-y: scroll;
+        background: #fff;
+        z-index: 9;
+        width: 3rem;
+        border-radius: 0.2rem;
+
+        li{
+          border-bottom: 1px solid #ddd;
+          text-align: center;
+          height:0.8rem;
+          line-height: 0.8rem;
+        }
+      }
+
+    }
+  }
+
+  /* 热门彩种 */
+  .popular {
+    ul {
+      padding: 0.234375rem 0.3rem 0;
+      li {
+        background: #f2f2f2;
+        margin-bottom: 0.3125rem;
+        padding-bottom: 0.234375rem;
+        border: 1px solid #f1f1f2;
+        border-radius: 0.15625rem;
+        .lt-name {
+          width: 2.5rem;
+          text-align: center;
+          .lt-icon {
+            display: block;
+            width: 1.875rem;
+            height: 1.875rem;
+            margin: 0.3825rem  auto 0.234375rem;
+          }
+          span {
+            font-size: 0.375rem;
+          }
+        }
+        .lt-info {
+          width: 6.5rem;
+          dl {
+            padding-top: 0.15625rem;
+            dd {
+              font-size: 0;
+              &:first-child {
+                border-bottom: 1px solid #d7d7d7;
+              }
+              span {
+                display: inline-block;
+                width: 45%;
+                padding: 0.078125rem 0 0.078125rem 0.15625rem;
+                font-size: 0.34375rem;
+                &:first-child {
+                  width: 55%;
+                }
+                em {
+                  font-style: normal;
+                  color: #d22018;
+                }
+              }
+              .issue{
+                color: #303030;
+              }
+            }
+          }
+          .bottom {
+            .cvs {
+              // background: #ea6100;
+              display: inline-block;
+              margin: 0 0.390625rem;
+              width: 1.40625rem;
+              height: 1.40625rem;
+              // border-radius: 50%;
+              // vertical-align: middle;
+            }
+            .rate {
+              display: inline-block;
+              text-align: center;
+              vertical-align: middle;
+            }
+            .btn-go {
+              background: #d22018;
+              display: inline-block;
+              width: 2.109375rem;
+              height: 1.09375rem;
+              line-height: 1.09375rem;
+              margin-left: 0.9375rem;
+              color: #fff;
+              font-size: 0.40625rem;
+              text-align: center;
+              border-radius: 8px;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* 猜你喜欢 */
+  .like {
+    ul {
+      font-size: 0;
+      text-align: center;
+      li {
+        display: inline-block;
+        margin: 0.3125rem;
+        i {
+          width: 1.5625rem;
+          height: 1.5625rem;
+        }
+      }
+    }
+  }
+}
+.navbar .navbar-right{
+  .set{
+    font-size: 0.4375rem;
+    margin-right: 0.4rem;
+    color: #fff;
+    position: relative;
+    top: 0.175rem;
+  }
+}
+/*弹窗广告*/
+.welcome_page{
+  .ant-modal-close-x{
+    color: aliceblue;
+  }
+  img{
+    width:100%;
+  }
+  .ant-modal-content{
+    background-color: rgba(0,0,0,0);
+    box-shadow:none!important;
+  }
+}
+.welcome{
+  .ant-modal-header{
+    background: #d22018!important;
+  };
+  .ant-modal-body{
+    max-height: 250px;
+    overflow: scroll;
+  }
+  .ant-modal-title{
+    color: #ecf6fd !important;
+    h2.info{
+      text-align: center;
+      color:#fff;
+    }
+  }
+}
+//轮播广告
+.noticeList{
+  p:nth-child(1){
+    max-height: 200px;
+    margin-top: 2px;
+    overflow: scroll;
+  }
+  .am-notice-bar-marquee{
+    padding-left: 100px;
+  }
+  .am-carousel-wrap-dot > span{
+    position:relative;
+    top:.34375rem;
+  }
+}
+.marquee{
+  background: white;
+}
+//我的最爱
+.favorite1{
+  ul{
+    overflow: hidden;
+    min-height: 2.1rem;
+    li{
+      width:25%;
+      float:left;
+    }
+  }
+}
+//公告相关
+.openInfo{
+  .ant-modal-content{
+    .ant-modal-body{
+      .slider{
+        .slider-frame{
+          .slider-list{
+            .slider-slide{
+              min-height: 5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  margin-top: -35px!important;
+  .slider-list{
+    max-height:200px;
+  }
+  .slider-slide{
+    max-height: 200px;
+    overflow: scroll;
+  }
+  .ant-modal-title{
+    text-align: center;
+    font-weight: bold;
+  }
+  .ant-modal-footer{
+    text-align: center;
+    button:nth-child(1).ant-btn-lg{
+      display: none;
+    }
+  }
+}
+.info>p{
+  word-break:break-all;
+}
+.noticeBar{
+  .am-notice-bar-marquee{
+    padding-left: 300px;
+    padding-right: 350px;
+  }
+}
+
+.ant-modal-content {
+  .ant-modal-body {
+    .ant-confirm-body-wrapper {
+      .ant-confirm-body {
+        .ant-confirm-content {
+          font-size: 0.4rem;
+        }
+      }
+    }
+  }
+}
+
+//热门彩票
+.credit{
+  p{
+    font-size: 0.5rem;
+    background-color: #fea130;
+    b{
+      font-size: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      background: red;
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      text-align: center;
+      color:#fff;
+      margin-left: .2rem;
+      margin-right: 0.3rem;
+    }
+  }
+  list-style:none;
+  margin-bottom: 0.5rem;
+
+  li{
+    width: 27%;
+    height: 2.7rem;
+    background: #f4f4f4;
+    border-radius: 10px;
+    margin-left: 0.43rem;
+    margin-top: 0.4rem;
+    border: 1px solid #e6e6e6;
+    display: inline-block;
+    position: relative;
+    box-shadow: 3px 3px 3px rgba(85,85,85,0.35) ;
+    img{
+      width: 1.66rem;
+      height: 1.66rem;
+      margin-left: 0.5rem;
+      margin-top: 0.2rem;
+    }
+    span{
+      text-align: center;
+      font-size: 0.4rem;
+      color: #333;
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+//登陆后弹窗样式
+.sign-wrapper{
+  .ant-modal-header{
+    background: #d22018;
+    .ant-modal-title{
+      color: #fff;
+    }
+  }
+  .ant-modal-footer{
+    .ant-btn{
+      background: #d22018;
+      border-color: #d22018;
+    }
+  }
+  .ant-modal-body{
+    min-height: 5rem;
+  }
+  .am-carousel-wrap-dot> span{
+    position: relative;
+    top: 0.34375rem;
+  }
+  .slider-list{
+    min-height: 198px;
+  }
+
+  .am-carousel-wrap-dot> span{
+    position: relative;
+    top: 0.54375rem;
+  }
+
 }

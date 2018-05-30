@@ -54,6 +54,85 @@
     }
   }
 
+  .btns {
+    background: #fff;
+    padding: 0 0.3125rem;
+
+    .row {
+      padding: 0.65625rem 0 0.3125rem;
+
+      &:first-child {
+        border-bottom: 1px solid #d5d5d5;
+      }
+
+      .col {
+        padding: 0 0.625rem;
+        text-align: center;
+
+        a {
+          display: block;
+        }
+        a:focus{
+          text-decoration: none;
+        }
+
+        &:first-child a {
+          margin-left: -0.3125rem;
+        }
+
+        &:last-child a {
+          margin-right: -0.3125rem;
+        }
+      }
+    }
+
+    i {
+      display: block;
+      background:center center no-repeat;
+      width: 0.65625rem;
+      height: 0.65625rem;
+      margin: 0 auto 0.125rem;
+
+      &.icon-deposit {
+        background-image: url("../img/user/icon_deposit.png");
+      }
+
+      &.icon-withdrawal {
+        background-image: url("../img/user/icon_withdrawal.png");
+      }
+
+      &.icon-orders {
+        background-image: url("../img/user/icon_orders.png");
+        width: 0.5625rem;
+      }
+
+      &.icon-account {
+        background-image: url("../img/user/icon_account.png");
+        width: 0.5625rem;
+      }
+
+      &.icon-team {
+        background-image: url("../img/user/icon_team.png");
+        width: 0.890625rem;
+      }
+
+      &.icon-message {
+        background-image: url("../img/user/icon_message.png");
+        width: 0.6875rem;
+      }
+
+      &.icon-message_red {
+        background-image: url("../img/user/icon_message_red.png");
+        width: 0.6875rem;
+      }
+      background-size: 100% 100%;
+    }
+
+    span {
+      color: #303030;
+      font-size: 0.3125rem;
+    }
+  }
 
   .list {
     background: #f2f2f2;
@@ -120,6 +199,7 @@
     margin-right: 0.5rem;
     background-size: 73%;
   }
+
   .icon_touxiang {
     background: url("../img/login/icon_touxiang.png") no-repeat;
     background-size: 100%;
@@ -128,6 +208,7 @@
     width: 1.7rem;
     border-radius: 0.9rem;
   }
+
   .arrow_right_withe {
     background: url("../img/global/arrow_right_withe.png") no-repeat;
     height: 0.8rem;

@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+
 import Api from '../api';
 
 export default class ShowMoney extends Component {

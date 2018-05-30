@@ -8,6 +8,7 @@ export default class Footer extends Component {
             userWay:"",
           };
     }
+
     render() {
         const user = JSON.parse(sessionStorage.getItem("user"));
         let userWay = "";

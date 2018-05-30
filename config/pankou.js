@@ -3,11 +3,11 @@
 const PANKOU = {
     "00":{
         "pankou":"00",
-        "title":"xy0",
-        "api_dev":"http://192.168.25.52:83/?",
+        "title":"xy0测试title",
+        "api_dev":"https://api.xy0test.com/?",
         "api_test":"https://api.xy0test.com/?",
         "api_online":"https://api.xy0test.com/?",
-        "PUBLIC_URL":"/",
+        "PUBLIC_URL":"https://static-pc.kst001.com/xy00000/",
     },
     "01":{
         "pankou":"01",
@@ -16,13 +16,15 @@ const PANKOU = {
         "api_test":"https://api.xy1test.com/?",
         "api_online":"https://vov1dd.jaxfangchan.com/?",
         "PUBLIC_URL":"https://static-pc.kst001.com/xy00001/",
-        "home":"../pages/home/01/home",
+        "home":"../pages/home/01/index",
+
     },
     "02":{
         "title":"Pankou2的title",
         "api_dev":"http://192.168.25.52:83/?",
         "api_test":"https://api.xy2test.com/?",
         "api_online":"https://xox2ff.dlxtdktv.com/?",
+        "home":"../pages/home/02/index",
     }
 }
 

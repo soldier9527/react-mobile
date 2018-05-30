@@ -1,5 +1,7 @@
 import React, { Component } from "react"
-import { PopupConfirm, Spin ,Icon} from 'antd';
+
+import Spin from 'antd/lib/spin';
+import  Icon from 'antd/lib/icon';
 class TouzhuCart extends Component {
     constructor(props) {
         super(props)

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router';
+import {withRouter} from 'react-router-dom'
 
-
- class Navbar extends Component {
+class Navbar extends Component {
     constructor(props) {
         super(props);
         this.state={
             displayDrop:"none",//默认隐藏
+
             navbarRight:null,//右侧渲染
         }
     }
@@ -28,6 +28,7 @@ import { withRouter } from 'react-router';
     }
     back(){
         if(this.props.back==="back"){//各个页面自己设置回退，
+            // console.log(this.props.history)
             this.props.history.goBack()
         }else{
             this.props.history.push(this.props.back)

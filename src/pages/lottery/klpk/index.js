@@ -2,7 +2,7 @@ import React, { Component} from "react"
 import '../../../css/klpk.scss';
 import {LotteryCommon} from '../components/common';
 import Game from '../components/game';
-import {Icon} from 'antd'
+import  Icon from 'antd/lib/icon';
 function replaceT(item){
     return item.replace(/T/g,"10");
 }

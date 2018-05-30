@@ -1,12 +1,12 @@
 import React, { Component } from "react"
 import './ssc.scss';
 import {LotteryCommon} from '../components/common';
-import {Icon} from 'antd'
+import  Icon from 'antd/lib/icon';
 
 import Game from '../components/game';
-import {Modal} from "antd/lib/index";
+
 import Calc from "../components/calc";
-import { Checkbox } from 'antd';
+import  Checkbox from 'antd/lib/checkbox';
 const CheckboxGroup = Checkbox.Group;
 
 

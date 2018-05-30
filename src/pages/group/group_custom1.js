@@ -2,10 +2,10 @@ import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import Navbar from '../common/navbar';
 import Api from '../api';
-import {DatePicker,Modal} from 'antd';
-import { PullToRefresh } from 'antd-mobile';
+import Modal from 'antd/lib/modal';
+import { PullToRefresh ,SearchBar ,Toast} from 'antd-mobile';
 import {Link} from 'react-router-dom';
-
+import 'antd-mobile/lib/search-bar/style/css';//加载选择样式
 export default class Group_custom1 extends Component {
     constructor(props) {
         super(props);
@@ -20,6 +20,7 @@ export default class Group_custom1 extends Component {
             height: document.documentElement.clientHeight,
             page: 1,
         }
+        this.search = this.search.bind(this);
     }
 
     getMemberData() {
@@ -63,6 +64,15 @@ export default class Group_custom1 extends Component {
             height: hei - itemHei,
         }), 0);
     }
+    search(value){
+        Api("c=user&a=childList&u_name="+value+"&remind=0", null, (res) => {
+            if(res.errno > 0){
+                Toast.info('抱歉!没有符合的用户名...', 2, null, false)
+            }else{
+                this.setState({memberDatas: res.data.show_datas,})
+            }
+        });
+    }
 
   render(){
     const { visible, confirmLoading, ModalText } = this.state;
@@ -92,6 +102,7 @@ export default class Group_custom1 extends Component {
     return (
       <div>
           <Navbar title="会员管理" back="/group" />
+
       <div className="teamlist1" style={{position:"fixed"}}>
 
 
@@ -104,6 +115,7 @@ export default class Group_custom1 extends Component {
               <li>最近登录</li>
             </ul>
           </div>
+             <SearchBar placeholder="请输入用户名进行搜索" maxLength={16} onSubmit={(value)=>this.search(value)} onClear={this.getMemberData.bind(this)}/>
         <PullToRefresh
         ref={el => this.ptr = el}
         style={{

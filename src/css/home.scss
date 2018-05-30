@@ -99,11 +99,6 @@
       &.btn_registered i{
         background-image: url("../img/home/btn_registered.png");
       }
-      &.btn_egame i{
-        background-image: url("../img/home/zhuan.png");
-      }
-
-
 
       img{
         background-position: 0 0;
@@ -177,7 +172,7 @@
   }
   /* 最新开奖 */
   .latest {
-    .container-wrap{
+    .container{
       position:fixed;
       top:0;
       bottom:0;
@@ -463,74 +458,11 @@
   }
 }
 .info>p{
-  word-break:break-all;
+  word-break:break-word;
 }
 .noticeBar{
   .am-notice-bar-marquee{
     padding-left: 300px;
     padding-right: 350px;
-  }
-}
-
-.ant-modal-content {
-  .ant-modal-body {
-    .ant-confirm-body-wrapper {
-      .ant-confirm-body {
-        .ant-confirm-content {
-          font-size: 0.4rem;
-        }
-      }
-    }
-  }
-}
-
-
-//热门彩票
-.credit{
-  p{
-    font-size: 0.5rem;
-    background-color: #fea130;
-    b{
-      font-size: 0.6rem;
-      border: 1px solid #ccc;
-      border-radius: 50%;
-      background: red;
-      display: inline-block;
-      width: 1rem;
-      height: 1rem;
-      text-align: center;
-      color:#fff;
-      margin-left: .2rem;
-      margin-right: 0.3rem;
-    }
-  }
-  list-style:none;
-  margin-bottom: 0.5rem;
-
-  li{
-    width: 27%;
-    height: 2.7rem;
-    background: #f4f4f4;
-    border-radius: 10px;
-    margin-left: 0.43rem;
-    margin-top: 0.4rem;
-    border: 1px solid #e6e6e6;
-    display: inline-block;
-    position: relative;
-    box-shadow: 3px 3px 3px rgba(85,85,85,0.35) ;
-    img{
-      width: 1.66rem;
-      height: 1.66rem;
-      margin-left: 0.5rem;
-      margin-top: 0.2rem;
-    }
-    span{
-      text-align: center;
-      font-size: 0.4rem;
-      color: #333;
-      display: inline-block;
-      width: 100%;
-      margin-bottom: 0.5rem;
-    }
   }
 }

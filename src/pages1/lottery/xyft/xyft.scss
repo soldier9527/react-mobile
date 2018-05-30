@@ -1,0 +1,19 @@
+//样式彩种wrapper,别用important
+
+.pk10-wrapper{
+  .pk10-UnderBall{
+    .ch_num_box .ch_num_show li {
+      button{
+        line-height: 0.625rem;
+
+        font-size: 0.4rem;
+      }
+      label{
+          padding-left: 0 !important;
+        display:block;
+        text-align:center;
+        color: #d22018;
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import {LotteryCommon} from '../components/common';
 import Game from '../components/game';
 import './xyft.scss';
-import {Icon} from 'antd'
+import  Icon from 'antd/lib/icon';
 class Xyft extends Component {
 
 

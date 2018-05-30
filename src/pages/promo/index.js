@@ -1,7 +1,6 @@
 
 import React, { Component, PropTypes } from 'react'
 import {Link} from 'react-router-dom';
-import { Carousel, Icon, Row, Col } from 'antd';
 import Navbar from '../common/navbar';
 import Footer from '../common/footer';
 import Api from '../api';

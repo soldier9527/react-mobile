@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from '../../common/navbar';
-import {hashHistory} from 'react-router-dom';
-import { PopupConfirm, message} from 'antd';
+import  message from 'antd/lib/message';
 import Api from '../../api';
 import MaskLoading from '../../common/maskLoading';
 import Trace from "./trace"
@@ -353,7 +352,7 @@ export default class TraceSingle extends Component {
             MaskLoading(false);
             if(res.errno === 0) {
                 message.success('购买成功', 2);
-                hashHistory.goBack();
+                this.props.history.goBack();
             } else {
                 message.error(res.msg);
             }

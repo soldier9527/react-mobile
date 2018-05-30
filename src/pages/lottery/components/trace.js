@@ -1,6 +1,7 @@
 import React, { Component } from "react"
-import { PopupConfirm,  Select,  Checkbox } from 'antd';
 
+import  Select from 'antd/lib/select';
+import  Checkbox from 'antd/lib/checkbox';
 const Option = Select.Option;
 class Trace extends Component {
     constructor(props) {

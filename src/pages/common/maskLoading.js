@@ -13,6 +13,7 @@ export default function MaskLoading(time) {
         setTimeout(()=>{
             Toast.hide();
         },500)
+
     }
 
 }

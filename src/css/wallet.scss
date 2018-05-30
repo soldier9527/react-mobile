@@ -1,18 +1,19 @@
 .wallet {
   background: #f2f2f2;
+  height: 17rem;
   position: relative;
   top: 1rem;
 
   .blance {
+    padding: 0.80rem;
     position: relative;
-    background: #a40000;
+    background: #d22018;
     color: #fff;
     font-size: 0.4rem;
-    height: 1.5rem;
-    line-height: 1.5rem;
-    padding-left: 0.3rem;
+    padding-bottom: 0.2rem;
+
     .bigsize {
-      font-size: 0.4rem;
+      font-size: 2rem;
     }
   }
 
@@ -32,7 +33,7 @@
             height: 0.65rem;
             width: 0.5rem;
             display: inline-block;
-            margin-top: 0.4rem;
+            margin-top: 0.5rem;
           }
 
           span {
@@ -43,18 +44,15 @@
 
         .lt-inegame {
           margin-left: 0.5rem;
-          width: 1rem;
-          height: 0.9rem;
+          width: 0.85rem;
+          height: 0.7rem;
         }
         .lt-outegame {
           margin-left: 0.5rem;
-          width: 1rem;
-          height: 0.9rem;
+          width: 0.85rem;
+          height: 0.7rem;
         }
       }
     }
   }
-}
-.walletNot{
-  display: none;
 }

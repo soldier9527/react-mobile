@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import {LotteryCommon} from '../components/common';
 import Game from '../components/game';
-import {Icon} from 'antd'
+import  Icon from 'antd/lib/icon';
 import './lucky28.scss';
 
 class Xy28 extends Component {

@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { PopupConfirm, message} from 'antd';
+import  message from 'antd/lib/message';
 
 class Utils extends Component {
     constructor(state) {

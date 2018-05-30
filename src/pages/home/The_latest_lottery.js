@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-// import {Select} from 'antd';
+
 import LotteryNum from '../open/lotteryNum';
 
 export default class TheLatestLottery extends Component {
@@ -69,7 +69,7 @@ export default class TheLatestLottery extends Component {
                             <p className="default" onClick={(e) => {this.showList(e);}}>
                               {item.lastIssueInfo.cname}
                             </p>
-                             {this.state.show?<div className="container-wrap">
+                             {this.state.show?<div className="container">
                                 <ul className="latestLottery">
                                   {list}
                                 </ul>

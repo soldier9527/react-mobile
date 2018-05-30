@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { PopupConfirm,  Icon} from 'antd';
+import  Icon from 'antd/lib/icon';
 import LotteryNum from '../../open/lotteryNum';
 import LotteryNameMap from '../../lottery_name_map';
-import { Link } from 'react-router-dom';
 //头部信息展示
 export default class LotteryHead extends Component {
     constructor(props) {
@@ -55,21 +54,70 @@ export default class LotteryHead extends Component {
         }
 
     }
+
+    //该方法计算是否是斗牛
+     calc(arr){
+        let content="";
+        let hasNiu =false;
+        for(let a=0,b=1,c=2;a<5&&b<5&&c<5&&!hasNiu;){
+            var count = arr[a]+arr[b]+arr[c];
+            if(count % 10 === 0){
+                let str =arr[a]+","+arr[b]+","+arr[c]
+                arr.splice(c,1);
+                arr.splice(b,1);
+                arr.splice(a,1);
+                if((arr[0]+arr[1])==10||(arr[0]+arr[1])==0){
+                    content="牛牛"
+                }else if((arr[0]+arr[1])<10){
+                    content="牛"+(arr[0]+arr[1])
+                }else if((arr[0]+arr[1])>10){
+                    content="牛"+((arr[0]+arr[1])-10)
+                }
+                hasNiu = true;
+            }else{
+                content="没牛";
+                if(c+1>=5){
+                    if(b+1>=4){
+                        a++;
+                        b=a+1;
+                        c=b+1;
+                    }else{
+                        b++;
+                        c=b+1
+                    }
+                }else{
+                    c++
+                }
+            }
+        }
+        return content
+    }
+
     analysisSSC(code,type){
-        if(code){
+        if(code) {
             let codeArr = code.split("");
             let count = 0;
-            codeArr.map((item,i)=>{
+            let isTiger = '';
+            codeArr.map((item, i) => {
                 count += parseInt(item);
+                codeArr[i]=parseInt(item)
             });
-            let isBig = count>22.5?"大":"小";
-            let isEven = count%2===1?"单":"双";
+            let isBig = count > 22.5 ? "大" : "小";
+            let isEven = count % 2 === 1 ? "单" : "双";
+            if (codeArr[0] > codeArr[4]) {
+                 isTiger = "龙"
+            } else if (codeArr[0] < codeArr[4]) {
+                isTiger = "虎"
+            } else {
+                 isTiger = "和"
+            }
             if(type==="array"){
-                return <div className="inline">[和值：{isBig}/{isEven}]</div>
+                return <div className="inline">[和值：{count}/{isBig}/{isEven}]</div>
             }else {
-                return <div className="right">
-                    <span>{isBig}</span>
-                    <span>{isEven}</span>
+                return <div className="right ssc-right">
+                    <span>{count}</span>
+                    <span>{isTiger}</span>
+                    <span>{this.calc(codeArr)}</span>
                 </div>
             }
         }else{
@@ -245,9 +293,10 @@ export default class LotteryHead extends Component {
             renderoPenIssues.push(<li key={-1}>
                 <span>期号</span>
                 <span className="open-title">开奖号码</span>
-                <div className="right">
-                    <span>和值大小</span>
-                    <span>和值单双</span>
+                <div className="right ssc-right">
+                    <span>和值</span>
+                    <span>龙虎</span>
+                    <span>斗牛</span>
                 </div>
 
             </li>)

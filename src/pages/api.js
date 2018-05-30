@@ -1,7 +1,7 @@
 import 'whatwg-fetch';
 import {JSEncrypt} from './jsencrypt';
 // import {hashHistory} from 'react-router-dom';
-import { Toast} from 'antd-mobile';
+import {Toast} from 'antd-mobile';
 import CryptoJS from 'crypto-js';// 定义加/解密的
 import config from './config';
 

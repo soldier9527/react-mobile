@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import Navbar from "../common/navbar";
 import '../../css/agency_explain.scss';
-import {Icon} from 'antd'
+import  Icon from 'antd/lib/icon';
 
 export default class Agency_explain extends Component{
     constructor(props){
