@@ -274,6 +274,7 @@ export let LotteryCommon = ComposeComponent => class extends ComposeComponent {
                 // sessionStorage.setItem(this.state.lottery_id+game_key,JSON.stringify(data.methods));
                 let methods = this.combineData(data.methods);
                 data.methods = methods;
+                console.log(data.methods)
                 this.transMethods(data.methods);
                 let sliderConfig=null;
                 //当前游戏最高最低返点

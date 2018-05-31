@@ -77,13 +77,18 @@ function RSAapi(path, req, callback,isFirstTime=true) {
 
     _fetch(fetch(request),flag?3000:15000).then(res => {
         res.text().then(d => {
-            let data = JSON.parse(d);
-            if (!data.errno) {
-                let tokenData = decryptedFunc(data.data, key);
-                token = JSON.parse(tokenData).token;
-                sessionStorage.setItem("token",JSON.stringify(token));
-                callback();
+            try{
+                let data = JSON.parse(d);
+                if (!data.errno) {
+                    let tokenData = decryptedFunc(data.data, key);
+                    token = JSON.parse(tokenData).token;
+                    sessionStorage.setItem("token",JSON.stringify(token));
+                    callback();
+                }
+            }catch(err){
+                Toast.info('数据解析失败', 2);
             }
+
         });
     }, function(err) {
         init = 0;
@@ -269,7 +274,7 @@ function getSession(type) {
     let countDown = sessionStorage.getItem("countDown");
     let now = new Date().getTime();
     //有请求不成功，半小时之内都用api/?
-    if(countDown&&(now-countDown<20*60*1000)){
+    if(countDown&&(now-countDown<20*60*100000000000)){
         return false;
     }else{
         return type;

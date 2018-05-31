@@ -21,9 +21,13 @@ export default class Promo extends Component {
     getData(){
         Api("c=default&a=activityList",null,(res)=>{
             let activityList=res.data;
-            this.setState({
-                activityList:activityList
-            })
+            if(activityList){
+                this.setState({
+                    activityList:activityList
+                })
+            }
+
+
         });
     }
 render(){
