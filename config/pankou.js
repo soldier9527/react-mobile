@@ -7,7 +7,7 @@ const PANKOU = {
         "api_dev":"https://api.xy0test.com/?",
         "api_test":"https://api.xy0test.com/?",
         "api_online":"https://api.xy0test.com/?",
-        "PUBLIC_URL":"https://static-pc.kst001.com/xy00000/",
+        "PUBLIC_URL":"/",
     },
     "01":{
         "pankou":"01",

@@ -8,17 +8,20 @@ const FormItem = Form.Item;
 
 
 export default class SetUserInfo extends Component {
+
     constructor(props) {
         super(props);
+        console.log(props.history.location)
+        let param = props.history.location.search?new URLSearchParams(props.history.location.search).get("param"):"nick_name"
         this.state = {
-            param:this.props.location.query.param,
+            param:param,
             title:"",
             form:""
         };
     }
     componentWillMount() {
         if (!sessionStorage.getItem("user")) {
-            this.props.history.push("login");
+            this.props.history.push("/login");
         };
         this.setTitle(this.state.param);
     }
@@ -86,7 +89,7 @@ class SetNickNameForm extends Component {
                             duration: 1,
                         });
                         message.success("设置成功",2);
-                        this.props.history.push("user_state");
+                        this.props.history.push("/user_state");
                     }
                 });
 
@@ -151,7 +154,7 @@ class SetMobileForm extends Component {
                             duration: 1,
                         });
                         message.success('设置成功',2);
-                        this.props.history.push("user_state");
+                        this.props.history.push("/user_state");
                     }
                 });
 
@@ -215,7 +218,7 @@ class SetRealNameForm extends Component {
                             duration: 1,
                         });
                         message.success('设置成功',2);
-                        this.props.history.push("user_state");
+                        this.props.history.push("/user_state");
                     }
                 });
 

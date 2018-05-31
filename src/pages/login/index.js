@@ -67,7 +67,7 @@ class NormalLoginForm extends React.Component {
             content: '找回密码，请联系客服',
         });
         setTimeout(()=> {
-            this.props.history.push("getService");
+            this.props.history.push("/getService");
         }, 2000);
     }
 
@@ -144,13 +144,13 @@ class NormalLoginForm extends React.Component {
                                     localStorage.setItem('username',JSON.stringify(e.data.username));
                                     localStorage.setItem('user',JSON.stringify(e.data));
                                     localStorage.setItem('checked',JSON.stringify(this.state.checked));
-                                    this.props.history.push("home");
+                                    this.props.history.push("/home");
                                 }else if(this.state.isRemember===false){
                                     localStorage.removeItem('sid');
                                     localStorage.removeItem('user_id');
                                     localStorage.removeItem('username');
                                     localStorage.removeItem('checked');
-                                    this.props.history.push("home");
+                                    this.props.history.push("/home");
                                 }
                             }else{
                                 this.getCode();
@@ -169,7 +169,7 @@ class NormalLoginForm extends React.Component {
                             if(res.errno===0){
                                 MaskLoading(false);
                                 sessionStorage.user = JSON.stringify(user);
-                                this.props.history.push('home')
+                                this.props.history.push('/home')
                             }
                         })
                 }

@@ -10,7 +10,7 @@ export default class Help extends Component {
     render() {
         return (
           <div>
-             <Navbar title="使用帮助" back="setting" />
+             <Navbar title="使用帮助" back="/setting" />
              <div className="help">
                 <ul>
                     <li>

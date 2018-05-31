@@ -22,13 +22,12 @@ export let LotteryCommon = ComposeComponent => class extends ComposeComponent {
     static displayName = 'LotteryCommon';
     constructor(props) {
         super(props);
-        // let type = props.location.query.type;
-        // if([26].indexOf(parseInt(props.params.ltCode))!==-1){
-        //     type="x"
-        // }else if([15].indexOf(parseInt(props.params.ltCode))!==-1){
-        //     type="g"
-        // }
-        let type = ""
+        let type = props.history.location.search&&new URLSearchParams(props.history.location.search).get('type')
+        if([26].indexOf(parseInt(this.props.match.params.id))!==-1){
+            type="x"
+        }else if([15].indexOf(parseInt(this.props.match.params.id))!==-1){
+            type="g"
+        }
         this.state = {
             lottery_id:this.props.match.params.id,
             // lottery_id:19,
@@ -158,7 +157,7 @@ export let LotteryCommon = ComposeComponent => class extends ComposeComponent {
 
       }else{
           ShowMessage("请先登录","info");
-       this.props.history.push("login");
+        this.props.history.push("/login");
       }
 
     }
@@ -202,7 +201,7 @@ export let LotteryCommon = ComposeComponent => class extends ComposeComponent {
         }else if([15].indexOf(id) !== -1) {
             path = 'mmc';
         }
-        return path
+        return "/"+path
     }
     changeLottery(id){
         let lotteryId=`${id}`;
@@ -1434,17 +1433,17 @@ export let LotteryCommon = ComposeComponent => class extends ComposeComponent {
             <label onClick={(e)=>{this.toggleNavRight(e)}} ></label>
             {this.state.showNavbarRight?<ul className="lottery-operate">
                 <li>
-                    <Link to="account">
+                    <Link to="/account">
                         个人帐变
                     </Link>
                 </li>
                 <li>
-                    <Link to="order">
+                    <Link to="/order">
                         投注记录
                     </Link>
                 </li>
                 <li>
-                    <Link to={{pathname:"lotteryTrend",query:{id:this.state.lottery_id}}}>
+                    <Link to={{pathname:"/lotteryTrend",search:"?id="+this.state.lottery_id}}>
                         走势图
                     </Link>
                 </li>

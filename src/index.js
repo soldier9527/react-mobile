@@ -4,6 +4,7 @@ import PageRouter from './router';
 import registerServiceWorker from './registerServiceWorker';
 // import 'url-search-params-polyfill'; // URLSearchParams兼容
 import 'antd/lib/progress/style/css';
+import 'antd/lib/form/style/css';
 import 'antd/lib/modal/style/css';
 import 'antd/lib/message/style/css';
 import 'antd/lib/row/style/css';

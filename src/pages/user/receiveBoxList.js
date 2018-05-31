@@ -102,7 +102,7 @@ export default class ReceiveBoxList extends Component {
 					 })
 					  message.error('暂无未读消息',1,()=>{
 							setTimeout(()=>{
-			          this.props.history.push("information")
+			          this.props.history.push("/information")
 			        },300)
 						});
 				 }else{

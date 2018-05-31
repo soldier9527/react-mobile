@@ -74,7 +74,7 @@ export default class Group_member_change_level extends Component{
                         message.info(res.errstr);
                     }
                     setTimeout(()=>{
-                        this.props.history.push("group_custom1");
+                        this.props.history.push("/group_custom1");
                     },1000)
                 })
             },

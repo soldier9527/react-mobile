@@ -59,7 +59,7 @@ export default class ResetLoginPsd extends Component {
             content:'修改登录密码成功,点击确定后请重新登录',
             onOk(){
             sessionStorage.removeItem("user");
-            this.props.history.push("login");
+            this.props.history.push("/login");
           }
           })
         }else{

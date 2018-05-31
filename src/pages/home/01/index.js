@@ -440,13 +440,13 @@ export default class Home extends Component {
                 if(!this.state.card_num){
                     this.showModal();
                 }else{
-                    this.props.history.push("withdrawMoney")
+                    this.props.history.push("/withdrawMoney")
                 }
             })
         }else if(!this.state.card_num){
             this.showModal();
         } else {
-            this.props.history.push("withdrawMoney")
+            this.props.history.push("/withdrawMoney")
         }
 
 
@@ -466,7 +466,7 @@ export default class Home extends Component {
         this.setState({
             cardvisible: false,
         }, () => {
-            this.props.history.push("bankCardBind")
+            this.props.history.push("/bankCardBind")
         });
 
     };
@@ -474,7 +474,7 @@ export default class Home extends Component {
         this.setState({
             psdvisible: false,
         }, () => {
-            this.props.history.push("setpassword")
+            this.props.history.push("/setpassword")
         });
 
     };
@@ -566,7 +566,7 @@ export default class Home extends Component {
     isJumpEgame(){
         Api('c=egame&a=lobby&remind='+0,{},(res)=>{
             if(res.errno===0){
-                this.props.history.push('egame')
+                this.props.history.push('/egame')
             }else{
                 // message.config({
                 //     top: 20,
@@ -598,7 +598,7 @@ export default class Home extends Component {
                 }
             })
         }else {
-            this.props.history.push('login')
+            this.props.history.push('/login')
         }
     }
     //判断下载app====>因为每个盘口的地址不一样,同步之后需要手工修改一下

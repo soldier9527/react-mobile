@@ -297,13 +297,13 @@ export default class Home extends Component {
                 if(!this.state.card_num){
                     this.showModal();
                 }else{
-                    this.props.history.push("withdrawMoney")
+                    this.props.history.push("/withdrawMoney")
                 }
             })
         }else if(!this.state.card_num){
             this.showModal();
         } else {
-            this.props.history.push("withdrawMoney")
+            this.props.history.push("/withdrawMoney")
         }
 
 
@@ -323,7 +323,7 @@ export default class Home extends Component {
         this.setState({
             cardvisible: false,
         }, () => {
-            this.props.history.push("bankCardBind")
+            this.props.history.push("/bankCardBind")
         });
 
     };
@@ -331,7 +331,7 @@ export default class Home extends Component {
         this.setState({
             psdvisible: false,
         }, () => {
-            this.props.history.push("setpassword")
+            this.props.history.push("/setpassword")
         });
 
     };
@@ -649,7 +649,7 @@ export default class Home extends Component {
                     <section className="fast-link">
                         {this.state.user?<Link to="pay" className="btn-deposit"><i></i>充值</Link>:<Link to="login" className="btn-login"><i></i>登录</Link>}
                         {this.state.user?<a onClick={()=>{this.jumptoWithraw()}} className="btn-withdrawal"><i></i>提现</a>:<Link to="Register" className="btn_registered"><i></i>注册</Link>}
-                        <Link to={{pathname:"lotteryTrend",query:{id:1}}} className="btn-trend"><i></i>走势图</Link>
+                        <Link to={{pathname:"/lotteryTrend"}} className="btn-trend"><i></i>走势图</Link>
                         <Link  className="btn-service" to="getService"><i></i>在线客服</Link>
                     </section>
                     <section className="popular">

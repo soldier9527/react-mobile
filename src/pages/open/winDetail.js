@@ -36,7 +36,7 @@ export default class WinDetail extends Component {
 
         return (
             <div className="open-wrap">
-                <Navbar title={this.state.name} back={"open/history/"+this.state.item.id} />
+                <Navbar title={this.state.name} back={"/open/history/"+this.state.item.id} />
                 <div className="win-detail-wrap">
                     <div className="win-detail-head">
                         <h3>{this.state.name}</h3>

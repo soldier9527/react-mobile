@@ -23,7 +23,7 @@ export default class Ours extends Component {
   let html=this.state.data;
 		return (
 			<div>
-         <Navbar  title="关于我们" back="setting"/>
+         <Navbar  title="关于我们" back="/setting"/>
          <div className="ours" dangerouslySetInnerHTML={{__html: html}}></div>
 			</div>
 		);

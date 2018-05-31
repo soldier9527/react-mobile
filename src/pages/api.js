@@ -169,7 +169,7 @@ function AESApi(path, req, callback,isFirstTime=true) {
                     localStorage.removeItem('user_id');
                     localStorage.removeItem('username');
                     localStorage.removeItem('checked');
-                    // hashHistory.push('login');
+                    // hashHistory.push('/login');
                 }, 3000);
 
             } else if (d.errno === 99999) {

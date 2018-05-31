@@ -181,7 +181,7 @@ class RegistrationForm extends React.Component {
                             </div>),
                             onOk() {
                                 sessionStorage.user = JSON.stringify(res.data);
-                                this.props.history.push("home");
+                                this.props.history.push("/home");
                             },
                         });
                     } else {

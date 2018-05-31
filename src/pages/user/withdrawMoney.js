@@ -28,11 +28,11 @@ export default class WithDrawMoney extends Component {
 
 				if(res.errno === 7009){//未绑定银行卡
                     setTimeout(()=>{
-                        this.props.history.push("bankCardBind");
+                        this.props.history.push("/bankCardBind");
                     },1000)
 				}else{//未设置密码跳
                     setTimeout(()=>{
-                        this.props.history.push("setpassword");
+                        this.props.history.push("/setpassword");
                     },1000)
 				}
             }else{
@@ -80,7 +80,7 @@ export default class WithDrawMoney extends Component {
                 },(res)=>{});
 
                 message.success("您的提款订单已经成功提交",2);
-                this.props.history.push("user_login");
+                this.props.history.push("/user_login");
             }
         });
 

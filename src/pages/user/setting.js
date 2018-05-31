@@ -10,7 +10,7 @@ export default class Setting extends Component {
         let user=sessionStorage.getItem("user");
         return (
           <div>
-             <Navbar title="设置" back={user?"user_login":"user"}/>
+             <Navbar title="设置" back={user?"/user_login":"/user"}/>
              <div className="setting">
                 <ul>
                     <li><Link to="feedback"><i className="setting_icon_pen fl"></i><span>意见反馈</span><i className="arrow-right fr"></i></Link></li>

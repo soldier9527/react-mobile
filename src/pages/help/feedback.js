@@ -80,7 +80,7 @@ export default class Feedback extends Component {
         };
         return (
           <div>
-             <Navbar title="意见反馈" back="setting"/>
+             <Navbar title="意见反馈" back="/setting"/>
              <div onClick={this.request}><Link to={this.state.userMessage?"feedback":"login"}><span  className="top_right">提交</span></Link></div>
              <div className="feedback">
                 <form action="" method="">

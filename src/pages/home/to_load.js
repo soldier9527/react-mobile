@@ -9,7 +9,7 @@ export default class To_load extends Component{
     }
     componentDidMount() {
         this.timer = setTimeout(
-            () => { hashHistory.push("Guidance") },
+            () => { hashHistory.push("/Guidance") },
             3000
         );
         this.timer=setInterval (()=>{

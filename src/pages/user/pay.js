@@ -57,7 +57,7 @@ export default class Pay extends Component {
 
     //在线客服
     onlineService() {
-        this.props.history.push("getService");
+        this.props.history.push("/getService");
     }
 
     render() {
@@ -845,7 +845,7 @@ class ScanCodeForm extends Component {
                 MaskLoading(false);
                 if (res.errno === 0) {
                     this.props.history.push({
-                        pathname:"paydetail",
+                        pathname:"/paydetail",
                         query:{
                             img:res.data.img,
                             order_number: res.data.order_number,

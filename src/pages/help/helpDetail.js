@@ -41,7 +41,7 @@ export default class HelpDetail extends Component {
     let html=this.state.text;
 		return (
       <div>
-            <Navbar  title={this.state.title} back="help"/>
+            <Navbar  title={this.state.title} back="/help"/>
             <div className="helpDetail">
              <div className="content" dangerouslySetInnerHTML={{__html: html}}></div>
             </div>

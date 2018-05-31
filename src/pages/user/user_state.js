@@ -105,18 +105,19 @@ export default class User_state extends Component {
 
     };
   showConfirm() {   //警告弹窗
+    let _this = this;
     confirm({
       title: '提示',
       content: '此次保存的用户数据将会清除,您确定要退出登陆？',
       onOk() {
-        Api("c=user&a=loginout",{str:3,is_wap:1},function(){
+        Api("c=user&a=loginout",{str:3,is_wap:1},()=>{
           sessionStorage.removeItem("user");
           localStorage.removeItem('sid');
           localStorage.removeItem('user_id');
           localStorage.removeItem('username');
           localStorage.removeItem('checked');
           setTimeout(()=>{
-            this.props.history.push("Home");
+              _this.props.history.push("Home");
           },100)
         })
       },
