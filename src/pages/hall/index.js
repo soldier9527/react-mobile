@@ -4,7 +4,7 @@ import {Tabs,Toast} from 'antd-mobile';
 import Navbar from '../common/navbar';
 import Footer from '../common/footer';
 import LotteryNum from '../open/lotteryNum'
-// import CountdownTimer from '../open/countdown'
+import CountdownTimer from '../open/countdown'
 import Api from '../api';
 
 
@@ -118,7 +118,6 @@ export default class Hall extends Component {
                 } else {
                     count_down = item.count_down > 0 ? item.count_down * 1000 : 0
                 }
-
                 return (
 
                     <Link key={item.lottery_id} to={this.state.user ? to : "login"}>
@@ -137,7 +136,7 @@ export default class Hall extends Component {
                             </div>
                             {item.lottery_id != 15 ? <p className="date">第
                                 <span className="">{item.issue}</span>期 截至
-                                {/*<CountdownTimer initialTimeRemaining={count_down}/>*/}
+                                <CountdownTimer initialTimeRemaining={count_down}/>
                             </p> : <p className="date">无奖期</p>}
                         </div>
                         <div className="gameRight"><i className="anticon anticon-right"></i></div>

@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React,{Component} from 'react';
 import {
     HashRouter,
     Route,
@@ -7,17 +7,13 @@ import {
     Redirect
 } from 'react-router-dom';
 import Loadable from 'react-loadable';
-// import Login from '../pages/login/login'
-// import Register from '../pages/login/register'
-// import Hall from '../pages/hall/index'; // 大厅
-// import OpenList from '../pages/open/index' // 开奖信息
-// import UserIndex from '../pages/user/index' // 开奖信息
-const Loading = () => <div>Loading...</div>;
-// import Home from '../pages/home/index'
-const Home = Loadable({
-    loader: () => import(process.env.REACT_APP_HOME?process.env.REACT_APP_HOME:"../pages/home/index"),
-    loading: Loading,
-});
+import Spin from 'antd/lib/spin';
+const Loading = () => <div><Spin></Spin></div>;
+import Home from '../pages/home/index'
+// const Home = Loadable({
+//     loader: () => import(process.env.REACT_APP_HOME?process.env.REACT_APP_HOME:"../pages/home/index"),
+//     loading: Loading,
+// });
 
 
 //个人中心
@@ -101,11 +97,20 @@ import Agency_explain from '../pages/group/agency_explain'//代理说明
 
 import Vindicate from '../pages/vindicate/vindicate' //维护
 import getStaticData from '../pages/common/getStatic' //维护
-
+class Root extends Component{
+    componentDidMount(){
+        getStaticData("x");
+        getStaticData("g");
+    }
+    render(){
+        return null
+    }
+}
 
 const PageRouter  = () =>(
     <HashRouter>
         <div>
+            <Route path="/" component={Root}></Route>
             <Switch>
                 <Redirect exact path="/" to="/home" />
                 <Route path="/home" component={Home}></Route>

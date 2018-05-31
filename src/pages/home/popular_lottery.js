@@ -1,8 +1,7 @@
 import React, { Component} from 'react'
 import {Link} from 'react-router-dom';
 import  Progress from 'antd/lib/progress';
-// import CountdownTimer  from '../open/countdown';
-
+import CountdownTimer  from '../open/countdown';
 
 export default class PopularLottery extends Component {
 
@@ -61,7 +60,7 @@ export default class PopularLottery extends Component {
                                 <dd><span>游戏人数：<em>{this.props.item.bet_people}</em></span><span><em className="issue">
                              {this.props.item.openinfo.issue}期</em></span></dd>
                                 <dd><span>中奖金额：<em>{this.state.Bonus_pools}</em></span><span>{this.props.item.kTime>0?"休市中..":"开奖："}
-                                    {/*<CountdownTimer initialTimeRemaining={this.props.item.kTime>0?this.props.item.kTime:this.props.item.openinfo.count_down*1000} />*/}
+                                    <CountdownTimer initialTimeRemaining={this.props.item.kTime>0?this.props.item.kTime:this.props.item.openinfo.count_down*1000} />
                            </span></dd>
                             </dl>
                             <div className="bottom">

@@ -731,10 +731,11 @@
         //padding: 0.28125rem 0.46875rem;
       	text-align: right;
         button {
+          padding: 0;
           background: #fff;
-          //width: 0.625rem;
-          //height: 0.625rem;
-          //line-height: 0.625rem;
+          width:px2rem(32px);
+          height: px2rem(36px);
+          line-height: px2rem(26px);
           margin-left: 0.235rem;
           text-align: center;
           border: 1px solid #c9c9c9;

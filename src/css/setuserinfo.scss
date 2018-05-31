@@ -13,6 +13,8 @@
     text-align: center;
     .ant-form-item-label{
       vertical-align: top;
+      display: inline;
+      padding-right: .1rem;
     }
     .ant-form-item-control-wrapper{
       display: inline-block;
