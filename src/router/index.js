@@ -8,12 +8,13 @@ import {
 } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import Spin from 'antd/lib/spin';
+import config from '../pages/config'
 const Loading = () => <div><Spin></Spin></div>;
-import Home from '../pages/home/index'
-// const Home = Loadable({
-//     loader: () => import(process.env.REACT_APP_HOME?process.env.REACT_APP_HOME:"../pages/home/index"),
-//     loading: Loading,
-// });
+// import Home from '../pages/home/01/index'
+const Home = Loadable({
+    loader: () => import(process.env.REACT_APP_HOME?process.env.REACT_APP_HOME:"../pages/home/index"),
+    loading: Loading,
+});
 
 
 //个人中心
@@ -97,6 +98,7 @@ import Agency_explain from '../pages/group/agency_explain'//代理说明
 
 import Vindicate from '../pages/vindicate/vindicate' //维护
 import getStaticData from '../pages/common/getStatic' //维护
+// import getAppVersion from './getAppVersion'
 class Root extends Component{
     componentDidMount(){
         getStaticData("x");
@@ -107,12 +109,21 @@ class Root extends Component{
     }
 }
 
+let indexRouter="/home";
+if(config.isAPP){
+    indexRouter="/home"
+}else if(config.index){
+    indexRouter= config.index
+}
+
 const PageRouter  = () =>(
     <HashRouter>
         <div>
             <Route path="/" component={Root}></Route>
             <Switch>
-                <Redirect exact path="/" to="/home" />
+                <Redirect exact path="/" to={indexRouter} />
+                <Route path="/load" component={To_load}></Route>
+                <Route path="/guidance" component={Guidance}></Route>
                 <Route path="/home" component={Home}></Route>
                 <Route path="/receiveBoxDetail" component={ReceiveBoxDetail}></Route>
                 <Route path="/receiveBoxList" component={ReceiveBoxList}></Route>
@@ -143,7 +154,7 @@ const PageRouter  = () =>(
                 <Route path="/register" component={Register}></Route>
                 {/*<Route path="/home/promodetail" component={HomePromodetail}></Route>*/}
                 <Route path="/user" component={User}></Route>
-                <Route path="/guidance" component={Guidance}></Route>
+
 
                 {/* 购彩 */}
                 <Route path="/hall" component={Hall}></Route>

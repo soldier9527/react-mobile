@@ -8,10 +8,9 @@ export default class To_load extends Component{
         }
     }
     componentDidMount() {
-        this.timer = setTimeout(
-            () => { hashHistory.push("/Guidance") },
-            3000
-        );
+        this.timer = setTimeout(() => {
+            this.props.history.push("/guidance")
+        }, 3000);
         this.timer=setInterval (()=>{
             this.setState({span:this.state.span+Math.floor(Math.random()*23+2)})
         },500)

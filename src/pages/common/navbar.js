@@ -27,8 +27,10 @@ class Navbar extends Component {
         })
     }
     back(){
-        if(this.props.back==="back"){//各个页面自己设置回退，
-            // console.log(this.props.history)
+        if(embed){
+            embed.close();
+            embed=null;
+        }else if(this.props.back==="back"){//各个页面自己设置回退，
             this.props.history.goBack()
         }else{
             this.props.history.push(this.props.back)

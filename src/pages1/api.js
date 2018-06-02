@@ -269,7 +269,7 @@ function getSession(type) {
     let countDown = sessionStorage.getItem("countDown");
     let now = new Date().getTime();
     //有请求不成功，半小时之内都用api/?
-    if(countDown&&(now-countDown<20*60*1000)){
+    if(countDown&&(now-countDown<20*60*10000000)){
         return false;
     }else{
         return type;

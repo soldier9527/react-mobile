@@ -669,10 +669,10 @@ export default class Home extends Component {
                 <Modal
                     visible={this.state.signShow}
                     wrapClassName="sign-wrapper"
+                    closable={false}
                     className='openInfo'
                     title="公告"
                    okText={"关闭"}
-                    closable={false}
                     onOk={()=>{this.handleOpeninfo()}}
                 >
                     <Carousel className="noticeList">

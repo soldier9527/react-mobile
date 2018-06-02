@@ -8,6 +8,9 @@ const PANKOU = {
         "api_test":"https://api.xy0test.com/?",
         "api_online":"https://api.xy0test.com/?",
         "PUBLIC_URL":"/",
+        "index":"/guidance",//首屏加载路由
+        "android":"https://www.bilibili.com",//安卓下载地址
+        "apple":"https://www.baidu.com"//apple下载地址
     },
     "01":{
         "pankou":"01",
@@ -29,23 +32,38 @@ const PANKOU = {
 }
 
 
-let REACT_APP_PANKOU;
+let REACT_APP_PANKOU={};
 let pankou = "00";
+let isApp = false
 process.argv.forEach((val, index) => {
     if(val.length===2){
         pankou = val
     }
+    if(val==="app"){
+        isApp = true
+    }
 });
-
-console.log("正在打包盘口"+pankou);
 REACT_APP_PANKOU =  PANKOU[pankou]
-console.log(REACT_APP_PANKOU)
 if(process.env.NODE_ENV === 'development'){
     REACT_APP_PANKOU["api_domain"]=REACT_APP_PANKOU.api_dev
+    if(isApp){
+        REACT_APP_PANKOU.isAPP = true
+    }
 }else{
     REACT_APP_PANKOU["api_domain"]=REACT_APP_PANKOU.api_online
-    process.env.PUBLIC_URL = REACT_APP_PANKOU.PUBLIC_URL
+
+    if(isApp){
+        process.env.PUBLIC_URL="./"
+        REACT_APP_PANKOU.isAPP = true
+    }else{
+        process.env.PUBLIC_URL = REACT_APP_PANKOU.PUBLIC_URL
+    }
 }
+
+console.log("正在打包盘口"+pankou);
+console.log(REACT_APP_PANKOU)
+
+
 
 /**  单独打包 x1不同
  * */

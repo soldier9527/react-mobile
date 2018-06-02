@@ -6,7 +6,6 @@ const paths = require('./paths');
 const pankouConfig = require('./pankou');
 process.env.REACT_APP_PANKOU = JSON.stringify(pankouConfig)
 
-
 // Make sure that including paths.js after env.js will read .env variables.
 delete require.cache[require.resolve('./paths')];
 

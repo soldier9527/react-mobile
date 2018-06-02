@@ -16,5 +16,13 @@ import 'antd/lib/input/style/css';
 import 'antd/lib/select/style/css';
 import 'antd/lib/checkbox/style/css';
 import './css/common.scss'
+import config from './pages/config'
+if(config.isAPP){
+    document.write('<script src="./mui.min.js"><\/script>')
+    document.write('<script src="./autoDownload.js"><\/script>')
+    document.write('<script src="./downloadImage.js"><\/script>')
+}else{
+    registerServiceWorker();
+}
+
 ReactDOM.render(<PageRouter />, document.getElementById('root'));
-registerServiceWorker();

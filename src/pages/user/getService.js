@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import Navbar from '../common/navbar';
 import Api from '../api';
-
+import {locationHref} from '../common/appCommon';
+import config from '../config'
 export default class GetService extends Component {
     constructor(props) {
         super(props);
@@ -12,10 +13,6 @@ export default class GetService extends Component {
         }
 
     }
-    componentWillMount(){
-
-
-    }
     componentDidMount() {
         if(sessionStorage.getItem("way")&&sessionStorage.getItem("way")==="origin"){
             window.history.go(-1);
@@ -23,9 +20,11 @@ export default class GetService extends Component {
         }else{
             Api("c=help&a=getService", null,  (res)=> {
                 if(res.errno===0){
-                    if(res.data.way==="origin"){
+                    if(config.isAPP){
+                        locationHref(res.data.ser_addr);
+                    }else if(res.data.way==="origin"){
                         sessionStorage.setItem("way","origin");
-                        window.location.href=res.data.ser_addr;
+                        locationHref(res.data.ser_addr);
                     }else{
                         this.setState({
                             url:res.data.ser_addr,
