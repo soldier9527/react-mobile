@@ -1,0 +1,36 @@
+@import '../../css/default/common';
+
+.header{
+  margin-bottom: 20px;
+
+  .topbar{
+    height: 30px;
+    line-height: 30px;
+    background: #f8f8f8;
+    overflow: hidden;
+    .login-box{
+      float: right;
+      a{
+        margin-right: 30px;
+      }
+    }
+  }
+  .nav{
+    display: block;
+    background: $color;
+    ul{
+      overflow: hidden;
+      >li{
+        float: left;
+        line-height: 40px;
+        padding: 0 30px;
+        &.on{
+          background: $tab_on;
+        }
+        a{
+          color: #fff;
+        }
+      }
+    }
+  }
+}

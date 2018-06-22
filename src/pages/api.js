@@ -1,6 +1,6 @@
 import 'whatwg-fetch';
 import {JSEncrypt} from './jsencrypt';
-import ShowMessage from './common/globalMessage'
+import {message} from 'antd'
 import CryptoJS from 'crypto-js';// 定义加/解密的
 import config from './config';
 let num = 0;
@@ -88,7 +88,8 @@ function RSAapi(path, req, callback,isFirstTime=true) {
                     callback();
                 }
             }catch(err){
-                ShowMessage('数据解析失败', "info",2)
+
+                message.error('数据解析失败')
             }
 
         });
@@ -101,7 +102,7 @@ function RSAapi(path, req, callback,isFirstTime=true) {
             sessionStorage.setItem("countDown",new Date().getTime())
         }
         if(!isFirstTime){
-            ShowMessage('网络异常，正在重新获取token', "info",2)
+            message.error('网络异常，正在重新获取token')
         }
     });
 }
@@ -167,8 +168,7 @@ function AESApi(path, req, callback,isFirstTime=true) {
                 }
                 callback(d);
             } else if (d.errno === 7001 || d.errno === 7006) {
-                //实现不累加显示，重复点击只显示一个
-                ShowMessage(d.errstr, "info",2);
+                message.error(d.errstr)
                 sessionStorage.removeItem("user");
                 localStorage.removeItem('rememberData');
                 if(callback){
@@ -189,7 +189,7 @@ function AESApi(path, req, callback,isFirstTime=true) {
             } else {
                 if (remind) {
                     //实现不累加显示，重复点击只显示一个
-                    ShowMessage(d.errstr, "info",2)
+                    message.error(d.errstr)
                 }
                 callback(d);
             }
@@ -202,7 +202,7 @@ function AESApi(path, req, callback,isFirstTime=true) {
             }
             sendData(request.url,flag?"3s请求超时":"15s请求超时");
         }else{
-            ShowMessage("请求失败，请清除缓存再试", "info",2)
+            message.error("请求失败，请清除缓存再试")
         }
         sendData(request.url,"跨域请求");
     });

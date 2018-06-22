@@ -1,0 +1,31 @@
+@import "../../css/default/common";
+
+
+
+
+.home-wrap{
+  .home-content{
+    min-height: 500px;
+    background: #fffdfd;
+  }
+  .home-lottery-list{
+    width: 200px;
+    border: 1px solid #e6c9a0;
+    border-top: 3px solid #e6c9a0;
+    ul>li{
+      height: 40px;
+      line-height: 40px;
+      border-bottom: 1px dashed #ddd;
+      span{
+        padding-left: 10px;
+        margin-right: 5px;
+        margin-bottom: 10px;
+        vertical-align: top;
+        font-size: 14px;
+        color: #333;
+        font-weight: 700;
+      }
+    }
+  }
+
+}

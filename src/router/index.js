@@ -8,20 +8,20 @@ import {
 } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import config from '../pages/config'
-import LoadingSpin from '../pages/common/loadingSpin'
+
 // import Home from '../pages/home/01/index'
 const Home = Loadable({
     loader: () => import(/* webpackChunkName: "app" */ process.env.REACT_APP_HOME?process.env.REACT_APP_HOME:"../pages/home/index"),
-    loading:  () => <LoadingSpin />,
+    loading: () => <div></div>,
 });
 // import Guidance from '../pages/home/guidance' //引导页
 const Guidance = Loadable({
     loader: () => import(/* webpackChunkName: "app" */ process.env.REACT_APP_GUIDANCE?process.env.REACT_APP_GUIDANCE:"../pages/home/guidance"),
-    loading:  () => <LoadingSpin />,
+    loading:  () => <div></div>,
 });
+import Login from '../pages/login/login'
 
-
-import getStaticData from '../pages/common/getStatic' //维护
+import getStaticData from '../pages/common/getStatic'
 class Root extends Component{
     componentDidMount(){
         getStaticData("x");
@@ -47,6 +47,7 @@ const PageRouter  = () =>(
                 <Redirect exact path="/" to={indexRouter} />
                 <Route path="/guidance" component={Guidance}></Route>
                 <Route path="/home" component={Home}></Route>
+                <Route path="/login" component={Login}></Route>
 
             </Switch>
         </div>

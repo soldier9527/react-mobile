@@ -1,0 +1,56 @@
+.login-wrap{
+  .login-content{
+    min-height: 500px;
+    padding: 20px;
+    border: 1px solid #e1e1e2;
+    background: #fff;
+    h3.title{
+      font-size: 24px;
+      color: #ff2c55;
+      margin-bottom: 5px;
+      margin-left: 30px;
+      margin-top: 0;
+      height: 50px;
+      border-bottom: 1px dashed #e0e3e6;
+    }
+    .input-wrap{
+      margin-top: 20px;
+      .label-input{
+        color: #666;
+        display: inline-block;
+        width: 144px;
+        text-align: right;
+        padding-right: 15px;
+        font-size: 12px;
+      }
+      .text-input{
+        height: 36px;
+        width: 280px;
+        border: 1px solid #e7e8e8;
+        background-color: #feffff;
+        color: #a9a9a9;
+        padding-left: 10px;
+        margin: 0;
+      }
+    }
+    .submit-btn{
+      display: inline-block;
+      line-height: 30px;
+      color: #fff;
+      padding: 0 15px;
+      border-radius: 3px;
+      font-size: 14px;
+      min-width: 55px;
+      text-align: center;
+      cursor: pointer;
+      background: #e4393c;
+      margin: 10px 0;
+    }
+    .forgot-pwd{
+      font-size: 12px;
+      margin-left: 30px;
+      display: inline-block;
+      line-height: 30px;
+    }
+  }
+}
